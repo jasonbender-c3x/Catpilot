@@ -104,7 +104,7 @@ def get_stats():
             "branchName": "main",
             "buildEnvironment": "CatPilot v1.0",
             "commitHash": "a3f7c2d",
-            "forkMaintainer": "Aidenir, Jason Bender & Replit Agent (Claude by Anthropic)",
+            "forkMaintainer": "Jason Bender & Replit Agent (Claude by Anthropic)",
             "updateAvailable": "No",
             "versionDate": "December 2025"
         }

@@ -90,7 +90,7 @@ export function Sidebar() {
           <img class="logo" src="/assets/images/main_logo.png" alt="CatPilot logo" />
           <div class="title_text sidebar_header">
             <p>The Pound 🐱</p>
-            <a href="https://github.com/Aidenir">by&nbsp;Aidenir</a>
+            <a href="https://github.com/commaai/catpilot">by&nbsp;The Compiler</a>
           </div>
         </div>
         <hr />
