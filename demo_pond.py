@@ -73,6 +73,35 @@ def get_routes():
         "note": "Demo mode - routes require comma device with recorded drives"
     })
 
+@app.route("/api/screen_recordings/list", methods=["GET"])
+def get_screen_recordings():
+    return jsonify([])
+
+@app.route("/api/tsk_keys", methods=["GET"])
+def get_tsk_keys():
+    return jsonify({"keys": []})
+
+@app.route("/api/tsk_available", methods=["GET"])
+def tsk_available():
+    return jsonify({"result": False, "reason": "Tailscale not available in demo mode"})
+
+@app.route("/api/stats", methods=["GET"])
+def get_stats():
+    return jsonify({
+        "hours": 0,
+        "miles": 0,
+        "note": "Demo mode - stats require actual driving data"
+    })
+
+@app.route("/api/params", methods=["GET"])
+def get_params():
+    key = request.args.get('key', '')
+    return jsonify({"value": "false", "note": "Demo mode"})
+
+@app.route("/api/toggles/get", methods=["GET"])
+def get_toggle_values():
+    return jsonify({"toggles": {}, "note": "Demo mode"})
+
 if __name__ == "__main__":
     print("=" * 60)
     print("🐱 CatPilot - The Pond Web Interface (Demo Mode)")
