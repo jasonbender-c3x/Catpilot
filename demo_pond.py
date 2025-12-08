@@ -90,21 +90,21 @@ def tsk_available():
 def get_stats():
     return jsonify({
         "driveStats": {
-            "all": {"drives": 1247, "distance": 18432, "hours": 412},
-            "week": {"drives": 23, "distance": 387, "hours": 9},
-            "catpilot": {"drives": 1189, "distance": 17654, "hours": 398}
+            "all": {"drives": 0, "distance": 0, "hours": 0},
+            "week": {"drives": 0, "distance": 0, "hours": 0},
+            "catpilot": {"drives": 0, "distance": 0, "hours": 0}
         },
         "firehoseStats": {
-            "segments": 8742
+            "segments": 0
         },
         "diskUsage": [
-            {"size": "256 GB", "used": "47.3 GB", "usedPercentage": "18.5"}
+            {"size": "0 GB", "used": "0 GB", "usedPercentage": "0"}
         ],
         "softwareInfo": {
             "branchName": "main",
             "buildEnvironment": "CatPilot v1.0",
             "commitHash": "a3f7c2d",
-            "forkMaintainer": "Jason Bender & Replit Agent (Claude by Anthropic)",
+            "forkMaintainer": "Aidenir, Jason Bender & Replit Agent (Claude by Anthropic)",
             "updateAvailable": "No",
             "versionDate": "December 2025"
         }
