@@ -404,7 +404,7 @@
 <context>
     <name>DriveStats</name>
     <message>
-        <source>FROGPILOT</source>
+        <source>CATPILOT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3096,7 +3096,7 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>FROGPILOT</source>
+        <source>CATPILOT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

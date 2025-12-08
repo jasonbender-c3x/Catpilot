@@ -65,7 +65,7 @@ class ToyotaFlags(IntFlag):
   RAISED_ACCEL_LIMIT = 2048
   SECOC = 4096
 
-class ToyotaFrogPilotFlags(IntFlag):
+class ToyotaCatPilotFlags(IntFlag):
   ZSS = 1
 
 class Footnote(Enum):

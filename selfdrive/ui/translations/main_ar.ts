@@ -404,8 +404,8 @@
 <context>
     <name>DriveStats</name>
     <message>
-        <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <source>CATPILOT</source>
+        <translation type="gpt-4o-generated">CATPILOT</translation>
     </message>
     <message>
         <source>Drives</source>
@@ -3107,8 +3107,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">مخزون</translation>
     </message>
     <message>
-        <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <source>CATPILOT</source>
+        <translation type="gpt-4o-generated">CATPILOT</translation>
     </message>
     <message>
         <source>CUSTOM</source>

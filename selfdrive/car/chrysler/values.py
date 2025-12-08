@@ -14,7 +14,7 @@ class ChryslerFlags(IntFlag):
   # Detected flags
   HIGHER_MIN_STEERING_SPEED = 1
 
-class ChryslerFrogPilotFlags(IntFlag):
+class ChryslerCatPilotFlags(IntFlag):
   RAM_HD_ALT_BUTTONS = 1
 
 @dataclass

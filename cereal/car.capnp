@@ -118,7 +118,7 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     paramsdPermanentError @119;
     actuatorsApiUnavailable @120;
 
-    # FrogPilot Events
+    # CatPilot Events
     accel30 @122;
     accel35 @123;
     accel40 @124;
@@ -445,7 +445,7 @@ struct CarControl {
       promptRepeat @7;
       promptDistracted @8;
 
-      # FrogPilot sounds
+      # CatPilot sounds
       angry @9;
       continued @10;
       dejaVu @11;

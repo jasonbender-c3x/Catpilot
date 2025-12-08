@@ -404,8 +404,8 @@
 <context>
     <name>DriveStats</name>
     <message>
-        <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <source>CATPILOT</source>
+        <translation type="gpt-4o-generated">CATPILOT</translation>
     </message>
     <message>
         <source>Drives</source>
@@ -3105,8 +3105,8 @@ Kendi animasyonlarınızı göndermek mi istiyorsunuz? Onları CatPilot Discord'
         <translation type="gpt-4o-generated">STOK</translation>
     </message>
     <message>
-        <source>FROGPILOT</source>
-        <translation type="gpt-4o-generated">FROGPILOT</translation>
+        <source>CATPILOT</source>
+        <translation type="gpt-4o-generated">CATPILOT</translation>
     </message>
     <message>
         <source>CUSTOM</source>

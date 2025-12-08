@@ -10,7 +10,7 @@ else:
   from openpilot.common.basedir import BASEDIR
 
 UI_DIR = os.path.join(BASEDIR, "selfdrive", "ui")
-FROGPILOT_UI_DIR = os.path.join(BASEDIR, "catpilot", "ui")
+CATPILOT_UI_DIR = os.path.join(BASEDIR, "catpilot", "ui")
 TRANSLATIONS_DIR = os.path.join(UI_DIR, "translations")
 LANGUAGES_FILE = os.path.join(TRANSLATIONS_DIR, "languages.json")
 TRANSLATIONS_INCLUDE_FILE = os.path.join(TRANSLATIONS_DIR, "alerts_generated.h")
@@ -84,7 +84,7 @@ def update_translations(vanish: bool = False, translation_files: None | list[str
     root = tree.getroot()
     backup = backup_translation_types(root)
 
-    args = f"lupdate -locations none -recursive {UI_DIR} {FROGPILOT_UI_DIR} -ts {tr_file} -I {BASEDIR}"
+    args = f"lupdate -locations none -recursive {UI_DIR} {CATPILOT_UI_DIR} -ts {tr_file} -I {BASEDIR}"
     if vanish:
       args += " -no-obsolete"
     if file in PLURAL_ONLY:
