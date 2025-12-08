@@ -1,0 +1,24 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11.4"
+dependencies = [
+    "cffi>=2.0.0",
+    "cython>=3.2.2",
+    "flask>=3.1.2",
+    "hexdump>=3.3",
+    "jinja2>=3.1.6",
+    "libusb1>=3.3.1",
+    "numpy>=2.3.5",
+    "pycapnp>=2.2.1",
+    "pycryptodome>=3.23.0",
+    "pytest>=9.0.2",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "scipy>=1.16.3",
+    "scons>=4.10.1",
+    "sympy>=1.14.0",
+    "tqdm>=4.67.1",
+    "werkzeug>=3.1.4",
+]

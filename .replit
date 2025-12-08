@@ -1,0 +1,7 @@
+modules = ["c-clang14", "nodejs-20", "rust-stable", "python-3.11"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["capnproto", "glibcLocales", "gmp", "libffi", "libxcrypt", "libyaml", "pkg-config", "xsimd"]
