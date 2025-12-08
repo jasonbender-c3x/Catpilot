@@ -10,10 +10,6 @@ packages = ["capnproto", "glibcLocales", "gmp", "libffi", "libxcrypt", "libyaml"
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 41743
-externalPort = 3000
-
 [workflows]
 runButton = "Project"
 
@@ -24,10 +20,10 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "The Pond Web UI"
+args = "The Pound Web UI"
 
 [[workflows.workflow]]
-name = "The Pond Web UI"
+name = "The Pound Web UI"
 author = "agent"
 
 [[workflows.workflow.tasks]]
@@ -39,5 +35,5 @@ waitForPort = 5000
 outputType = "webview"
 
 [deployment]
-deploymentTarget = "autoscale"
-run = ["python3", "demo_pond.py"]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "/nix/store/cn7gx98bvd6qj3jrh5v21q868nlv2jv6-python3-wrapper/bin/python3 $file"]

@@ -89,7 +89,7 @@ export function Sidebar() {
         <div class="title">
           <img class="logo" src="/assets/images/main_logo.png" alt="FrogPilot logo" />
           <div class="title_text sidebar_header">
-            <p>The Pond</p>
+            <p>The Pound 🐱</p>
             <a href="https://github.com/Aidenir">by&nbsp;Aidenir</a>
           </div>
         </div>

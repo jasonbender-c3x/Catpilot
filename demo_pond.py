@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Simplified demo version of The Pond for Replit environment.
+Simplified demo version of The Pound for Replit environment.
 This version runs without the full openpilot/hardware dependencies.
+🐱 All cats, all the time! 🐱
 """
 from flask import Flask, render_template, jsonify, request, send_from_directory
 import secrets
@@ -35,14 +36,14 @@ def status():
     return jsonify({
         "status": "running",
         "mode": "demo",
-        "message": "The Pond demo is running on Replit. Full hardware features are not available in this environment."
+        "message": "The Pound demo is running on Replit. Full hardware features are not available in this environment."
     })
 
 @app.route("/api/info", methods=["GET"])
 def info():
     """Provide basic info about the deployment"""
     return jsonify({
-        "project": "CatPilot - The Pond",
+        "project": "CatPilot - The Pound",
         "description": "Web interface for CatPilot (openpilot fork)",
         "environment": "Replit Demo",
         "note": "This is a demo version. Full functionality requires comma.ai hardware."
@@ -104,7 +105,7 @@ def get_toggle_values():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("🐱 CatPilot - The Pond Web Interface (Demo Mode)")
+    print("🐱 CatPilot - The Pound Web Interface (Demo Mode) 🐱")
     print("=" * 60)
     print("Starting server on http://0.0.0.0:5000")
     print("\nNote: This is a demo version running on Replit.")

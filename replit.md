@@ -1,10 +1,10 @@
-# CatPilot - The Pond Web Interface
+# CatPilot - The Pound Web Interface 🐱
 
 ## Project Overview
 
-**CatPilot** is a fully open-sourced fork of openpilot, featuring clear and concise commits and serving as a resource for the openpilot developer community. This Replit project showcases **The Pond**, CatPilot's lightweight web-based interface for managing comma devices.
+**CatPilot** is a fully open-sourced fork of openpilot, featuring clear and concise commits and serving as a resource for the openpilot developer community. This Replit project showcases **The Pound**, CatPilot's lightweight web-based interface for managing comma devices.
 
-**Important Note**: This is a **demo version** of The Pond running in the Replit environment. Full functionality requires actual comma.ai hardware (comma 3/3X device). The demo version provides a preview of the user interface and basic API structure.
+**Important Note**: This is a **demo version** of The Pound running in the Replit environment. Full functionality requires actual comma.ai hardware (comma 3/3X device). The demo version provides a preview of the user interface and basic API structure.
 
 ### What is openpilot?
 
@@ -14,9 +14,9 @@ openpilot is an open source driver assistance system that performs:
 - Forward Collision Warning (FCW)
 - Lane Departure Warning (LDW)
 
-### What is The Pond?
+### What is The Pound?
 
-The Pond is a web-based management interface that allows users to:
+The Pound is a web-based management interface that allows users to:
 - View driving statistics
 - Manage device settings and toggles
 - Access error logs and screen recordings
@@ -29,7 +29,7 @@ The Pond is a web-based management interface that allows users to:
 .
 ├── catpilot/              # CatPilot-specific code
 │   └── system/
-│       └── the_pond/      # Web UI components
+│       └── the_pond/      # Web UI components (The Pound)
 │           ├── assets/    # JavaScript, CSS, images
 │           ├── templates/ # HTML templates
 │           ├── the_pond.py  # Full Flask application (requires hardware)
@@ -64,7 +64,7 @@ The project runs a simplified demo version (`demo_pond.py`) that:
 - Displays "Demo Mode" messages
 
 ### Current Setup
-- **Workflow**: "The Pond Web UI" - Runs automatically
+- **Workflow**: "The Pound Web UI" - Runs automatically
 - **Port**: 5000 (configured for Replit webview)
 - **Host**: 0.0.0.0 (allows Replit proxy to work)
 
@@ -120,6 +120,7 @@ To run the full version, you need:
 - Configured Flask server for port 5000
 - Set up workflow and deployment
 - Added stub API endpoints for demo mode
+- Renamed from "The Pond" to "The Pound" with cat theme
 
 ## Resources
 

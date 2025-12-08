@@ -113,7 +113,7 @@ export function Home() {
         if (state.data) {
           const { driveStats, firehoseStats, softwareInfo } = state.data;
           return html`
-            <h1>The Pond</h1>
+            <h1>The Pound 🐱</h1>
 
             <div class="drivingStats">
               ${DriveStat("All Time", driveStats?.all, state.unit)}
