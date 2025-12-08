@@ -104,7 +104,7 @@ def get_stats():
             "branchName": "main",
             "buildEnvironment": "Replit Demo",
             "commitHash": "catpilot-demo",
-            "forkMaintainer": "Jason Bender & Replit",
+            "forkMaintainer": "Jason Bender & Replit Agent (Claude by Anthropic)",
             "updateAvailable": "No",
             "versionDate": "December 2025"
         }
