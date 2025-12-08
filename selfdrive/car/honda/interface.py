@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 from cereal import car, custom
 from panda import Panda
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.numpy_fast import interp
-from openpilot.selfdrive.car.honda.hondacan import CanBus
-from openpilot.selfdrive.car.honda.values import CarControllerParams, CruiseButtons, CruiseSettings, HondaFlags, CAR, HONDA_BOSCH, \
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.numpy_fast import interp
+from catpilot.selfdrive.car.honda.hondacan import CanBus
+from catpilot.selfdrive.car.honda.values import CarControllerParams, CruiseButtons, CruiseSettings, HondaFlags, CAR, HONDA_BOSCH, \
                                                  HONDA_NIDEC_ALT_SCM_MESSAGES, HONDA_BOSCH_RADARLESS
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
-from openpilot.selfdrive.car.disable_ecu import disable_ecu
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car.disable_ecu import disable_ecu
 
 
 ButtonType = car.CarState.ButtonEvent.Type
@@ -43,16 +43,16 @@ class CarInterface(CarInterfaceBase):
     if candidate in HONDA_BOSCH:
       ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.hondaBosch)]
       ret.radarUnavailable = True
-      # Disable the radar and let openpilot control longitudinal
+      # Disable the radar and let catpilot control longitudinal
       # WARNING: THIS DISABLES AEB!
       # If Bosch radarless, this blocks ACC messages from the camera
       ret.experimentalLongitudinalAvailable = True
-      ret.openpilotLongitudinalControl = experimental_long
-      ret.pcmCruise = not ret.openpilotLongitudinalControl
+      ret.catpilotLongitudinalControl = experimental_long
+      ret.pcmCruise = not ret.catpilotLongitudinalControl
     else:
       ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.hondaNidec)]
       ret.enableGasInterceptor = 0x201 in fingerprint[CAN.pt]
-      ret.openpilotLongitudinalControl = not catpilot_toggles.disable_openpilot_long
+      ret.catpilotLongitudinalControl = not catpilot_toggles.disable_catpilot_long
 
       ret.pcmCruise = not ret.enableGasInterceptor
 
@@ -228,7 +228,7 @@ class CarInterface(CarInterfaceBase):
     if candidate in HONDA_NIDEC_ALT_SCM_MESSAGES:
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_HONDA_NIDEC_ALT
 
-    if ret.openpilotLongitudinalControl and candidate in HONDA_BOSCH:
+    if ret.catpilotLongitudinalControl and candidate in HONDA_BOSCH:
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_HONDA_BOSCH_LONG
 
     if ret.enableGasInterceptor and candidate not in HONDA_BOSCH:
@@ -250,7 +250,7 @@ class CarInterface(CarInterfaceBase):
 
   @staticmethod
   def init(CP, logcan, sendcan):
-    if CP.carFingerprint in (HONDA_BOSCH - HONDA_BOSCH_RADARLESS) and CP.openpilotLongitudinalControl:
+    if CP.carFingerprint in (HONDA_BOSCH - HONDA_BOSCH_RADARLESS) and CP.catpilotLongitudinalControl:
       disable_ecu(logcan, sendcan, bus=1, addr=0x18DAB0F1, com_cont_req=b'\x28\x83\x03')
 
   # returns a car.CarState
@@ -272,7 +272,7 @@ class CarInterface(CarInterfaceBase):
       # we engage when pcm is active (rising edge)
       if ret.cruiseState.enabled and not self.CS.out.cruiseState.enabled:
         events.add(EventName.pcmEnable)
-      elif not ret.cruiseState.enabled and (c.actuators.accel >= 0. or not self.CP.openpilotLongitudinalControl):
+      elif not ret.cruiseState.enabled and (c.actuators.accel >= 0. or not self.CP.catpilotLongitudinalControl):
         # it can happen that car cruise disables while comma system is enabled: need to
         # keep braking if needed or if the speed is very low
         if ret.vEgo < self.CP.minEnableSpeed + 2.:

@@ -64,7 +64,7 @@ export function ToggleControl () {
 
   async function resetTogglesToStock () {
     state.showResetStockModal = false;
-    showSnackbar("Resetting toggles to stock openpilot values...");
+    showSnackbar("Resetting toggles to stock catpilot values...");
     await new Promise(resolve => setTimeout(resolve, 3000));
     showSnackbar("Rebooting...");
     await new Promise(resolve => setTimeout(resolve, 3000));
@@ -87,9 +87,9 @@ export function ToggleControl () {
       </section>
 
       <section class="toggle-control-widget" style="margin-left: 1.5rem">
-        <div class="toggle-control-title">Reset Toggles to Default CatPilot/Stock openpilot</div>
+        <div class="toggle-control-title">Reset Toggles to Default CatPilot/Stock catpilot</div>
         <p class="toggle-control-text">
-          Reset all toggles to default CatPilot/stock openpilot settings.
+          Reset all toggles to default CatPilot/stock catpilot settings.
         </p>
         <button class="toggle-control-button" @click="${confirmResetDefault}">
           Reset Toggles to Default
@@ -108,7 +108,7 @@ export function ToggleControl () {
       }) : ""}
     ${() => state.showResetStockModal ? Modal({
         title: "Reset Toggles",
-        message: "Are you sure you want to reset all toggles to stock openpilot values?",
+        message: "Are you sure you want to reset all toggles to stock catpilot values?",
         onConfirm: resetTogglesToStock,
         onCancel: () => { state.showResetStockModal = false; },
         confirmText: "Reset to Stock"

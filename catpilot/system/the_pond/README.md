@@ -20,7 +20,7 @@ The API is simple and defined in `the_pond.py`. It exposes a handful of JSON-bas
 - Fetch error logs  
 - List recorded routes  
 - Load a specific route and video stream (ported from Fleet Manager)  
-- Save a navigation destination (triggers OpenPilot navigation)
+- Save a navigation destination (triggers CatPilot navigation)
 
 ## Web App
 

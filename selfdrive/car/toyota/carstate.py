@@ -1,14 +1,14 @@
 import copy
 
 from cereal import car, custom
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.numpy_fast import mean
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.realtime import DT_CTRL
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.numpy_fast import mean
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import DT_CTRL
 from opendbc.can.can_define import CANDefine
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.interfaces import CarStateBase
-from openpilot.selfdrive.car.toyota.values import ToyotaFlags, ToyotaCatPilotFlags, CAR, DBC, STEER_THRESHOLD, NO_STOP_TIMER_CAR, \
+from catpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.selfdrive.car.toyota.values import ToyotaFlags, ToyotaCatPilotFlags, CAR, DBC, STEER_THRESHOLD, NO_STOP_TIMER_CAR, \
                                                   TSS2_CAR, RADAR_ACC_CAR, EPS_SCALE, UNSUPPORTED_DSU_CAR, SECOC_CAR
 
 SteerControlType = car.CarParams.SteerControlType

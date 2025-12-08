@@ -11,9 +11,9 @@ import wave
 from aiohttp import web
 from aiohttp import ClientSession
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.system.webrtc.webrtcd import StreamRequestBody
-from openpilot.common.params import Params
+from catpilot.common.basedir import BASEDIR
+from catpilot.system.webrtc.webrtcd import StreamRequestBody
+from catpilot.common.params import Params
 
 logger = logging.getLogger("bodyteleop")
 logging.basicConfig(level=logging.INFO)

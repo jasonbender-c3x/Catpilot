@@ -23,8 +23,8 @@ Safety modes optionally support `controls_allowed`, which allows or blocks a sub
 
 ## Code Rigor
 
-The panda firmware is written for its use in conjuction with [openpilot](https://github.com/commaai/openpilot). The panda firmware, through its safety model, provides and enforces the
-[openpilot safety](https://github.com/commaai/openpilot/blob/master/docs/SAFETY.md). Due to its critical function, it's important that the application code rigor within the `board` folder is held to high standards.
+The panda firmware is written for its use in conjuction with [catpilot](https://github.com/commaai/catpilot). The panda firmware, through its safety model, provides and enforces the
+[catpilot safety](https://github.com/commaai/catpilot/blob/master/docs/SAFETY.md). Due to its critical function, it's important that the application code rigor within the `board` folder is held to high standards.
 
 These are the [CI regression tests](https://github.com/commaai/panda/actions) we have in place:
 * A generic static code analysis is performed by [cppcheck](https://github.com/danmar/cppcheck/).
@@ -97,7 +97,7 @@ The panda jungle uses different udev rules. See [the repo](https://github.com/co
 As a universal car interface, it should support every reasonable software interface.
 
 - [Python library](https://github.com/commaai/panda/tree/master/python)
-- [C++ library](https://github.com/commaai/openpilot/tree/master/selfdrive/boardd)
+- [C++ library](https://github.com/commaai/catpilot/tree/master/selfdrive/boardd)
 - [socketcan in kernel](https://github.com/commaai/panda/tree/master/drivers/linux) (alpha)
 
 ## Licensing

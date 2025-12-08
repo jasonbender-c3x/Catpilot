@@ -8,10 +8,10 @@ import urllib.parse
 
 from pathlib import Path
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.catpilot.assets.download_functions import GITLAB_URL, download_file, get_repository_url, handle_error, handle_request_error, verify_download
-from openpilot.catpilot.common.catpilot_utilities import delete_file
-from openpilot.catpilot.common.catpilot_variables import DEFAULT_CLASSIC_MODEL, DEFAULT_MODEL, DEFAULT_TINYGRAD_MODEL, MODELS_PATH, RESOURCES_REPO, TINYGRAD_FILES, \
+from catpilot.common.basedir import BASEDIR
+from catpilot.catpilot.assets.download_functions import GITLAB_URL, download_file, get_repository_url, handle_error, handle_request_error, verify_download
+from catpilot.catpilot.common.catpilot_utilities import delete_file
+from catpilot.catpilot.common.catpilot_variables import DEFAULT_CLASSIC_MODEL, DEFAULT_MODEL, DEFAULT_TINYGRAD_MODEL, MODELS_PATH, RESOURCES_REPO, TINYGRAD_FILES, \
                                                            params, params_default, params_memory
 
 VERSION = "v15"

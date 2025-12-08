@@ -7,11 +7,11 @@ from PIL import Image
 
 import cereal.messaging as messaging
 from msgq.visionipc import VisionIpcClient, VisionStreamType
-from openpilot.common.params import Params
-from openpilot.common.realtime import DT_MDL
-from openpilot.system.hardware import PC
-from openpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
-from openpilot.system.manager.process_config import managed_processes
+from catpilot.common.params import Params
+from catpilot.common.realtime import DT_MDL
+from catpilot.system.hardware import PC
+from catpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
+from catpilot.system.manager.process_config import managed_processes
 
 
 VISION_STREAMS = {

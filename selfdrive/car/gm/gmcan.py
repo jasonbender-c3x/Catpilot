@@ -1,10 +1,10 @@
 import math
 
 from cereal import log
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.car import make_can_msg
-from openpilot.selfdrive.car.gm.values import CAR, CruiseButtons, CanBus
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.car import make_can_msg
+from catpilot.selfdrive.car.gm.values import CAR, CruiseButtons, CanBus
 
 
 def create_buttons(packer, bus, idx, button):

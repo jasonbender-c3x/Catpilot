@@ -3,12 +3,12 @@ import shutil
 import uuid
 
 
-from openpilot.common.params import Params
-from openpilot.system.hardware import PC
-from openpilot.system.hardware.hw import Paths
-from openpilot.system.hardware.hw import DEFAULT_DOWNLOAD_CACHE_ROOT
+from catpilot.common.params import Params
+from catpilot.system.hardware import PC
+from catpilot.system.hardware.hw import Paths
+from catpilot.system.hardware.hw import DEFAULT_DOWNLOAD_CACHE_ROOT
 
-class OpenpilotPrefix:
+class CatpilotPrefix:
   def __init__(self, prefix: str = None, clean_dirs_on_exit: bool = True, shared_download_cache: bool = False):
     self.prefix = prefix if prefix else str(uuid.uuid4().hex[0:15])
     self.msgq_path = os.path.join('/dev/shm', self.prefix)
@@ -16,8 +16,8 @@ class OpenpilotPrefix:
     self.shared_download_cache = shared_download_cache
 
   def __enter__(self):
-    self.original_prefix = os.environ.get('OPENPILOT_PREFIX', None)
-    os.environ['OPENPILOT_PREFIX'] = self.prefix
+    self.original_prefix = os.environ.get('CATPILOT_PREFIX', None)
+    os.environ['CATPILOT_PREFIX'] = self.prefix
     try:
       os.mkdir(self.msgq_path)
     except FileExistsError:
@@ -33,9 +33,9 @@ class OpenpilotPrefix:
     if self.clean_dirs_on_exit:
       self.clean_dirs()
     try:
-      del os.environ['OPENPILOT_PREFIX']
+      del os.environ['CATPILOT_PREFIX']
       if self.original_prefix is not None:
-        os.environ['OPENPILOT_PREFIX'] = self.original_prefix
+        os.environ['CATPILOT_PREFIX'] = self.original_prefix
     except KeyError:
       pass
     return False

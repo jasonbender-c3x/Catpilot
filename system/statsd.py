@@ -7,14 +7,14 @@ from collections import defaultdict
 from datetime import datetime, UTC
 from typing import NoReturn
 
-from openpilot.common.params import Params
+from catpilot.common.params import Params
 from cereal.messaging import SubMaster
-from openpilot.system.hardware.hw import Paths
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.hardware import HARDWARE
-from openpilot.common.file_helpers import atomic_write_in_dir
-from openpilot.system.version import get_build_metadata
-from openpilot.system.loggerd.config import STATS_DIR_FILE_LIMIT, STATS_SOCKET, STATS_FLUSH_TIME_S
+from catpilot.system.hardware.hw import Paths
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.hardware import HARDWARE
+from catpilot.common.file_helpers import atomic_write_in_dir
+from catpilot.system.version import get_build_metadata
+from catpilot.system.loggerd.config import STATS_DIR_FILE_LIMIT, STATS_SOCKET, STATS_FLUSH_TIME_S
 
 
 class METRIC_TYPE:
@@ -91,10 +91,10 @@ def main() -> NoReturn:
   # initialize tags
   tags = {
     'started': False,
-    'version': build_metadata.openpilot.version,
+    'version': build_metadata.catpilot.version,
     'branch': build_metadata.channel,
-    'dirty': build_metadata.openpilot.is_dirty,
-    'origin': build_metadata.openpilot.git_normalized_origin,
+    'dirty': build_metadata.catpilot.is_dirty,
+    'origin': build_metadata.catpilot.git_normalized_origin,
     'deviceType': HARDWARE.get_device_type(),
   }
 

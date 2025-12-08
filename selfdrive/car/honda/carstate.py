@@ -1,15 +1,15 @@
 from collections import defaultdict
 
 from cereal import car, custom
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.numpy_fast import interp
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.numpy_fast import interp
 from opendbc.can.can_define import CANDefine
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.honda.hondacan import CanBus, get_cruise_speed_conversion
-from openpilot.selfdrive.car.honda.values import CAR, DBC, STEER_THRESHOLD, HONDA_BOSCH, \
+from catpilot.selfdrive.car.honda.hondacan import CanBus, get_cruise_speed_conversion
+from catpilot.selfdrive.car.honda.values import CAR, DBC, STEER_THRESHOLD, HONDA_BOSCH, \
                                                  HONDA_NIDEC_ALT_SCM_MESSAGES, HONDA_BOSCH_RADARLESS, \
                                                  HondaFlags
-from openpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.selfdrive.car.interfaces import CarStateBase
 
 TransmissionType = car.CarParams.TransmissionType
 
@@ -52,7 +52,7 @@ def get_can_messages(CP, gearbox_msg):
 
   if CP.carFingerprint in HONDA_BOSCH:
     # these messages are on camera bus on radarless cars
-    if not CP.openpilotLongitudinalControl and CP.carFingerprint not in HONDA_BOSCH_RADARLESS:
+    if not CP.catpilotLongitudinalControl and CP.carFingerprint not in HONDA_BOSCH_RADARLESS:
       messages += [
         ("ACC_HUD", 10),
         ("ACC_CONTROL", 50),
@@ -80,7 +80,7 @@ def get_can_messages(CP, gearbox_msg):
     messages.append(("CRUISE_FAULT_STATUS", 50))
   elif CP.carFingerprint == CAR.HONDA_CLARITY:
     messages.append(("BRAKE_ERROR", 100)),
-  elif CP.openpilotLongitudinalControl:
+  elif CP.catpilotLongitudinalControl:
     messages.append(("STANDSTILL", 50))
 
   return messages
@@ -157,7 +157,7 @@ class CarState(CarStateBase):
     else:
       # On some cars, these two signals are always 1, this flag is masking a bug in release
       # FIXME: find and set the ACC faulted signals on more platforms
-      if self.CP.openpilotLongitudinalControl:
+      if self.CP.catpilotLongitudinalControl:
         ret.accFaulted = bool(cp.vl["STANDSTILL"]["BRAKE_ERROR_1"] or cp.vl["STANDSTILL"]["BRAKE_ERROR_2"])
 
       # Log non-critical stock ACC/LKAS faults if Nidec (camera)
@@ -215,7 +215,7 @@ class CarState(CarStateBase):
       if self.CP.carFingerprint in HONDA_BOSCH_RADARLESS:
         ret.cruiseState.nonAdaptive = cp_cam.vl["ACC_HUD"]["CRUISE_CONTROL_LABEL"] != 0
 
-      if not self.CP.openpilotLongitudinalControl:
+      if not self.CP.catpilotLongitudinalControl:
         # ACC_HUD is on camera bus on radarless cars
         acc_hud = cp_cam.vl["ACC_HUD"] if self.CP.carFingerprint in HONDA_BOSCH_RADARLESS else cp.vl["ACC_HUD"]
         ret.cruiseState.nonAdaptive = acc_hud["CRUISE_CONTROL_LABEL"] != 0
@@ -255,7 +255,7 @@ class CarState(CarStateBase):
     if self.CP.carFingerprint in HONDA_BOSCH:
       # TODO: find the radarless AEB_STATUS bit and make sure ACCEL_COMMAND is correct to enable AEB alerts
       if self.CP.carFingerprint not in HONDA_BOSCH_RADARLESS:
-        ret.stockAeb = (not self.CP.openpilotLongitudinalControl) and bool(cp.vl["ACC_CONTROL"]["AEB_STATUS"] and cp.vl["ACC_CONTROL"]["ACCEL_COMMAND"] < -1e-5)
+        ret.stockAeb = (not self.CP.catpilotLongitudinalControl) and bool(cp.vl["ACC_CONTROL"]["AEB_STATUS"] and cp.vl["ACC_CONTROL"]["ACCEL_COMMAND"] < -1e-5)
     else:
       aeb_sig = "COMPUTER_BRAKE_ALT" if self.CP.carFingerprint == CAR.HONDA_CLARITY else "COMPUTER_BRAKE"
       ret.stockAeb = bool(cp_cam.vl["BRAKE_COMMAND"]["AEB_REQ_1"] and cp_cam.vl["BRAKE_COMMAND"][aeb_sig] > 1e-5)
@@ -271,7 +271,7 @@ class CarState(CarStateBase):
 
     if self.CP.enableBsm:
       # BSM messages are on B-CAN, requires a panda forwarding B-CAN messages to CAN 0
-      # more info here: https://github.com/commaai/openpilot/pull/1867
+      # more info here: https://github.com/commaai/catpilot/pull/1867
       ret.leftBlindspot = cp_body.vl["BSM_STATUS_LEFT"]["BSM_ALERT"] == 1
       ret.rightBlindspot = cp_body.vl["BSM_STATUS_RIGHT"]["BSM_ALERT"] == 1
 
@@ -280,7 +280,7 @@ class CarState(CarStateBase):
                         CAR.HONDA_CIVIC_BOSCH_DIESEL, CAR.HONDA_CRV_HYBRID, CAR.ACURA_RDX_3G, CAR.HONDA_E)
 
     if self.CP.carFingerprint in brake_light_cars or (self.CP.carFingerprint in HONDA_BOSCH and self.CP.carFingerprint not in HONDA_BOSCH_RADARLESS):
-      fp_ret.brakeLights = bool(cp.vl["ACC_CONTROL"]['BRAKE_LIGHTS'] != 0 or ret.brake > 0.4) if not self.CP.openpilotLongitudinalControl else bool(ret.brake > 0.4)
+      fp_ret.brakeLights = bool(cp.vl["ACC_CONTROL"]['BRAKE_LIGHTS'] != 0 or ret.brake > 0.4) if not self.CP.catpilotLongitudinalControl else bool(ret.brake > 0.4)
 
     self.prev_distance_button = self.distance_button
     self.distance_button = self.cruise_setting == 3

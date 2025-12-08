@@ -1,16 +1,16 @@
 # loggerd
 
-openpilot records routes in one minute chunks called segments. A route starts on the rising edge of ignition and ends on the falling edge.
+catpilot records routes in one minute chunks called segments. A route starts on the rising edge of ignition and ends on the falling edge.
 
-Check out our [python library](https://github.com/commaai/openpilot/blob/master/tools/lib/logreader.py) for reading openpilot logs. Also checkout our [tools](https://github.com/commaai/openpilot/tree/master/tools) to replay and view your data. These are the same tools we use to debug and develop openpilot.
+Check out our [python library](https://github.com/commaai/catpilot/blob/master/tools/lib/logreader.py) for reading catpilot logs. Also checkout our [tools](https://github.com/commaai/catpilot/tree/master/tools) to replay and view your data. These are the same tools we use to debug and develop catpilot.
 
 ## log types
 
-For each segment, openpilot records the following log types:
+For each segment, catpilot records the following log types:
 
 ## rlog.bz2
 
-rlogs contain all the messages passed amongst openpilot's processes. See [cereal/services.py](https://github.com/commaai/cereal/blob/master/services.py) for a list of all the logged services. They're a bzip2 archive of the serialized capnproto messages.
+rlogs contain all the messages passed amongst catpilot's processes. See [cereal/services.py](https://github.com/commaai/cereal/blob/master/services.py) for a list of all the logged services. They're a bzip2 archive of the serialized capnproto messages.
 
 ## {f,e,d}camera.hevc
 

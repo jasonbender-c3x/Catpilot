@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 
 from cereal import car
 from panda.python import uds
-from openpilot.selfdrive.car import AngleRateLimit, CarSpecs, DbcDict, PlatformConfig, Platforms, dbc_dict
-from openpilot.selfdrive.car.docs_definitions import CarDocs, CarHarness, CarParts
-from openpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
+from catpilot.selfdrive.car import AngleRateLimit, CarSpecs, DbcDict, PlatformConfig, Platforms, dbc_dict
+from catpilot.selfdrive.car.docs_definitions import CarDocs, CarHarness, CarParts
+from catpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 
 Ecu = car.CarParams.Ecu
 

@@ -15,13 +15,13 @@ from struct import unpack_from, calcsize, pack
 
 from cereal import log
 import cereal.messaging as messaging
-from openpilot.common.gpio import gpio_init, gpio_set
-from openpilot.common.retry import retry
-from openpilot.common.time import system_time_valid
-from openpilot.system.hardware.tici.pins import GPIO
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.qcomgpsd.modemdiag import ModemDiag, DIAG_LOG_F, setup_logs, send_recv
-from openpilot.system.qcomgpsd.structs import (dict_unpacker, position_report, relist,
+from catpilot.common.gpio import gpio_init, gpio_set
+from catpilot.common.retry import retry
+from catpilot.common.time import system_time_valid
+from catpilot.system.hardware.tici.pins import GPIO
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.qcomgpsd.modemdiag import ModemDiag, DIAG_LOG_F, setup_logs, send_recv
+from catpilot.system.qcomgpsd.structs import (dict_unpacker, position_report, relist,
                                               gps_measurement_report, gps_measurement_report_sv,
                                               glonass_measurement_report, glonass_measurement_report_sv,
                                               oemdre_measurement_report, oemdre_measurement_report_sv, oemdre_svpoly_report,

@@ -1,22 +1,22 @@
 # Multilanguage
 
-[![languages](https://raw.githubusercontent.com/commaai/openpilot/badges/translation_badge.svg)](#)
+[![languages](https://raw.githubusercontent.com/commaai/catpilot/badges/translation_badge.svg)](#)
 
 ## Contributing
 
-Before getting started, make sure you have set up the openpilot Ubuntu development environment by reading the [tools README.md](/tools/README.md).
+Before getting started, make sure you have set up the catpilot Ubuntu development environment by reading the [tools README.md](/tools/README.md).
 
 ### Policy
 
-Most of the languages supported by openpilot come from and are maintained by the community via pull requests. A pull request likely to be merged is one that [fixes a translation or adds missing translations.](https://github.com/commaai/openpilot/blob/master/selfdrive/ui/translations/README.md#improving-an-existing-language)
+Most of the languages supported by catpilot come from and are maintained by the community via pull requests. A pull request likely to be merged is one that [fixes a translation or adds missing translations.](https://github.com/commaai/catpilot/blob/master/selfdrive/ui/translations/README.md#improving-an-existing-language)
 
-We also generally merge pull requests adding support for a new language if there are community members willing to maintain it. Maintaining a language is ensuring quality and completion of translations before each openpilot release.
+We also generally merge pull requests adding support for a new language if there are community members willing to maintain it. Maintaining a language is ensuring quality and completion of translations before each catpilot release.
 
 comma may remove or hide language support from releases depending on translation quality and completeness.
 
 ### Adding a New Language
 
-openpilot provides a few tools to help contributors manage their translations and to ensure quality. To get started:
+catpilot provides a few tools to help contributors manage their translations and to ensure quality. To get started:
 
 1. Add your new language to [languages.json](/selfdrive/ui/translations/languages.json) with the appropriate [language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) and the localized language name (Traditional Chinese is `中文（繁體）`).
 2. Generate the XML translation file (`*.ts`):
@@ -35,7 +35,7 @@ openpilot provides a few tools to help contributors manage their translations an
 
 ### Improving an Existing Language
 
-Follow step 3. above, you can review existing translations and add missing ones. Once you're done, just open a pull request to openpilot.
+Follow step 3. above, you can review existing translations and add missing ones. Once you're done, just open a pull request to catpilot.
 
 ### Checking the UI
 Different languages use varying space to convey the same message, so it's a good idea to double-check that your translations do not overlap and fit into each widget. Start the UI (step 4. above) and view each page, making adjustments to translations as needed.
@@ -53,7 +53,7 @@ Any time you edit source code in the UI, you need to update the translations to 
 
 ### Testing
 
-openpilot has a few unit tests to make sure all translations are up-to-date and that all strings are wrapped in a translation marker. They are run in CI, but you can also run them locally.
+catpilot has a few unit tests to make sure all translations are up-to-date and that all strings are wrapped in a translation marker. They are run in CI, but you can also run them locally.
 
 Tests translation files up to date:
 

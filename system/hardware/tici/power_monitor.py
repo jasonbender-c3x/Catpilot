@@ -5,8 +5,8 @@ import datetime
 import numpy as np
 from collections import deque
 
-from openpilot.common.realtime import Ratekeeper
-from openpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import Ratekeeper
+from catpilot.common.filter_simple import FirstOrderFilter
 
 
 def read_power():

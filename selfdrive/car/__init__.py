@@ -8,9 +8,9 @@ from dataclasses import replace
 import capnp
 
 from cereal import car
-from openpilot.common.numpy_fast import clip, interp
-from openpilot.common.utils import Freezable
-from openpilot.selfdrive.car.docs_definitions import CarDocs
+from catpilot.common.numpy_fast import clip, interp
+from catpilot.common.utils import Freezable
+from catpilot.selfdrive.car.docs_definitions import CarDocs
 
 # set up logging
 carlog = logging.getLogger('carlog')

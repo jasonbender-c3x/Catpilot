@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-**CatPilot** is a fully open-sourced fork of openpilot, featuring clear and concise commits and serving as a resource for the openpilot developer community. This Replit project showcases **The Pound**, CatPilot's lightweight web-based interface for managing comma devices.
+**CatPilot** is a fully open-sourced fork of catpilot, featuring clear and concise commits and serving as a resource for the catpilot developer community. This Replit project showcases **The Pound**, CatPilot's lightweight web-based interface for managing comma devices.
 
 **Important Note**: This is a **demo version** of The Pound running in the Replit environment. Full functionality requires actual comma.ai hardware (comma 3/3X device). The demo version provides a preview of the user interface and basic API structure.
 
-### What is openpilot?
+### What is catpilot?
 
-openpilot is an open source driver assistance system that performs:
+catpilot is an open source driver assistance system that performs:
 - Adaptive Cruise Control (ACC)
 - Automated Lane Centering (ALC)
 - Forward Collision Warning (FCW)
@@ -38,7 +38,7 @@ The Pound is a web-based management interface that allows users to:
 ├── cereal/                # Messaging system (Cap'n Proto)
 ├── opendbc/               # CAN bus databases
 ├── panda/                 # Interface to comma hardware
-├── system/                # Core openpilot systems
+├── system/                # Core catpilot systems
 └── selfdrive/             # Autonomous driving logic
 ```
 
@@ -126,7 +126,7 @@ To run the full version, you need:
 
 - [CatPilot GitHub](https://github.com/CatAi/CatPilot)
 - [CatPilot Discord](https://discord.gg/catpilot)
-- [openpilot Documentation](https://github.com/commaai/openpilot)
+- [catpilot Documentation](https://github.com/commaai/catpilot)
 - [comma.ai](https://comma.ai)
 
 ## Architecture Notes

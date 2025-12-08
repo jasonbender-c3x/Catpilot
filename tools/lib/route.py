@@ -5,9 +5,9 @@ from urllib.parse import urlparse
 from collections import defaultdict
 from itertools import chain
 
-from openpilot.tools.lib.auth_config import get_token
-from openpilot.tools.lib.api import CommaApi
-from openpilot.tools.lib.helpers import RE
+from catpilot.tools.lib.auth_config import get_token
+from catpilot.tools.lib.api import CommaApi
+from catpilot.tools.lib.helpers import RE
 
 QLOG_FILENAMES = ['qlog', 'qlog.bz2']
 QCAMERA_FILENAMES = ['qcamera.ts']

@@ -3,7 +3,7 @@ from typing import Any
 from functools import cache
 
 from cereal import log
-from openpilot.common.transformations.orientation import rot_from_euler, euler_from_rot
+from catpilot.common.transformations.orientation import rot_from_euler, euler_from_rot
 
 
 @cache

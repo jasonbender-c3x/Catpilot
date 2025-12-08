@@ -1,11 +1,11 @@
 import numpy as np
 
-from openpilot.common.realtime import DT_CTRL
+from catpilot.common.realtime import DT_CTRL
 from opendbc.can.packer import CANPacker
-from openpilot.selfdrive.car.body import bodycan
-from openpilot.selfdrive.car.body.values import SPEED_FROM_RPM
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.controls.lib.pid import PIDController
+from catpilot.selfdrive.car.body import bodycan
+from catpilot.selfdrive.car.body.values import SPEED_FROM_RPM
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.controls.lib.pid import PIDController
 
 
 MAX_TORQUE = 500

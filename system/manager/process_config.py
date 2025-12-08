@@ -1,9 +1,9 @@
 import os
 
 from cereal import car
-from openpilot.common.params import Params
-from openpilot.system.hardware import PC, TICI
-from openpilot.system.manager.process import PythonProcess, NativeProcess, DaemonProcess
+from catpilot.common.params import Params
+from catpilot.system.hardware import PC, TICI
+from catpilot.system.manager.process import PythonProcess, NativeProcess, DaemonProcess
 
 WEBCAM = os.getenv("USE_WEBCAM") is not None
 

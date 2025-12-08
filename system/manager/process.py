@@ -12,10 +12,10 @@ from setproctitle import setproctitle
 
 from cereal import car, log
 import cereal.messaging as messaging
-import openpilot.system.sentry as sentry
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.params import Params
-from openpilot.common.swaglog import cloudlog
+import catpilot.system.sentry as sentry
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.params import Params
+from catpilot.common.swaglog import cloudlog
 
 WATCHDOG_FN = "/dev/shm/wd_"
 ENABLE_WATCHDOG = os.getenv("NO_WATCHDOG") is None

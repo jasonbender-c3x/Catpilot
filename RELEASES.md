@@ -37,7 +37,7 @@ Version 0.9.6 (2024-02-27)
 Version 0.9.5 (2023-11-17)
 ========================
 * New driving model
-  * Improved navigate on openpilot performance using navigation instructions as an additional model input
+  * Improved navigate on catpilot performance using navigation instructions as an additional model input
   * Do lateral planning inside the model
   * New vision transformer architecture
 * Cadillac Escalade ESV 2019 support thanks to twilsonco!
@@ -55,11 +55,11 @@ Version 0.9.5 (2023-11-17)
 Version 0.9.4 (2023-07-27)
 ========================
 * comma 3X support
-* Navigate on openpilot in Experimental mode
-  * When navigation has a destination, openpilot will input the map information into the model, which provides useful context to help the model understand the scene
-  * When navigating on openpilot, openpilot will keep left or right appropriately at forks and exits
-  * When navigating on openpilot, lane change behavior is unchanged and still activated by the driver
-  * When navigate on openpilot is active, the path on the map is green
+* Navigate on catpilot in Experimental mode
+  * When navigation has a destination, catpilot will input the map information into the model, which provides useful context to help the model understand the scene
+  * When navigating on catpilot, catpilot will keep left or right appropriately at forks and exits
+  * When navigating on catpilot, lane change behavior is unchanged and still activated by the driver
+  * When navigate on catpilot is active, the path on the map is green
 * UI updates
   * Navigation settings moved to home screen and map
   * Border color always shows engagement status. Blue means disengaged, green means engaged, and grey means engaged with human overriding
@@ -136,12 +136,12 @@ Version 0.9.0 (2022-11-21)
   * Less reliance on previous frames makes model more reactive and snappy
   * Trained in new reprojective simulator
   * Trained in 36 hours from scratch, compared to one week for previous releases
-  * Training now simulates both lateral and longitudinal behavior, which allows openpilot to slow down for turns, stop at traffic lights, and more in experimental mode
+  * Training now simulates both lateral and longitudinal behavior, which allows catpilot to slow down for turns, stop at traffic lights, and more in experimental mode
 * Experimental driving mode
   * End-to-end longitudinal control
   * Stops for traffic lights and stop signs
   * Slows down for turns
-  * openpilot defaults to chill mode, enable experimental mode in settings
+  * catpilot defaults to chill mode, enable experimental mode in settings
 * Driver monitoring updates
   * New bigger model with added end-to-end distracted trigger
   * Reduced false positives during driver calibration
@@ -412,7 +412,7 @@ Version 0.8.2 (2021-02-26)
  * New driver monitoring model trained with 3x more diverse data
  * Improved face detection with masks
  * More predictable DM alerts when visibility is bad
- * Rewritten video streaming between openpilot processes
+ * Rewritten video streaming between catpilot processes
  * Improved longitudinal tuning on TSS2 Corolla and Rav4 thanks to briskspirit!
  * Audi A3 2015 and 2017 support thanks to keeleysam!
  * Nissan Altima 2020 support thanks to avolmensky!
@@ -433,7 +433,7 @@ Version 0.8.0 (2020-11-30)
 ========================
  * New driving model: fully 3D and improved cut-in detection
  * UI draws 2 road edges, 4 lanelines and paths in 3D
- * Major fixes to cut-in detection for openpilot longitudinal
+ * Major fixes to cut-in detection for catpilot longitudinal
  * Grey panda is no longer supported, upgrade to comma two or black panda
  * Lexus NX 2018 support thanks to matt12eagles!
  * Kia Niro EV 2020 support thanks to nickn17!
@@ -561,7 +561,7 @@ Version 0.6.6 (2019-11-05)
  * Log panda firmware and dongle ID thanks to martinl!
  * New driving model: improve path prediction and lead detection
  * New driver monitoring model, 4x smaller and running on DSP
- * Display an alert and don't start openpilot if panda has wrong firmware
+ * Display an alert and don't start catpilot if panda has wrong firmware
  * Fix bug preventing EON from terminating processes after a drive
  * Remove support for Toyota giraffe without the 120Ohm resistor
 
@@ -609,23 +609,23 @@ Version 0.6.2 (2019-07-29)
  * Better lead tracking around turns
  * Improve cut-in prediction by using neural network
  * Improve lateral control on Toyota Camry and C-HR thanks to zorrobyte!
- * Fix unintended openpilot disengagements on Jeep thanks to adhintz!
+ * Fix unintended catpilot disengagements on Jeep thanks to adhintz!
  * Fix delayed transition to offroad when car is turned off
 
 Version 0.6.1 (2019-07-21)
 ========================
  * Remote SSH with comma prime and [ssh.comma.ai](https://ssh.comma.ai)
  * Panda code Misra-c2012 compliance, tested against cppcheck coverage
- * Lockout openpilot after 3 terminal alerts for driver distracted or unresponsive
+ * Lockout catpilot after 3 terminal alerts for driver distracted or unresponsive
  * Toyota Sienna support thanks to wocsor!
 
 Version 0.6 (2019-07-01)
 ========================
  * New model, with double the pixels and ten times the temporal context!
  * Car should not take exits when in the right lane
- * openpilot uses only ~65% of the CPU (down from 75%)
+ * catpilot uses only ~65% of the CPU (down from 75%)
  * Routes visible in connect/explorer after only 0.2% is uploaded (qlogs)
- * loggerd and sensord are open source, every line of openpilot is now open
+ * loggerd and sensord are open source, every line of catpilot is now open
  * Panda safety code is MISRA compliant and ships with a signed version on release2
  * New NEOS is 500MB smaller and has a reproducible usr/pipenv
  * Lexus ES Hybrid support thanks to wocsor!
@@ -638,7 +638,7 @@ Version 0.5.13 (2019-05-31)
  * Reduce EON power consumption by 40%, down to 1100mW, when car is off
  * Reduce CPU utilization by 20% and improve stability
  * Temporarily remove mapd functionalities to improve stability
- * Add openpilot record-only mode for unsupported cars
+ * Add catpilot record-only mode for unsupported cars
  * Synchronize controlsd to pandad to reduce latency
  * Remove panda support for Subaru giraffe
 
@@ -709,7 +709,7 @@ Version 0.5.7 (2018-12-06)
 ========================
  * Speed limit from OpenStreetMap added to UI
  * Highlight speed limit when speed exceeds road speed limit plus a delta
- * Option to limit openpilot max speed to road speed limit plus a delta
+ * Option to limit catpilot max speed to road speed limit plus a delta
  * Cadillac ATS support thanks to vntarasov!
  * GMC Acadia support thanks to CryptoKylan!
  * Decrease GPU power consumption
@@ -718,7 +718,7 @@ Version 0.5.7 (2018-12-06)
 Version 0.5.6 (2018-11-16)
 ========================
  * Refresh settings layout and add feature descriptions
- * In Honda, keep stock camera on for logging and extra stock features; new openpilot giraffe setting is 0111!
+ * In Honda, keep stock camera on for logging and extra stock features; new catpilot giraffe setting is 0111!
  * In Toyota, option to keep stock camera on for logging and extra stock features (e.g. AHB); 120Ohm resistor required on giraffe.
  * Improve camera calibration stability
  * More tuning to Honda positive accelerations
@@ -848,7 +848,7 @@ Version 0.4.3 (2018-03-13)
  * Slight increase in acceleration response from stop
  * Switch CAN sending to use CANPacker
  * Fix pulsing acceleration regression on Honda
- * Fix openpilot bugs when stock system is in use
+ * Fix catpilot bugs when stock system is in use
  * Change starting logic for chffrplus to use battery voltage
 
 Version 0.4.2 (2018-02-05)
@@ -885,7 +885,7 @@ Version 0.3.9 (2017-11-21)
  * Add alpha support for 2017 Toyota Prius
  * Improved longitudinal control using model predictive control
  * Enable Forward Collision Warning
- * Acura ILX now maintains openpilot engaged at standstill when brakes are applied
+ * Acura ILX now maintains catpilot engaged at standstill when brakes are applied
 
 Version 0.3.8.2 (2017-10-30)
 ==========================
@@ -1018,12 +1018,12 @@ Version 0.2  (2016-12-12)
  * visiond exits more gracefully now
  * Hardware encoder in visiond should always init
  * ui now turns off the screen after 30 seconds
- * Switch to openpilot release branch for future releases
+ * Switch to catpilot release branch for future releases
  * Added preliminary Docker container to run tests on PC
 
 Version 0.1  (2016-11-29)
 =========================
- * Initial release of openpilot
+ * Initial release of catpilot
  * Adaptive cruise control is working
  * Lane keep assist is working
  * Support for Acura ILX 2016 with AcuraWatch Plus

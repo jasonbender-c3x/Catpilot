@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 import random
 
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_MDL
-from openpilot.selfdrive.controls.lib.desire_helper import TurnDirection
-from openpilot.selfdrive.controls.lib.events import ET, EVENTS, EventName, Events
-from openpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_MDL
+from catpilot.selfdrive.controls.lib.desire_helper import TurnDirection
+from catpilot.selfdrive.controls.lib.events import ET, EVENTS, EventName, Events
+from catpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
 
-from openpilot.catpilot.assets.theme_manager import update_wheel_image
-from openpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, NON_DRIVING_GEARS, params, params_memory
+from catpilot.catpilot.assets.theme_manager import update_wheel_image
+from catpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, NON_DRIVING_GEARS, params, params_memory
 
 DEJA_VU_G_FORCE = 0.5
 RANDOM_EVENTS_CHANCE = 0.01 * DT_MDL

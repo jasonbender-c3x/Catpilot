@@ -1,9 +1,9 @@
 from cereal import car
-from openpilot.common.numpy_fast import clip, interp
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N, apply_deadzone
-from openpilot.selfdrive.controls.lib.pid import PIDController
-from openpilot.selfdrive.modeld.constants import ModelConstants
+from catpilot.common.numpy_fast import clip, interp
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N, apply_deadzone
+from catpilot.selfdrive.controls.lib.pid import PIDController
+from catpilot.selfdrive.modeld.constants import ModelConstants
 
 CONTROL_N_T_IDX = ModelConstants.T_IDXS[:CONTROL_N]
 

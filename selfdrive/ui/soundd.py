@@ -6,15 +6,15 @@ import wave
 from pathlib import Path
 
 from cereal import car, messaging
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.realtime import Ratekeeper
-from openpilot.common.retry import retry
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import Ratekeeper
+from catpilot.common.retry import retry
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.system import micd
+from catpilot.system import micd
 
-from openpilot.catpilot.common.catpilot_variables import ACTIVE_THEME_PATH, ERROR_LOGS_PATH, RANDOM_EVENTS_PATH, get_catpilot_toggles, params_memory
+from catpilot.catpilot.common.catpilot_variables import ACTIVE_THEME_PATH, ERROR_LOGS_PATH, RANDOM_EVENTS_PATH, get_catpilot_toggles, params_memory
 
 SAMPLE_RATE = 48000
 SAMPLE_BUFFER = 4096 # (approx 100ms)
@@ -82,7 +82,7 @@ class Soundd:
     # CatPilot variables
     self.catpilot_toggles = get_catpilot_toggles()
 
-    self.openpilot_crashed_played = False
+    self.catpilot_crashed_played = False
     self.restart_stream = False
 
     self.auto_volume = 0
@@ -159,13 +159,13 @@ class Soundd:
       self.update_alert(getattr(AudibleAlert, params_memory.get("TestAlert", encoding="utf-8")))
 
       params_memory.remove("TestAlert")
-    elif not self.openpilot_crashed_played and self.error_log.is_file():
+    elif not self.catpilot_crashed_played and self.error_log.is_file():
       if self.catpilot_toggles.random_events:
         self.update_alert(AudibleAlert.fart)
       else:
         self.update_alert(AudibleAlert.prompt)
 
-      self.openpilot_crashed_played = True
+      self.catpilot_crashed_played = True
     elif sm.updated['controlsState']:
       new_alert = sm['controlsState'].alertSound.raw
       self.update_alert(new_alert)

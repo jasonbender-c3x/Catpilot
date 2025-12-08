@@ -2,20 +2,20 @@ import math
 import numpy as np
 
 from cereal import car
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.numpy_fast import clip, interp
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.car import carlog, apply_meas_steer_torque_limits, apply_std_steer_angle_limits, common_fault_avoidance, create_gas_interceptor_command, make_can_msg, rate_limit
-from openpilot.selfdrive.car.secoc import add_mac, build_sync_mac
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.car.toyota import toyotacan
-from openpilot.selfdrive.car.toyota.values import CAR, STATIC_DSU_MSGS, NO_STOP_TIMER_CAR, TSS2_CAR, \
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.numpy_fast import clip, interp
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.car import carlog, apply_meas_steer_torque_limits, apply_std_steer_angle_limits, common_fault_avoidance, create_gas_interceptor_command, make_can_msg, rate_limit
+from catpilot.selfdrive.car.secoc import add_mac, build_sync_mac
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.car.toyota import toyotacan
+from catpilot.selfdrive.car.toyota.values import CAR, STATIC_DSU_MSGS, NO_STOP_TIMER_CAR, TSS2_CAR, \
                                         MIN_ACC_SPEED, PEDAL_TRANSITION, CarControllerParams, ToyotaFlags, \
                                         UNSUPPORTED_DSU_CAR, STOP_AND_GO_CAR
-from openpilot.selfdrive.controls.lib.pid import PIDController
+from catpilot.selfdrive.controls.lib.pid import PIDController
 from opendbc.can.packer import CANPacker
 
-from openpilot.selfdrive.car.interfaces import get_max_allowed_accel
+from catpilot.selfdrive.car.interfaces import get_max_allowed_accel
 
 GearShifter = car.CarState.GearShifter
 LongCtrlState = car.CarControl.Actuators.LongControlState
@@ -213,7 +213,7 @@ class CarController(CarControllerBase):
     else:
       interceptor_gas_cmd = 0.
 
-    if self.frame % 2 == 0 and self.CP.enableGasInterceptor and self.CP.openpilotLongitudinalControl:
+    if self.frame % 2 == 0 and self.CP.enableGasInterceptor and self.CP.catpilotLongitudinalControl:
       # send exactly zero if gas cmd is zero. Interceptor will send the max between read value and gas cmd.
       # This prevents unexpected pedal range rescaling
       can_sends.append(create_gas_interceptor_command(self.packer, interceptor_gas_cmd, self.frame // 2))
@@ -232,10 +232,10 @@ class CarController(CarControllerBase):
     steer_alert = hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw)
     lead = hud_control.leadVisible or CS.out.vEgo < 12.  # at low speed we always assume the lead is present so ACC can be engaged
 
-    if self.CP.openpilotLongitudinalControl:
+    if self.CP.catpilotLongitudinalControl:
       if self.frame % 3 == 0:
         # Press distance button until we are at the correct bar length. Only change while enabled to avoid skipping startup popup
-        if self.frame % 6 == 0 and self.CP.openpilotLongitudinalControl and not self.CP.flags & ToyotaFlags.SECOC.value:
+        if self.frame % 6 == 0 and self.CP.catpilotLongitudinalControl and not self.CP.flags & ToyotaFlags.SECOC.value:
           desired_distance = 4 - hud_control.leadDistanceBars
           if CS.out.cruiseState.enabled and CS.pcm_follow_distance != desired_distance:
             self.distance_button = not self.distance_button

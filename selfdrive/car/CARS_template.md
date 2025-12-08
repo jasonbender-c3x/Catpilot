@@ -27,16 +27,16 @@ A supported vehicle is one that just works when you install a comma device. All 
 {% endfor %}
 
 ## Community Maintained Cars
-Although they're not upstream, the community has openpilot running on other makes and models. See the 'Community Supported Models' section of each make [on our wiki](https://wiki.comma.ai/).
+Although they're not upstream, the community has catpilot running on other makes and models. See the 'Community Supported Models' section of each make [on our wiki](https://wiki.comma.ai/).
 
 # Don't see your car here?
 
-**openpilot can support many more cars than it currently does.** There are a few reasons your car may not be supported.
+**catpilot can support many more cars than it currently does.** There are a few reasons your car may not be supported.
 If your car doesn't fit into any of the incompatibility criteria here, then there's a good chance it can be supported! We're adding support for new cars all the time. **We don't have a roadmap for car support**, and in fact, most car support comes from users like you!
 
 ### Which cars are able to be supported?
 
-openpilot uses the existing steering, gas, and brake interfaces in your car. If your car lacks any one of these interfaces, openpilot will not be able to control the car. If your car has [ACC](https://en.wikipedia.org/wiki/Adaptive_cruise_control) and any form of [LKAS](https://en.wikipedia.org/wiki/Automated_Lane_Keeping_Systems)/[LCA](https://en.wikipedia.org/wiki/Lane_centering), then it almost certainly has these interfaces. These features generally started shipping on cars around 2016. Note that manufacturers will often make their own [marketing terms](https://en.wikipedia.org/wiki/Adaptive_cruise_control#Vehicle_models_supporting_adaptive_cruise_control) for these features, such as Hyundai's "Smart Cruise Control" branding of Adaptive Cruise Control.
+catpilot uses the existing steering, gas, and brake interfaces in your car. If your car lacks any one of these interfaces, catpilot will not be able to control the car. If your car has [ACC](https://en.wikipedia.org/wiki/Adaptive_cruise_control) and any form of [LKAS](https://en.wikipedia.org/wiki/Automated_Lane_Keeping_Systems)/[LCA](https://en.wikipedia.org/wiki/Lane_centering), then it almost certainly has these interfaces. These features generally started shipping on cars around 2016. Note that manufacturers will often make their own [marketing terms](https://en.wikipedia.org/wiki/Adaptive_cruise_control#Vehicle_models_supporting_adaptive_cruise_control) for these features, such as Hyundai's "Smart Cruise Control" branding of Adaptive Cruise Control.
 
 If your car has the following packages or features, then it's a good candidate for support.
 
@@ -53,12 +53,12 @@ If your car has the following packages or features, then it's a good candidate f
 
 ### FlexRay
 
-All the cars that openpilot supports use a [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) for communication between all the car's computers, however a CAN bus isn't the only way that the computers in your car can communicate. Most, if not all, vehicles from the following manufacturers use [FlexRay](https://en.wikipedia.org/wiki/FlexRay) instead of a CAN bus: **BMW, Mercedes, Audi, Land Rover, and some Volvo**. These cars may one day be supported, but we have no immediate plans to support FlexRay.
+All the cars that catpilot supports use a [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) for communication between all the car's computers, however a CAN bus isn't the only way that the computers in your car can communicate. Most, if not all, vehicles from the following manufacturers use [FlexRay](https://en.wikipedia.org/wiki/FlexRay) instead of a CAN bus: **BMW, Mercedes, Audi, Land Rover, and some Volvo**. These cars may one day be supported, but we have no immediate plans to support FlexRay.
 
 ### Toyota Security
 
-openpilot does not yet support these Toyota models due to a new message authentication method.
-[Vote](https://comma.ai/shop#toyota-security) if you'd like to see openpilot support on these models.
+catpilot does not yet support these Toyota models due to a new message authentication method.
+[Vote](https://comma.ai/shop#toyota-security) if you'd like to see catpilot support on these models.
 
 * Toyota RAV4 Prime 2021+
 * Toyota Sienna 2021+

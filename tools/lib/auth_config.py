@@ -1,6 +1,6 @@
 import json
 import os
-from openpilot.system.hardware.hw import Paths
+from catpilot.system.hardware.hw import Paths
 
 
 class MissingAuthConfigError(Exception):

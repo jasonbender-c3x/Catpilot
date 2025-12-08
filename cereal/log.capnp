@@ -699,7 +699,7 @@ struct ControlsState @0x97ff69c53601abf1 {
   longitudinalPlanMonoTime @28 :UInt64;
   lateralPlanMonoTime @50 :UInt64;
 
-  state @31 :OpenpilotState;
+  state @31 :CatpilotState;
   enabled @19 :Bool;
   active @36 :Bool;
 
@@ -742,7 +742,7 @@ struct ControlsState @0x97ff69c53601abf1 {
     lqrStateDEPRECATED @55 :LateralLQRState;
   }
 
-  enum OpenpilotState @0xdbe58b96d2d1ac61 {
+  enum CatpilotState @0xdbe58b96d2d1ac61 {
     disabled @0;
     preEnabled @1;
     enabled @2;
@@ -1216,7 +1216,7 @@ struct LateralPlan @0xe1e9318e2ae8b51e {
 struct LiveLocationKalman {
 
   # More info on reference frames:
-  # https://github.com/commaai/openpilot/tree/master/common/transformations
+  # https://github.com/commaai/catpilot/tree/master/common/transformations
 
   positionECEF @0 : Measurement;
   positionGeodetic @1 : Measurement;
@@ -1273,7 +1273,7 @@ struct LiveLocationKalman {
 
 struct LivePose {
   # More info on reference frames:
-  # https://github.com/commaai/openpilot/tree/master/common/transformations
+  # https://github.com/commaai/catpilot/tree/master/common/transformations
   orientationNED @0 :XYZMeasurement;
   velocityDevice @1 :XYZMeasurement;
   accelerationDevice @2 :XYZMeasurement;
@@ -2323,7 +2323,7 @@ struct Event {
     # *********** bootlog ***********
     boot @60 :Boot;
 
-    # ********** openpilot daemon msgs **********
+    # ********** catpilot daemon msgs **********
     gpsNMEA @3 :GPSNMEAData;
     can @5 :List(CanData);
     controlsState @7 :ControlsState;

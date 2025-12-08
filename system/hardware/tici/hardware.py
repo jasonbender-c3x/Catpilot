@@ -9,11 +9,11 @@ from functools import cached_property, lru_cache
 from pathlib import Path
 
 from cereal import log
-from openpilot.common.gpio import gpio_set, gpio_init, get_irqs_for_action
-from openpilot.system.hardware.base import HardwareBase, ThermalConfig
-from openpilot.system.hardware.tici import iwlist
-from openpilot.system.hardware.tici.pins import GPIO
-from openpilot.system.hardware.tici.amplifier import Amplifier
+from catpilot.common.gpio import gpio_set, gpio_init, get_irqs_for_action
+from catpilot.system.hardware.base import HardwareBase, ThermalConfig
+from catpilot.system.hardware.tici import iwlist
+from catpilot.system.hardware.tici.pins import GPIO
+from catpilot.system.hardware.tici.amplifier import Amplifier
 
 NM = 'org.freedesktop.NetworkManager'
 NM_CON_ACT = NM + '.Connection.Active'

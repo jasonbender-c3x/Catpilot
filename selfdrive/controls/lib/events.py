@@ -8,11 +8,11 @@ from types import SimpleNamespace
 
 from cereal import log, car
 import cereal.messaging as messaging
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.git import get_short_branch
-from openpilot.common.params import Params
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.locationd.calibrationd import MIN_SPEED_FILTER
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.git import get_short_branch
+from catpilot.common.params import Params
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.locationd.calibrationd import MIN_SPEED_FILTER
 
 AlertSize = log.ControlsState.AlertSize
 AlertStatus = log.ControlsState.AlertStatus
@@ -148,7 +148,7 @@ class Alert:
 
 class NoEntryAlert(Alert):
   def __init__(self, alert_text_2: str,
-               alert_text_1: str = "openpilot Unavailable",
+               alert_text_1: str = "catpilot Unavailable",
                visual_alert: car.CarControl.HUDControl.VisualAlert=VisualAlert.none):
     super().__init__(alert_text_1, alert_text_2, AlertStatus.normal,
                      AlertSize.mid, Priority.LOW, visual_alert,
@@ -167,7 +167,7 @@ class SoftDisableAlert(Alert):
 class UserSoftDisableAlert(SoftDisableAlert):
   def __init__(self, alert_text_2: str):
     super().__init__(alert_text_2),
-    self.alert_text_1 = "openpilot will disengage"
+    self.alert_text_1 = "catpilot will disengage"
 
 
 class ImmediateDisableAlert(Alert):
@@ -457,12 +457,12 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
   },
 
   EventName.cruiseMismatch: {
-    #ET.PERMANENT: ImmediateDisableAlert("openpilot failed to cancel cruise"),
+    #ET.PERMANENT: ImmediateDisableAlert("catpilot failed to cancel cruise"),
   },
 
-  # openpilot doesn't recognize the car. This switches openpilot into a
+  # catpilot doesn't recognize the car. This switches catpilot into a
   # read-only mode. This can be solved by adding your fingerprint.
-  # See https://github.com/commaai/openpilot/wiki/Fingerprinting for more information
+  # See https://github.com/commaai/catpilot/wiki/Fingerprinting for more information
   EventName.carUnrecognized: {
     ET.PERMANENT: NormalPermanentAlert("Dashcam Mode",
                                        "Car Unrecognized",
@@ -643,8 +643,8 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
     ET.PERMANENT: NormalPermanentAlert("locationd Permanent Error"),
   },
 
-  # openpilot tries to learn certain parameters about your car by observing
-  # how the car behaves to steering inputs from both human and openpilot driving.
+  # catpilot tries to learn certain parameters about your car by observing
+  # how the car behaves to steering inputs from both human and catpilot driving.
   # This includes:
   # - steer ratio: gear ratio of the steering rack. Steering angle divided by tire angle
   # - tire stiffness: how much grip your tires have
@@ -835,7 +835,7 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
     ET.NO_ENTRY: NoEntryAlert("Low Battery"),
   },
 
-  # Different openpilot services communicate between each other at a certain
+  # Different catpilot services communicate between each other at a certain
   # interval. If communication does not follow the regular schedule this alert
   # is thrown. This can mean a service crashed, did not broadcast a message for
   # ten times the regular interval, or the average interval is more than 10% too high.
@@ -997,7 +997,7 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
 
   EventName.speedTooLow: {
     ET.IMMEDIATE_DISABLE: Alert(
-      "openpilot Canceled",
+      "catpilot Canceled",
       "Speed too low",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGH, VisualAlert.none, AudibleAlert.disengage, 3.),
@@ -1086,15 +1086,15 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
     ET.WARNING: no_lane_available_alert,
   },
 
-  EventName.openpilotCrashed: {
+  EventName.catpilotCrashed: {
     ET.IMMEDIATE_DISABLE: Alert(
-      "openpilot crashed",
+      "catpilot crashed",
       "Please post the 'Error Log' in the CatPilot Discord!",
       AlertStatus.critical, AlertSize.mid,
       Priority.HIGHEST, VisualAlert.none, AudibleAlert.prompt, .1),
 
     ET.NO_ENTRY: Alert(
-      "openpilot crashed",
+      "catpilot crashed",
       "Please post the 'Error Log' in the CatPilot Discord!",
       AlertStatus.critical, AlertSize.mid,
       Priority.HIGHEST, VisualAlert.none, AudibleAlert.prompt, .1),
@@ -1209,15 +1209,15 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
       Priority.HIGH, VisualAlert.none, AudibleAlert.hal9000, 4.),
   },
 
-  EventName.openpilotCrashedRandomEvent: {
+  EventName.catpilotCrashedRandomEvent: {
     ET.IMMEDIATE_DISABLE: Alert(
-      "openpilot crashed 💩",
+      "catpilot crashed 💩",
       "Please post the 'Error Log' in the CatPilot Discord!",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGHEST, VisualAlert.none, AudibleAlert.fart, 10.),
 
     ET.NO_ENTRY: Alert(
-      "openpilot crashed 💩",
+      "catpilot crashed 💩",
       "Please post the 'Error Log' in the CatPilot Discord!",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGHEST, VisualAlert.none, AudibleAlert.fart, 10.),

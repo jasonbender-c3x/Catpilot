@@ -1,7 +1,7 @@
 from cereal import car
-from openpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms, dbc_dict
-from openpilot.selfdrive.car.docs_definitions import CarDocs
-from openpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
+from catpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms, dbc_dict
+from catpilot.selfdrive.car.docs_definitions import CarDocs
+from catpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 
 Ecu = car.CarParams.Ecu
 

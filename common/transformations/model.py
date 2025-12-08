@@ -1,7 +1,7 @@
 import numpy as np
 
-from openpilot.common.transformations.orientation import rot_from_euler
-from openpilot.common.transformations.camera import get_view_frame_from_calib_frame, view_frame_from_device_frame
+from catpilot.common.transformations.orientation import rot_from_euler
+from catpilot.common.transformations.camera import get_view_frame_from_calib_frame, view_frame_from_device_frame
 
 # segnet
 SEGNET_SIZE = (512, 384)

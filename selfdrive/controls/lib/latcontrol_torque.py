@@ -1,13 +1,13 @@
 import math
 
 from cereal import log
-from openpilot.common.numpy_fast import interp
-from openpilot.selfdrive.car.interfaces import LatControlInputs
-from openpilot.selfdrive.controls.lib.latcontrol import LatControl
-from openpilot.selfdrive.controls.lib.pid import PIDController
-from openpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
+from catpilot.common.numpy_fast import interp
+from catpilot.selfdrive.car.interfaces import LatControlInputs
+from catpilot.selfdrive.controls.lib.latcontrol import LatControl
+from catpilot.selfdrive.controls.lib.pid import PIDController
+from catpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
 
-from openpilot.catpilot.controls.lib.neural_network_feedforward import LOW_SPEED_Y_NN, NeuralNetworkFeedforward
+from catpilot.catpilot.controls.lib.neural_network_feedforward import LOW_SPEED_Y_NN, NeuralNetworkFeedforward
 
 # At higher speeds (25+mph) we can assume:
 # Lateral acceleration achieved by a specific car correlates to

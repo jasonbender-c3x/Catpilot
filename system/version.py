@@ -6,9 +6,9 @@ import os
 import pathlib
 import subprocess
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.swaglog import cloudlog
-from openpilot.common.git import get_commit, get_origin, get_branch, get_short_branch, get_commit_date
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.swaglog import cloudlog
+from catpilot.common.git import get_commit, get_origin, get_branch, get_short_branch, get_commit_date
 
 RELEASE_BRANCHES = ['CatPilot', 'CatPilot-Vetting']
 TESTED_BRANCHES = RELEASE_BRANCHES + ['CatPilot-Staging', 'CatPilot-Testing']
@@ -61,7 +61,7 @@ def is_dirty(cwd: str = BASEDIR) -> bool:
 
 
 @dataclass
-class OpenpilotMetadata:
+class CatpilotMetadata:
   version: str
   release_notes: str
   git_commit: str
@@ -78,7 +78,7 @@ class OpenpilotMetadata:
   def comma_remote(self) -> bool:
     # note to fork maintainers, this is used for release metrics. please do not
     # touch this to get rid of the orange startup alert. there's better ways to do that
-    return self.git_normalized_origin == "github.com/commaai/openpilot"
+    return self.git_normalized_origin == "github.com/commaai/catpilot"
 
   @property
   def git_normalized_origin(self) -> str:
@@ -92,7 +92,7 @@ class OpenpilotMetadata:
 @dataclass
 class BuildMetadata:
   channel: str
-  openpilot: OpenpilotMetadata
+  catpilot: CatpilotMetadata
 
   @property
   def tested_channel(self) -> bool:
@@ -104,24 +104,24 @@ class BuildMetadata:
 
   @property
   def canonical(self) -> str:
-    return f"{self.openpilot.version}-{self.openpilot.git_commit}-{self.openpilot.build_style}"
+    return f"{self.catpilot.version}-{self.catpilot.git_commit}-{self.catpilot.build_style}"
 
   @property
   def ui_description(self) -> str:
-    return f"{self.openpilot.version} / {self.openpilot.git_commit[:6]} / {self.channel}"
+    return f"{self.catpilot.version} / {self.catpilot.git_commit[:6]} / {self.channel}"
 
 
 def build_metadata_from_dict(build_metadata: dict) -> BuildMetadata:
   channel = build_metadata.get("channel", "unknown")
-  openpilot_metadata = build_metadata.get("openpilot", {})
-  version = openpilot_metadata.get("version", "unknown")
-  release_notes = openpilot_metadata.get("release_notes", "unknown")
-  git_commit = openpilot_metadata.get("git_commit", "unknown")
-  git_origin = openpilot_metadata.get("git_origin", "unknown")
-  git_commit_date = openpilot_metadata.get("git_commit_date", "unknown")
-  build_style = openpilot_metadata.get("build_style", "unknown")
+  catpilot_metadata = build_metadata.get("catpilot", {})
+  version = catpilot_metadata.get("version", "unknown")
+  release_notes = catpilot_metadata.get("release_notes", "unknown")
+  git_commit = catpilot_metadata.get("git_commit", "unknown")
+  git_origin = catpilot_metadata.get("git_origin", "unknown")
+  git_commit_date = catpilot_metadata.get("git_commit_date", "unknown")
+  build_style = catpilot_metadata.get("build_style", "unknown")
   return BuildMetadata(channel,
-            OpenpilotMetadata(
+            CatpilotMetadata(
               version=version,
               release_notes=release_notes,
               git_commit=git_commit,
@@ -142,7 +142,7 @@ def get_build_metadata(path: str = BASEDIR) -> BuildMetadata:
 
   if git_folder.exists():
     return BuildMetadata(get_short_branch(path),
-                    OpenpilotMetadata(
+                    CatpilotMetadata(
                       version=get_version(path),
                       release_notes=get_release_notes(path),
                       git_commit=get_commit(path),
@@ -156,7 +156,7 @@ def get_build_metadata(path: str = BASEDIR) -> BuildMetadata:
 
 
 if __name__ == "__main__":
-  from openpilot.common.params import Params
+  from catpilot.common.params import Params
 
   params = Params()
   params.put("TermsVersion", terms_version)

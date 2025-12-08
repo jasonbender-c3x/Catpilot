@@ -16,8 +16,8 @@ import os
 import sys
 from os.path import exists
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.system.version import get_version
+from catpilot.common.basedir import BASEDIR
+from catpilot.system.version import get_version
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
@@ -27,7 +27,7 @@ VERSION = get_version()
 
 # -- Project information -----------------------------------------------------
 
-project = 'openpilot docs'
+project = 'catpilot docs'
 copyright = '2021, comma.ai' # noqa: A001
 author = 'comma.ai'
 version = VERSION
@@ -50,25 +50,25 @@ extensions = [
 ]
 
 myst_html_meta = {
-  "description": "openpilot docs",
-  "keywords": "op, openpilot, docs, documentation",
+  "description": "catpilot docs",
+  "keywords": "op, catpilot, docs, documentation",
   "robots": "all,follow",
   "googlebot": "index,follow,snippet,archive",
   "property=og:locale": "en_US",
   "property=og:site_name": "docs.comma.ai",
   "property=og:url": "https://docs.comma.ai",
-  "property=og:title": "openpilot Documentation",
+  "property=og:title": "catpilot Documentation",
   "property=og:type": "website",
   "property=og:image:type": "image/jpeg",
   "property=og:image:width": "400",
   "property=og:image": "https://docs.comma.ai/_static/logo.png",
   "property=og:image:url": "https://docs.comma.ai/_static/logo.png",
   "property=og:image:secure_url": "https://docs.comma.ai/_static/logo.png",
-  "property=og:description": "openpilot Documentation",
+  "property=og:description": "catpilot Documentation",
   "property=twitter:card": "summary_large_image",
   "property=twitter:logo": "https://docs.comma.ai/_static/logo.png",
-  "property=twitter:title": "openpilot Documentation",
-  "property=twitter:description": "openpilot Documentation"
+  "property=twitter:title": "catpilot Documentation",
+  "property=twitter:description": "catpilot Documentation"
 }
 
 html_baseurl = 'https://docs.comma.ai/'

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from cereal import car, custom
-from openpilot.selfdrive.controls.lib.drive_helpers import CRUISE_LONG_PRESS
-from openpilot.selfdrive.controls.lib.events import ET, EventName
+from catpilot.selfdrive.controls.lib.drive_helpers import CRUISE_LONG_PRESS
+from catpilot.selfdrive.controls.lib.events import ET, EventName
 
-from openpilot.catpilot.common.catpilot_variables import NON_DRIVING_GEARS, params, params_memory
+from catpilot.catpilot.common.catpilot_variables import NON_DRIVING_GEARS, params, params_memory
 
 ButtonType = car.CarState.ButtonEvent.Type
 CatPilotButtonType = custom.CatPilotCarState.ButtonEvent.Type

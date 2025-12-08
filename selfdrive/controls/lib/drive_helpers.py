@@ -2,9 +2,9 @@ import math
 import numpy as np
 
 from cereal import car, log
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.numpy_fast import clip, interp
-from openpilot.common.realtime import DT_CTRL, DT_MDL
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.numpy_fast import clip, interp
+from catpilot.common.realtime import DT_CTRL, DT_MDL
 
 # WARNING: this value was determined based on the model's training distribution,
 #          model predictions above this speed can be unpredictable
@@ -185,7 +185,7 @@ def smooth_value(val, prev_val, tau, dt=DT_MDL):
 
 def clip_curvature(v_ego, prev_curvature, new_curvature):
   v_ego = max(MIN_SPEED, v_ego)
-  max_curvature_rate = MAX_LATERAL_JERK / (v_ego**2) # inexact calculation, check https://github.com/commaai/openpilot/pull/24755
+  max_curvature_rate = MAX_LATERAL_JERK / (v_ego**2) # inexact calculation, check https://github.com/commaai/catpilot/pull/24755
   safe_desired_curvature = clip(new_curvature,
                                 prev_curvature - max_curvature_rate * DT_CTRL,
                                 prev_curvature + max_curvature_rate * DT_CTRL)

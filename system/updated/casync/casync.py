@@ -13,8 +13,8 @@ from typing import IO
 
 import requests
 from Crypto.Hash import SHA512
-from openpilot.system.updated.casync import tar
-from openpilot.system.updated.casync.common import create_casync_tar_package
+from catpilot.system.updated.casync import tar
+from catpilot.system.updated.casync.common import create_casync_tar_package
 
 CA_FORMAT_INDEX = 0x96824d9c7b129ff9
 CA_FORMAT_TABLE = 0xe75b9e112f17417d

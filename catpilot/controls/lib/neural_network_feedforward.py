@@ -8,13 +8,13 @@ import math
 import numpy as np
 import os
 
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.numpy_fast import interp
-from openpilot.selfdrive.car.interfaces import LatControlInputs
-from openpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N
-from openpilot.selfdrive.modeld.constants import ModelConstants
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.numpy_fast import interp
+from catpilot.selfdrive.car.interfaces import LatControlInputs
+from catpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N
+from catpilot.selfdrive.modeld.constants import ModelConstants
 
-from openpilot.catpilot.common.catpilot_variables import TORQUE_NN_MODEL_PATH, get_nnff_model_files, params
+from catpilot.catpilot.common.catpilot_variables import TORQUE_NN_MODEL_PATH, get_nnff_model_files, params
 
 # At higher speeds (25+mph) we can assume:
 # Lateral acceleration achieved by a specific car correlates to

@@ -1,5 +1,5 @@
 from cereal import car
-from openpilot.selfdrive.car import CanBusBase
+from catpilot.selfdrive.car import CanBusBase
 
 HUDControl = car.CarControl.HUDControl
 
@@ -204,7 +204,7 @@ def create_acc_ui_msg(packer, CAN: CanBus, CP, main_on: bool, enabled: bool, fcw
     "Tja_D_Stat": status,        # TJA status
   })
 
-  if CP.openpilotLongitudinalControl:
+  if CP.catpilotLongitudinalControl:
     values.update({
       "AccStopStat_D_Dsply": 2 if standstill else 0,              # Stopping status text
       "AccMsgTxt_D2_Rq": 0,                                       # ACC text

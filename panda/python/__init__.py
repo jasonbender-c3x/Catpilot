@@ -306,7 +306,7 @@ class Panda:
     self.health_version, self.can_version, self.can_health_version = self.get_packets_versions()
     logging.debug("connected")
 
-    # disable openpilot's heartbeat checks
+    # disable catpilot's heartbeat checks
     if self._disable_checks:
       self.set_heartbeat_disabled()
       self.set_power_save(0)
@@ -892,7 +892,7 @@ class Panda:
   def send_heartbeat(self, engaged=True):
     self._handle.controlWrite(Panda.REQUEST_OUT, 0xf3, engaged, 0, b'')
 
-  # disable heartbeat checks for use outside of openpilot
+  # disable heartbeat checks for use outside of catpilot
   # sending a heartbeat will reenable the checks
   def set_heartbeat_disabled(self):
     self._handle.controlWrite(Panda.REQUEST_OUT, 0xf8, 0, 0, b'')

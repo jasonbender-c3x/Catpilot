@@ -7,12 +7,12 @@ import time
 from collections import OrderedDict, deque
 from datetime import datetime, timedelta, timezone
 
-import openpilot.system.sentry as sentry
+import catpilot.system.sentry as sentry
 
 from cereal import log, messaging
 
-from openpilot.catpilot.common.catpilot_utilities import calculate_distance_to_point, calculate_lane_width, is_url_pingable
-from openpilot.catpilot.common.catpilot_variables import params, params_memory
+from catpilot.catpilot.common.catpilot_utilities import calculate_distance_to_point, calculate_lane_width, is_url_pingable
+from catpilot.catpilot.common.catpilot_variables import params, params_memory
 
 NetworkType = log.DeviceState.NetworkType
 

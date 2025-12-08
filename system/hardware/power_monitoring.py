@@ -1,10 +1,10 @@
 import time
 import threading
 
-from openpilot.common.params import Params
-from openpilot.system.hardware import HARDWARE
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.statsd import statlog
+from catpilot.common.params import Params
+from catpilot.system.hardware import HARDWARE
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.statsd import statlog
 
 CAR_VOLTAGE_LOW_PASS_K = 0.011 # LPF gain for 45s tau (dt/tau / (dt/tau + 1))
 

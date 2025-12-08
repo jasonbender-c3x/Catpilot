@@ -3,11 +3,11 @@
 import time
 from multiprocessing import Process
 
-from openpilot.common.params import Params
-from openpilot.system.manager.process import launcher
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.hardware import HARDWARE
-from openpilot.system.version import get_build_metadata
+from catpilot.common.params import Params
+from catpilot.system.manager.process import launcher
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.hardware import HARDWARE
+from catpilot.system.version import get_build_metadata
 
 ATHENA_MGR_PID_PARAM = "AthenadPid"
 
@@ -18,11 +18,11 @@ def main():
   build_metadata = get_build_metadata()
 
   cloudlog.bind_global(dongle_id=dongle_id,
-                       version=build_metadata.openpilot.version,
-                       origin=build_metadata.openpilot.git_normalized_origin,
+                       version=build_metadata.catpilot.version,
+                       origin=build_metadata.catpilot.git_normalized_origin,
                        branch=build_metadata.channel,
-                       commit=build_metadata.openpilot.git_commit,
-                       dirty=build_metadata.openpilot.is_dirty,
+                       commit=build_metadata.catpilot.git_commit,
+                       dirty=build_metadata.catpilot.is_dirty,
                        device=HARDWARE.get_device_type())
 
   try:

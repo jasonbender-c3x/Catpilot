@@ -11,12 +11,12 @@ import numpy as np
 from lru import LRU
 
 import _io
-from openpilot.tools.lib.cache import cache_path_for_file_path, DEFAULT_CACHE_DIR
-from openpilot.tools.lib.exceptions import DataUnreadableError
-from openpilot.tools.lib.vidindex import hevc_index
-from openpilot.common.file_helpers import atomic_write_in_dir
+from catpilot.tools.lib.cache import cache_path_for_file_path, DEFAULT_CACHE_DIR
+from catpilot.tools.lib.exceptions import DataUnreadableError
+from catpilot.tools.lib.vidindex import hevc_index
+from catpilot.common.file_helpers import atomic_write_in_dir
 
-from openpilot.tools.lib.filereader import FileReader, resolve_name
+from catpilot.tools.lib.filereader import FileReader, resolve_name
 
 HEVC_SLICE_B = 0
 HEVC_SLICE_P = 1

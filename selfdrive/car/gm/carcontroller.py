@@ -1,16 +1,16 @@
 from cereal import car
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.numpy_fast import interp, clip
-from openpilot.common.realtime import DT_CTRL
-from openpilot.common.params_pyx import Params
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.numpy_fast import interp, clip
+from catpilot.common.realtime import DT_CTRL
+from catpilot.common.params_pyx import Params
 from opendbc.can.packer import CANPacker
-from openpilot.selfdrive.car import apply_driver_steer_torque_limits, create_gas_interceptor_command
-from openpilot.selfdrive.car.gm import gmcan
-from openpilot.selfdrive.car.gm.values import DBC, CanBus, CarControllerParams, CruiseButtons, GMFlags, CC_ONLY_CAR, SDGM_CAR, EV_CAR, AccState
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.controls.lib.drive_helpers import apply_deadzone
-from openpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
+from catpilot.selfdrive.car import apply_driver_steer_torque_limits, create_gas_interceptor_command
+from catpilot.selfdrive.car.gm import gmcan
+from catpilot.selfdrive.car.gm.values import DBC, CanBus, CarControllerParams, CruiseButtons, GMFlags, CC_ONLY_CAR, SDGM_CAR, EV_CAR, AccState
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.controls.lib.drive_helpers import apply_deadzone
+from catpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
 
 VisualAlert = car.CarControl.HUDControl.VisualAlert
 NetworkLocation = car.CarParams.NetworkLocation
@@ -90,7 +90,7 @@ class CarController(CarControllerBase):
       # Also send at 50Hz:
       # - on startup, first few msgs are blocked
       # - until we're in sync with camera so counters align when relay closes, preventing a fault.
-      #   openpilot can subtly drift, so this is activated throughout a drive to stay synced
+      #   catpilot can subtly drift, so this is activated throughout a drive to stay synced
       out_of_sync = self.lka_steering_cmd_counter % 4 != (CS.cam_lka_steering_cmd_counter + 1) % 4
       if CS.loopback_lka_steering_cmd_ts_nanos == 0 or out_of_sync:
         steer_step = self.params.STEER_STEP
@@ -116,7 +116,7 @@ class CarController(CarControllerBase):
       idx = self.lka_steering_cmd_counter % 4
       can_sends.append(gmcan.create_steering_control(self.packer_pt, CanBus.POWERTRAIN, apply_steer, idx, CC.latActive))
 
-    if self.CP.openpilotLongitudinalControl:
+    if self.CP.catpilotLongitudinalControl:
       # Gas/regen, brakes, and UI commands - all at 25Hz
       if self.frame % 4 == 0:
         stopping = actuators.longControlState == LongCtrlState.stopping

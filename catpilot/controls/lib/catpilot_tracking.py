@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import json
 
-from openpilot.common.realtime import DT_MDL
+from catpilot.common.realtime import DT_MDL
 
-from openpilot.catpilot.common.catpilot_variables import params, params_tracking
+from catpilot.catpilot.common.catpilot_variables import params, params_tracking
 
 class CatPilotTracking:
   def __init__(self):

@@ -4,9 +4,9 @@ import json
 import math
 from typing import Any, cast
 
-from openpilot.common.conversions import Conversions
-from openpilot.common.numpy_fast import clip
-from openpilot.common.params import Params
+from catpilot.common.conversions import Conversions
+from catpilot.common.numpy_fast import clip
+from catpilot.common.params import Params
 
 DIRECTIONS = ('left', 'right', 'straight')
 MODIFIABLE_DIRECTIONS = ('left', 'right')

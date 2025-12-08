@@ -9,8 +9,8 @@ import subprocess
 import tempfile
 import threading
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.params import Params
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.params import Params
 
 def unblock_stdout() -> None:
   # get a non-blocking stdout

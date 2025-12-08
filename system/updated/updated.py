@@ -14,16 +14,16 @@ from collections import defaultdict
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.params import Params
-from openpilot.common.time import system_time_valid
-from openpilot.common.markdown import parse_markdown
-from openpilot.common.swaglog import cloudlog
-from openpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
-from openpilot.system.hardware import AGNOS, HARDWARE
-from openpilot.system.version import get_build_metadata
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.params import Params
+from catpilot.common.time import system_time_valid
+from catpilot.common.markdown import parse_markdown
+from catpilot.common.swaglog import cloudlog
+from catpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
+from catpilot.system.hardware import AGNOS, HARDWARE
+from catpilot.system.version import get_build_metadata
 
-from openpilot.catpilot.common.catpilot_variables import BACKUP_PATH, get_catpilot_toggles, params_memory
+from catpilot.catpilot.common.catpilot_variables import BACKUP_PATH, get_catpilot_toggles, params_memory
 
 LOCK_FILE = os.getenv("UPDATER_LOCK_FILE", "/tmp/safe_staging_overlay.lock")
 STAGING_ROOT = os.getenv("UPDATER_STAGING_ROOT", "/data/safe_staging")
@@ -221,7 +221,7 @@ def finalize_update(manual_update_requested, params, catpilot_toggles) -> None:
 
 
 def handle_agnos_update() -> None:
-  from openpilot.system.hardware.tici.agnos import flash_agnos_update, get_target_slot_number
+  from catpilot.system.hardware.tici.agnos import flash_agnos_update, get_target_slot_number
 
   cur_version = HARDWARE.get_os_version()
   updated_version = run(["bash", "-c", r"unset AGNOS_VERSION && source launch_env.sh && \
@@ -231,7 +231,7 @@ def handle_agnos_update() -> None:
   if cur_version == updated_version:
     return
 
-  # prevent an openpilot getting swapped in with a mismatched or partially downloaded agnos
+  # prevent an catpilot getting swapped in with a mismatched or partially downloaded agnos
   set_consistent_flag(False)
 
   cloudlog.info(f"Beginning background installation for AGNOS {updated_version}")
@@ -439,7 +439,7 @@ def main() -> None:
       proc.ionice(psutil.IOPRIO_CLASS_BE, value=7)
 
     # Check if we just performed an update
-    if Path(os.path.join(STAGING_ROOT, "old_openpilot")).is_dir():
+    if Path(os.path.join(STAGING_ROOT, "old_catpilot")).is_dir():
       cloudlog.event("update installed")
 
     updater = Updater()

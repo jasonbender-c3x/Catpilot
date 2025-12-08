@@ -2,13 +2,13 @@ import math
 
 from cereal import car
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.interfaces import RadarInterfaceBase
-from openpilot.selfdrive.car.hyundai.values import DBC
+from catpilot.selfdrive.car.interfaces import RadarInterfaceBase
+from catpilot.selfdrive.car.hyundai.values import DBC
 
 RADAR_START_ADDR = 0x500
 RADAR_MSG_COUNT = 32
 
-# POC for parsing corner radars: https://github.com/commaai/openpilot/pull/24221/
+# POC for parsing corner radars: https://github.com/commaai/catpilot/pull/24221/
 
 def get_radar_can_parser(CP):
   if DBC[CP.carFingerprint]['radar'] is None:

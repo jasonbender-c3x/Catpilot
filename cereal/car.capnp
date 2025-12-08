@@ -16,7 +16,7 @@ struct CarEvent @0x9b1657f34caf3ad3 {
   softDisable @5 :Bool;
   immediateDisable @6 :Bool;
   preEnable @7 :Bool;
-  permanent @8 :Bool; # alerts presented regardless of openpilot state
+  permanent @8 :Bool; # alerts presented regardless of catpilot state
   overrideLateral @10 :Bool;
   overrideLongitudinal @9 :Bool;
 
@@ -134,8 +134,8 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     laneChangeBlockedLoud @134;
     leadDeparting @135;
     noLaneAvailable @136;
-    openpilotCrashed @137;
-    openpilotCrashedRandomEvent @138;
+    catpilotCrashed @137;
+    catpilotCrashedRandomEvent @138;
     pedalInterceptorNoBrake @139;
     speedLimitChanged @140;
     thisIsFineSteerSaturated @141;
@@ -487,7 +487,7 @@ struct CarParams {
 
   notCar @66 :Bool;  # flag for non-car robotics platforms
 
-  pcmCruise @3 :Bool;        # is openpilot's state tied to the PCM's cruise state?
+  pcmCruise @3 :Bool;        # is catpilot's state tied to the PCM's cruise state?
   enableDsu @5 :Bool;        # driving support unit
   enableBsm @56 :Bool;       # blind spot monitoring
   flags @64 :UInt32;         # flags for car specific quirks
@@ -539,10 +539,10 @@ struct CarParams {
 
   steerActuatorDelay @36 :Float32; # Steering wheel actuator delay in seconds
   longitudinalActuatorDelay @58 :Float32; # Gas/Brake actuator delay in seconds
-  openpilotLongitudinalControl @37 :Bool; # is openpilot doing the longitudinal control?
+  catpilotLongitudinalControl @37 :Bool; # is catpilot doing the longitudinal control?
   carVin @38 :Text; # VIN number queried during fingerprinting
   dashcamOnly @41: Bool;
-  passive @73: Bool;   # is openpilot in control?
+  passive @73: Bool;   # is catpilot in control?
   transmissionType @43 :TransmissionType;
   carFw @44 :List(CarFw);
 

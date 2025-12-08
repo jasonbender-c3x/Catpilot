@@ -5,9 +5,9 @@ from typing import Any
 
 import numpy as np
 
-from openpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
-from openpilot.selfdrive.locationd.models.constants import ObservationKind
-from openpilot.common.swaglog import cloudlog
+from catpilot.selfdrive.controls.lib.vehicle_model import ACCELERATION_DUE_TO_GRAVITY
+from catpilot.selfdrive.locationd.models.constants import ObservationKind
+from catpilot.common.swaglog import cloudlog
 
 from rednose.helpers.kalmanfilter import KalmanFilter
 

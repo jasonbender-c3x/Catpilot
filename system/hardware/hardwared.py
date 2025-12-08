@@ -12,20 +12,20 @@ import psutil
 import cereal.messaging as messaging
 from cereal import log
 from cereal.services import SERVICE_LIST
-from openpilot.common.dict_helpers import strip_deprecated_keys
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.params import Params
-from openpilot.common.realtime import DT_HW
-from openpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
-from openpilot.system.hardware import HARDWARE, TICI, AGNOS
-from openpilot.system.loggerd.config import get_available_bytes, get_available_percent, get_used_bytes
-from openpilot.system.statsd import statlog
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.hardware.power_monitoring import PowerMonitoring
-from openpilot.system.hardware.fan_controller import TiciFanController
-from openpilot.system.version import terms_version, training_version
+from catpilot.common.dict_helpers import strip_deprecated_keys
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.params import Params
+from catpilot.common.realtime import DT_HW
+from catpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
+from catpilot.system.hardware import HARDWARE, TICI, AGNOS
+from catpilot.system.loggerd.config import get_available_bytes, get_available_percent, get_used_bytes
+from catpilot.system.statsd import statlog
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.hardware.power_monitoring import PowerMonitoring
+from catpilot.system.hardware.fan_controller import TiciFanController
+from catpilot.system.version import terms_version, training_version
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
 
 ThermalStatus = log.DeviceState.ThermalStatus
 NetworkType = log.DeviceState.NetworkType

@@ -1,5 +1,5 @@
 from cereal import car
-from openpilot.selfdrive.car.subaru.values import CanBus
+from catpilot.selfdrive.car.subaru.values import CanBus
 
 VisualAlert = car.CarControl.HUDControl.VisualAlert
 
@@ -53,7 +53,7 @@ def create_es_distance(packer, frame, es_distance_msg, bus, pcm_cancel_cmd, long
   if long_enabled:
     values["Cruise_Throttle"] = cruise_throttle
 
-    # Do not disable openpilot on Eyesight Soft Disable, if openpilot is controlling long
+    # Do not disable catpilot on Eyesight Soft Disable, if catpilot is controlling long
     values["Cruise_Soft_Disable"] = 0
     values["Cruise_Fault"] = 0
 
@@ -107,7 +107,7 @@ def create_es_lkas_state(packer, frame, es_lkas_state_msg, enabled, visual_alert
   if values["LKAS_Alert_Msg"] == 7:
     values["LKAS_Alert_Msg"] = 0
 
-  # Show Keep hands on wheel alert for openpilot steerRequired alert
+  # Show Keep hands on wheel alert for catpilot steerRequired alert
   if visual_alert == VisualAlert.steerRequired:
     values["LKAS_Alert_Msg"] = 1
 
@@ -243,7 +243,7 @@ def create_es_infotainment(packer, frame, es_infotainment_msg, visual_alert):
   if values["LKAS_State_Infotainment"] in (3, 4):
     values["LKAS_State_Infotainment"] = 0
 
-  # Show Keep hands on wheel alert for openpilot steerRequired alert
+  # Show Keep hands on wheel alert for catpilot steerRequired alert
   if visual_alert == VisualAlert.steerRequired:
     values["LKAS_State_Infotainment"] = 3
 

@@ -20,18 +20,18 @@ import traceback
 
 from cereal import car, messaging
 from opendbc.can.parser import CANParser
-from openpilot.common.realtime import DT_HW
-from openpilot.selfdrive.car.toyota.carcontroller import LOCK_CMD, UNLOCK_CMD
-from openpilot.system.hardware import HARDWARE, PC
-from openpilot.system.hardware.hw import Paths
-from openpilot.system.loggerd.deleter import PRESERVE_ATTR_NAME, PRESERVE_ATTR_VALUE, PRESERVE_COUNT
-from openpilot.system.version import get_build_metadata
+from catpilot.common.realtime import DT_HW
+from catpilot.selfdrive.car.toyota.carcontroller import LOCK_CMD, UNLOCK_CMD
+from catpilot.system.hardware import HARDWARE, PC
+from catpilot.system.hardware.hw import Paths
+from catpilot.system.loggerd.deleter import PRESERVE_ATTR_NAME, PRESERVE_ATTR_VALUE, PRESERVE_COUNT
+from catpilot.system.version import get_build_metadata
 from panda import Panda
 
-from openpilot.catpilot.common.catpilot_utilities import delete_file, get_lock_status, run_cmd
-from openpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, EXCLUDED_KEYS, SCREEN_RECORDINGS_PATH,\
+from catpilot.catpilot.common.catpilot_utilities import delete_file, get_lock_status, run_cmd
+from catpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, EXCLUDED_KEYS, SCREEN_RECORDINGS_PATH,\
                                                            catpilot_default_params, params, update_catpilot_toggles
-from openpilot.catpilot.system.the_pond import utilities
+from catpilot.catpilot.system.the_pond import utilities
 
 FOOTAGE_PATHS = [
   Paths.log_root(HD=True, raw=True),
@@ -606,10 +606,10 @@ def setup(app):
       "softwareInfo": {
         "branchName": build_metadata.channel,
         "buildEnvironment": env,
-        "commitHash": build_metadata.openpilot.git_commit,
-        "forkMaintainer": utilities.get_repo_owner(build_metadata.openpilot.git_normalized_origin),
+        "commitHash": build_metadata.catpilot.git_commit,
+        "forkMaintainer": utilities.get_repo_owner(build_metadata.catpilot.git_normalized_origin),
         "updateAvailable": "Yes" if params.get_bool("UpdaterFetchAvailable") else "No",
-        "versionDate": utilities.format_git_date(build_metadata.openpilot.git_commit_date),
+        "versionDate": utilities.format_git_date(build_metadata.catpilot.git_commit_date),
       },
     }
 
@@ -907,7 +907,7 @@ def setup(app):
 
   @app.route("/mapbox-help/<path:filename>", methods=["GET"])
   def serve_mapbox_help(filename):
-    return send_from_directory("/data/openpilot/catpilot/navigation/navigation_training", filename)
+    return send_from_directory("/data/catpilot/catpilot/navigation/navigation_training", filename)
 
   @app.route("/playground", methods=["GET"])
   def playground():

@@ -3,16 +3,16 @@ import time
 from collections.abc import Callable
 
 from cereal import car
-from openpilot.common.params import Params
-from openpilot.selfdrive.car.interfaces import get_interface_attr
-from openpilot.selfdrive.car.fingerprints import eliminate_incompatible_cars, all_legacy_fingerprint_cars
-from openpilot.selfdrive.car.vin import get_vin, is_valid_vin, VIN_UNKNOWN
-from openpilot.selfdrive.car.fw_versions import get_fw_versions_ordered, get_present_ecus, match_fw_to_car, set_obd_multiplexing
-from openpilot.selfdrive.car.mock.values import CAR as MOCK
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.selfdrive.car.interfaces import get_interface_attr
+from catpilot.selfdrive.car.fingerprints import eliminate_incompatible_cars, all_legacy_fingerprint_cars
+from catpilot.selfdrive.car.vin import get_vin, is_valid_vin, VIN_UNKNOWN
+from catpilot.selfdrive.car.fw_versions import get_fw_versions_ordered, get_present_ecus, match_fw_to_car, set_obd_multiplexing
+from catpilot.selfdrive.car.mock.values import CAR as MOCK
+from catpilot.common.swaglog import cloudlog
 import cereal.messaging as messaging
-from openpilot.selfdrive.car import gen_empty_fingerprint
-from openpilot.system.version import get_build_metadata
+from catpilot.selfdrive.car import gen_empty_fingerprint
+from catpilot.system.version import get_build_metadata
 
 FRAME_FINGERPRINT = 100  # 1s
 
@@ -42,7 +42,7 @@ def get_one_can(logcan):
 def load_interfaces(brand_names):
   ret = {}
   for brand_name in brand_names:
-    path = f'openpilot.selfdrive.car.{brand_name}'
+    path = f'catpilot.selfdrive.car.{brand_name}'
     CarInterface = __import__(path + '.interface', fromlist=['CarInterface']).CarInterface
     CarState = __import__(path + '.carstate', fromlist=['CarState']).CarState
     CarController = __import__(path + '.carcontroller', fromlist=['CarController']).CarController

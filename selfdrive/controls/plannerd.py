@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from cereal import car
-from openpilot.common.params import Params
-from openpilot.common.realtime import Priority, config_realtime_process
-from openpilot.common.swaglog import cloudlog
-from openpilot.selfdrive.controls.lib.longitudinal_planner import LongitudinalPlanner
+from catpilot.common.params import Params
+from catpilot.common.realtime import Priority, config_realtime_process
+from catpilot.common.swaglog import cloudlog
+from catpilot.selfdrive.controls.lib.longitudinal_planner import LongitudinalPlanner
 import cereal.messaging as messaging
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
 
 def publish_ui_plan(sm, pm, longitudinal_planner):
   ui_send = messaging.new_message('uiPlan')

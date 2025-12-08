@@ -1,11 +1,11 @@
 import copy
 from cereal import car, custom
 from opendbc.can.can_define import CANDefine
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car.interfaces import CarStateBase
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.subaru.values import DBC, CanBus, PREGLOBAL_CARS, SubaruFlags
-from openpilot.selfdrive.car import CanSignalRateCalculator
+from catpilot.selfdrive.car.subaru.values import DBC, CanBus, PREGLOBAL_CARS, SubaruFlags
+from catpilot.selfdrive.car import CanSignalRateCalculator
 
 
 class CarState(CarStateBase):
@@ -34,8 +34,8 @@ class CarState(CarStateBase):
     if not (self.CP.flags & SubaruFlags.HYBRID):
       eyesight_fault = bool(cp_es_distance.vl["ES_Distance"]["Cruise_Fault"])
 
-      # if openpilot is controlling long, an eyesight fault is a non-critical fault. otherwise it's an ACC fault
-      if self.CP.openpilotLongitudinalControl:
+      # if catpilot is controlling long, an eyesight fault is a non-critical fault. otherwise it's an ACC fault
+      if self.CP.catpilotLongitudinalControl:
         ret.carFaultedNonCritical = eyesight_fault
       else:
         ret.accFaulted = eyesight_fault

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Simplified demo version of The Pound for Replit environment.
-This version runs without the full openpilot/hardware dependencies.
+This version runs without the full catpilot/hardware dependencies.
 🐱 All cats, all the time! 🐱
 """
 from flask import Flask, render_template, jsonify, request, send_from_directory
@@ -44,7 +44,7 @@ def info():
     """Provide basic info about the deployment"""
     return jsonify({
         "project": "CatPilot - The Pound",
-        "description": "Web interface for CatPilot (openpilot fork)",
+        "description": "Web interface for CatPilot (catpilot fork)",
         "environment": "Replit Demo",
         "note": "This is a demo version. Full functionality requires comma.ai hardware."
     })
@@ -58,7 +58,7 @@ def doors_available():
 def get_toggles():
     return jsonify({
         "toggles": {},
-        "note": "Demo mode - toggle management requires full openpilot environment"
+        "note": "Demo mode - toggle management requires full catpilot environment"
     })
 
 @app.route("/api/error_logs", methods=["GET"])

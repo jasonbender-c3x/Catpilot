@@ -222,7 +222,7 @@ void tick_handler(void) {
 
       }
 
-      // exit controls allowed if unused by openpilot for a few seconds
+      // exit controls allowed if unused by catpilot for a few seconds
       if (controls_allowed && !heartbeat_engaged) {
         heartbeat_engaged_mismatches += 1U;
         if (heartbeat_engaged_mismatches >= 3U) {

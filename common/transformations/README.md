@@ -46,14 +46,14 @@ while rotating around the rotated axes, not the original axes.
 
 Car frame
 ------
-Device frame is aligned with the road-facing camera used by openpilot. However, when controlling the vehicle it is helpful to think in a reference frame aligned with the vehicle. These two reference frames can be different.
+Device frame is aligned with the road-facing camera used by catpilot. However, when controlling the vehicle it is helpful to think in a reference frame aligned with the vehicle. These two reference frames can be different.
 
 The orientation of car frame is defined to be aligned with the car's direction of travel and the road plane when the vehicle is driving on a flat road and not turning. The origin of car frame is defined to be directly below device frame (in car frame), such that it is on the road plane. The position and orientation of this frame is not necessarily always aligned with the direction of travel or the road plane due to suspension movements and other effects.
 
 
 Calibrated frame
 ------
-It is helpful for openpilot's driving model to take in images that look similar when mounted differently in different cars. To achieve this we "calibrate" the images by transforming it into calibrated frame. Calibrated frame is defined to be aligned with car frame in pitch and yaw, and aligned with device frame in roll. It also has the same origin as device frame.
+It is helpful for catpilot's driving model to take in images that look similar when mounted differently in different cars. To achieve this we "calibrate" the images by transforming it into calibrated frame. Calibrated frame is defined to be aligned with car frame in pitch and yaw, and aligned with device frame in roll. It also has the same origin as device frame.
 
 
 Example

@@ -30,17 +30,17 @@ from websocket import (ABNF, WebSocket, WebSocketException, WebSocketTimeoutExce
 import cereal.messaging as messaging
 from cereal import log
 from cereal.services import SERVICE_LIST
-from openpilot.common.api import Api
-from openpilot.common.file_helpers import CallbackReader
-from openpilot.common.params import Params
-from openpilot.common.realtime import set_core_affinity
-from openpilot.system.hardware import HARDWARE, PC
-from openpilot.system.loggerd.xattr_cache import getxattr, setxattr
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.version import get_build_metadata
-from openpilot.system.hardware.hw import Paths
+from catpilot.common.api import Api
+from catpilot.common.file_helpers import CallbackReader
+from catpilot.common.params import Params
+from catpilot.common.realtime import set_core_affinity
+from catpilot.system.hardware import HARDWARE, PC
+from catpilot.system.loggerd.xattr_cache import getxattr, setxattr
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.version import get_build_metadata
+from catpilot.system.hardware.hw import Paths
 
-from openpilot.catpilot.common.catpilot_utilities import use_konik_server
+from catpilot.catpilot.common.catpilot_utilities import use_konik_server
 
 ATHENA_HOST = os.getenv('ATHENA_HOST', 'wss://athena.comma.ai')
 KONIK_ATHENA_HOST = os.getenv('ATHENA_HOST', 'wss://athena.konik.ai')
@@ -323,10 +323,10 @@ def getMessage(service: str, timeout: int = 1000) -> dict:
 def getVersion() -> dict[str, str]:
   build_metadata = get_build_metadata()
   return {
-    "version": build_metadata.openpilot.version,
-    "remote": build_metadata.openpilot.git_normalized_origin,
+    "version": build_metadata.catpilot.version,
+    "remote": build_metadata.catpilot.git_normalized_origin,
     "branch": build_metadata.channel,
-    "commit": build_metadata.openpilot.git_commit,
+    "commit": build_metadata.catpilot.git_commit,
   }
 
 
@@ -535,7 +535,7 @@ def getNetworks():
 
 @dispatcher.add_method
 def takeSnapshot() -> str | dict[str, str] | None:
-  from openpilot.system.camerad.snapshot.snapshot import jpeg_write, snapshot
+  from catpilot.system.camerad.snapshot.snapshot import jpeg_write, snapshot
   ret = snapshot()
   if ret is not None:
     def b64jpeg(x):

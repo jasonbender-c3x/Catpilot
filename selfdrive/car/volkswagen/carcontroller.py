@@ -1,14 +1,14 @@
 from cereal import car
 from opendbc.can.packer import CANPacker
-from openpilot.common.numpy_fast import clip
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.car import apply_driver_steer_torque_limits
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.car.volkswagen import mqbcan, pqcan
-from openpilot.selfdrive.car.volkswagen.values import CANBUS, CarControllerParams, VolkswagenFlags
+from catpilot.common.numpy_fast import clip
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.car import apply_driver_steer_torque_limits
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.car.volkswagen import mqbcan, pqcan
+from catpilot.selfdrive.car.volkswagen.values import CANBUS, CarControllerParams, VolkswagenFlags
 
-from openpilot.selfdrive.car.interfaces import get_max_allowed_accel
+from catpilot.selfdrive.car.interfaces import get_max_allowed_accel
 
 GearShifter = car.CarState.GearShifter
 VisualAlert = car.CarControl.HUDControl.VisualAlert
@@ -72,8 +72,8 @@ class CarController(CarControllerBase):
 
       if self.CP.flags & VolkswagenFlags.STOCK_HCA_PRESENT:
         # Pacify VW Emergency Assist driver inactivity detection by changing its view of driver steering input torque
-        # to the greatest of actual driver input or 2x openpilot's output (1x openpilot output is not enough to
-        # consistently reset inactivity detection on straight level roads). See commaai/openpilot#23274 for background.
+        # to the greatest of actual driver input or 2x catpilot's output (1x catpilot output is not enough to
+        # consistently reset inactivity detection on straight level roads). See commaai/catpilot#23274 for background.
         ea_simulated_torque = clip(apply_steer * 2, -self.CCP.STEER_MAX, self.CCP.STEER_MAX)
         if abs(CS.out.steeringTorque) > abs(ea_simulated_torque):
           ea_simulated_torque = CS.out.steeringTorque
@@ -81,7 +81,7 @@ class CarController(CarControllerBase):
 
     # **** Acceleration Controls ******************************************** #
 
-    if self.frame % self.CCP.ACC_CONTROL_STEP == 0 and self.CP.openpilotLongitudinalControl:
+    if self.frame % self.CCP.ACC_CONTROL_STEP == 0 and self.CP.catpilotLongitudinalControl:
       acc_control = self.CCS.acc_control_value(CS.out.cruiseState.available, CS.out.accFaulted, CC.longActive)
       if catpilot_toggles.sport_plus and (CS.out.gearShifter == GearShifter.sport or not catpilot_toggles.map_acceleration):
         accel = clip(actuators.accel, self.CCP.ACCEL_MIN, get_max_allowed_accel(CS.out.vEgo)) if CC.longActive else 0
@@ -101,7 +101,7 @@ class CarController(CarControllerBase):
       can_sends.append(self.CCS.create_lka_hud_control(self.packer_pt, CANBUS.pt, CS.ldw_stock_values, CC.latActive,
                                                        CS.out.steeringPressed, hud_alert, hud_control))
 
-    if self.frame % self.CCP.ACC_HUD_STEP == 0 and self.CP.openpilotLongitudinalControl:
+    if self.frame % self.CCP.ACC_HUD_STEP == 0 and self.CP.catpilotLongitudinalControl:
       lead_distance = 0
       if hud_control.leadVisible and self.frame * DT_CTRL > 1.0:  # Don't display lead until we know the scaling factor
         lead_distance = 512 if CS.upscale_lead_car_signal else 8

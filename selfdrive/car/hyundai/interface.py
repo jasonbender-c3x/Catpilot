@@ -1,13 +1,13 @@
 from cereal import car, custom
 from panda import Panda
-from openpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
-from openpilot.selfdrive.car.hyundai.values import HyundaiFlags, CAR, DBC, CANFD_CAR, CAMERA_SCC_CAR, CANFD_RADAR_SCC_CAR, \
+from catpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
+from catpilot.selfdrive.car.hyundai.values import HyundaiFlags, CAR, DBC, CANFD_CAR, CAMERA_SCC_CAR, CANFD_RADAR_SCC_CAR, \
                                          CANFD_UNSUPPORTED_LONGITUDINAL_CAR, EV_CAR, HYBRID_CAR, LEGACY_SAFETY_MODE_CAR, \
                                          UNSUPPORTED_LONGITUDINAL_CAR, Buttons
-from openpilot.selfdrive.car.hyundai.radar_interface import RADAR_START_ADDR
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
-from openpilot.selfdrive.car.disable_ecu import disable_ecu
+from catpilot.selfdrive.car.hyundai.radar_interface import RADAR_START_ADDR
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car.disable_ecu import disable_ecu
 
 Ecu = car.CarParams.Ecu
 ButtonType = car.CarState.ButtonEvent.Type
@@ -97,8 +97,8 @@ class CarInterface(CarInterfaceBase):
         ret.longitudinalTuning.kpV = [0.5]
         ret.longitudinalTuning.kiV = [0.0]
       ret.experimentalLongitudinalAvailable = candidate not in (UNSUPPORTED_LONGITUDINAL_CAR | CAMERA_SCC_CAR)
-    ret.openpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
-    ret.pcmCruise = not ret.openpilotLongitudinalControl
+    ret.catpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
+    ret.pcmCruise = not ret.catpilotLongitudinalControl
 
     ret.stoppingControl = True
     ret.startingState = True
@@ -140,7 +140,7 @@ class CarInterface(CarInterfaceBase):
       if 0x391 in fingerprint[0]:
         ret.safetyConfigs[0].safetyParam |= Panda.FLAG_HYUNDAI_LFA_BTN
 
-    if ret.openpilotLongitudinalControl:
+    if ret.catpilotLongitudinalControl:
       ret.safetyConfigs[-1].safetyParam |= Panda.FLAG_HYUNDAI_LONG
     if ret.flags & HyundaiFlags.HYBRID:
       ret.safetyConfigs[-1].safetyParam |= Panda.FLAG_HYUNDAI_HYBRID_GAS
@@ -164,7 +164,7 @@ class CarInterface(CarInterfaceBase):
 
   @staticmethod
   def init(CP, logcan, sendcan):
-    if CP.openpilotLongitudinalControl and not (CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value):
+    if CP.catpilotLongitudinalControl and not (CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value):
       addr, bus = 0x7d0, 0
       if CP.flags & HyundaiFlags.CANFD_HDA2.value:
         addr, bus = 0x730, CanBus(CP).ECAN
@@ -177,7 +177,7 @@ class CarInterface(CarInterfaceBase):
   def _update(self, c, catpilot_toggles):
     ret, fp_ret = self.CS.update(self.cp, self.cp_cam, catpilot_toggles)
 
-    if self.CS.CP.openpilotLongitudinalControl:
+    if self.CS.CP.catpilotLongitudinalControl:
       ret.buttonEvents = [
         *create_button_events(self.CS.cruise_buttons[-1], self.CS.prev_cruise_buttons, BUTTONS_DICT),
         *create_button_events(self.CS.lkas_enabled, self.CS.lkas_previously_enabled, {1: CatPilotButtonType.lkas}),
@@ -186,7 +186,7 @@ class CarInterface(CarInterfaceBase):
       ret.buttonEvents = create_button_events(self.CS.lkas_enabled, self.CS.lkas_previously_enabled, {1: CatPilotButtonType.lkas})
 
     # On some newer model years, the CANCEL button acts as a pause/resume button based on the PCM state
-    # To avoid re-engaging when openpilot cancels, check user engagement intention via buttons
+    # To avoid re-engaging when catpilot cancels, check user engagement intention via buttons
     # Main button also can trigger an engagement on these cars
     allow_enable = any(btn in ENABLE_BUTTONS for btn in self.CS.cruise_buttons) or any(self.CS.main_buttons)
     events = self.create_common_events(ret, extra_gears=[GearShifter.sport, GearShifter.manumatic],

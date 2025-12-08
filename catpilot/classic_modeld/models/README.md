@@ -1,4 +1,4 @@
-## Neural networks in openpilot
+## Neural networks in catpilot
 To view the architecture of the ONNX networks, you can use [netron](https://netron.app/)
 
 ## Supercombo
@@ -24,7 +24,7 @@ To view the architecture of the ONNX networks, you can use [netron](https://netr
 
 
 ### Supercombo output format (Full size: XXX x float32)
-Read [here](https://github.com/commaai/openpilot/blob/90af436a121164a51da9fa48d093c29f738adf6a/catpilot/classic_modeld/models/driving.h#L236) for more.
+Read [here](https://github.com/commaai/catpilot/blob/90af436a121164a51da9fa48d093c29f738adf6a/catpilot/classic_modeld/models/driving.h#L236) for more.
 
 
 ## Driver Monitoring Model
@@ -38,7 +38,7 @@ Read [here](https://github.com/commaai/openpilot/blob/90af436a121164a51da9fa48d0
 * camera calibration angles (roll, pitch, yaw) from liveCalibration: 3 x float32 inputs
 
 ### output format
-* 84 x float32 outputs = 2 + 41 * 2 ([parsing example](https://github.com/commaai/openpilot/blob/22ce4e17ba0d3bfcf37f8255a4dd1dc683fe0c38/catpilot/classic_modeld/models/dmonitoring.cc#L33))
+* 84 x float32 outputs = 2 + 41 * 2 ([parsing example](https://github.com/commaai/catpilot/blob/22ce4e17ba0d3bfcf37f8255a4dd1dc683fe0c38/catpilot/classic_modeld/models/dmonitoring.cc#L33))
   * for each person in the front seats (2 * 41)
     * face pose: 12 = 6 + 6
       * face orientation [pitch, yaw, roll] in camera frame: 3

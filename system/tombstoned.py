@@ -9,10 +9,10 @@ import time
 import glob
 from typing import NoReturn
 
-import openpilot.system.sentry as sentry
-from openpilot.system.hardware.hw import Paths
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.version import get_build_metadata
+import catpilot.system.sentry as sentry
+from catpilot.system.hardware.hw import Paths
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.version import get_build_metadata
 
 MAX_SIZE = 1_000_000 * 100  # allow up to 100M
 MAX_TOMBSTONE_FN_LEN = 62  # 85 - 23 ("<dongle id>/crash/")
@@ -36,7 +36,7 @@ def clear_apport_folder():
 
 def get_apport_stacktrace(fn):
   try:
-    cmd = f'apport-retrace -s <(cat <(echo "Package: openpilot") "{fn}")'
+    cmd = f'apport-retrace -s <(cat <(echo "Package: catpilot") "{fn}")'
     return subprocess.check_output(cmd, shell=True, encoding='utf8', timeout=30, executable='/bin/bash')
   except subprocess.CalledProcessError:
     return "Error getting stacktrace"
@@ -66,7 +66,7 @@ def report_tombstone_apport(fn):
 
   message = ""  # One line description of the crash
   contents = ""  # Full file contents without coredump
-  path = ""  # File path relative to openpilot directory
+  path = ""  # File path relative to catpilot directory
 
   proc_maps = False
 
@@ -84,7 +84,7 @@ def report_tombstone_apport(fn):
 
       if "ExecutablePath" in line:
         path = line.strip().split(': ')[-1]
-        path = path.replace('/data/openpilot/', '')
+        path = path.replace('/data/catpilot/', '')
         message += path
       elif "Signal" in line:
         message += " - " + line.strip()
@@ -102,7 +102,7 @@ def report_tombstone_apport(fn):
   if len(stacktrace_s) > 2:
     found = False
 
-    # Try to find first entry in openpilot, fall back to first line
+    # Try to find first entry in catpilot, fall back to first line
     for line in stacktrace_s:
       if "at selfdrive/" in line:
         crash_function = line
@@ -126,7 +126,7 @@ def report_tombstone_apport(fn):
 
   build_metadata = get_build_metadata()
 
-  new_fn = f"{date}_{(build_metadata.openpilot.git_commit or 'nocommit')[:8]}_{safe_fn(clean_path)}"[:MAX_TOMBSTONE_FN_LEN]
+  new_fn = f"{date}_{(build_metadata.catpilot.git_commit or 'nocommit')[:8]}_{safe_fn(clean_path)}"[:MAX_TOMBSTONE_FN_LEN]
 
   crashlog_dir = os.path.join(Paths.log_root(), "crash")
   os.makedirs(crashlog_dir, exist_ok=True)

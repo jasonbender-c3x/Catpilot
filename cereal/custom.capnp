@@ -13,7 +13,7 @@ using Car = import "car.capnp";
 struct CatPilotCarParams @0x81c2f05a394cf4af {
   fpFlags @0 :UInt32;
   isHDA2 @1 :Bool;
-  openpilotLongitudinalControlDisabled @2 :Bool;
+  catpilotLongitudinalControlDisabled @2 :Bool;
 }
 
 struct CatPilotCarState @0xaedffd8f31e7b55d {

@@ -1,9 +1,9 @@
 from cereal import car, custom
 from panda import Panda
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.disable_ecu import disable_ecu
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
-from openpilot.selfdrive.car.subaru.values import CAR, GLOBAL_ES_ADDR, SubaruFlags
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.disable_ecu import disable_ecu
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car.subaru.values import CAR, GLOBAL_ES_ADDR, SubaruFlags
 
 CatPilotButtonType = custom.CatPilotCarState.ButtonEvent.Type
 
@@ -86,12 +86,12 @@ class CarInterface(CarInterfaceBase):
 
     ret.experimentalLongitudinalAvailable = not (ret.flags & (SubaruFlags.GLOBAL_GEN2 | SubaruFlags.PREGLOBAL |
                                                               SubaruFlags.LKAS_ANGLE | SubaruFlags.HYBRID))
-    ret.openpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
+    ret.catpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
 
-    if ret.flags & SubaruFlags.GLOBAL_GEN2 and ret.openpilotLongitudinalControl:
+    if ret.flags & SubaruFlags.GLOBAL_GEN2 and ret.catpilotLongitudinalControl:
       ret.flags |= SubaruFlags.DISABLE_EYESIGHT.value
 
-    if ret.openpilotLongitudinalControl:
+    if ret.catpilotLongitudinalControl:
       ret.stoppingControl = True
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_SUBARU_LONG
 

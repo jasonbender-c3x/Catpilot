@@ -1,22 +1,22 @@
-[![openpilot on the comma 3X](https://i.imgur.com/Zwv9SaN.png)](https://comma.ai/shop/comma-3x)
+[![catpilot on the comma 3X](https://i.imgur.com/Zwv9SaN.png)](https://comma.ai/shop/comma-3x)
 
-What is openpilot?
+What is catpilot?
 ------
 
-[openpilot](http://github.com/commaai/openpilot) is an open source driver assistance system. Currently, openpilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models, and model years](docs/CARS.md). In addition, while openpilot is engaged, a camera-based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
+[catpilot](http://github.com/commaai/catpilot) is an open source driver assistance system. Currently, catpilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models, and model years](docs/CARS.md). In addition, while catpilot is engaged, a camera-based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
 
 <table>
   <tr>
-    <td><a href="https://youtu.be/NmBfgOanCyk" title="Video By Greer Viau"><img src="https://github.com/commaai/openpilot/assets/8762862/2f7112ae-f748-4f39-b617-fabd689c3772"></a></td>
-    <td><a href="https://youtu.be/VHKyqZ7t8Gw" title="Video By Logan LeGrand"><img src="https://github.com/commaai/openpilot/assets/8762862/92351544-2833-40d7-9e0b-7ef7ae37ec4c"></a></td>
-    <td><a href="https://youtu.be/SUIZYzxtMQs" title="A drive to Taco Bell"><img src="https://github.com/commaai/openpilot/assets/8762862/05ceefc5-2628-439c-a9b2-89ce77dc6f63"></a></td>
+    <td><a href="https://youtu.be/NmBfgOanCyk" title="Video By Greer Viau"><img src="https://github.com/commaai/catpilot/assets/8762862/2f7112ae-f748-4f39-b617-fabd689c3772"></a></td>
+    <td><a href="https://youtu.be/VHKyqZ7t8Gw" title="Video By Logan LeGrand"><img src="https://github.com/commaai/catpilot/assets/8762862/92351544-2833-40d7-9e0b-7ef7ae37ec4c"></a></td>
+    <td><a href="https://youtu.be/SUIZYzxtMQs" title="A drive to Taco Bell"><img src="https://github.com/commaai/catpilot/assets/8762862/05ceefc5-2628-439c-a9b2-89ce77dc6f63"></a></td>
   </tr>
 </table>
 
 What is CatPilot? 🐸
 ------
 
-CatPilot is a fully open-sourced fork of openpilot, featuring clear and concise commits striving to be a resource for the openpilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced openpilot experience for everyone!
+CatPilot is a fully open-sourced fork of catpilot, featuring clear and concise commits striving to be a resource for the catpilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced catpilot experience for everyone!
 
 ------
 CatPilot was last updated on:
@@ -26,17 +26,17 @@ CatPilot was last updated on:
 Features
 ------
 
-CatPilot offers a wide range of customizable features that are easily toggled on or off to suit your preferences. Whether you want a completely stock openpilot experience, or want to add some fun and personal touches, CatPilot has you covered! Some of the features include:
+CatPilot offers a wide range of customizable features that are easily toggled on or off to suit your preferences. Whether you want a completely stock catpilot experience, or want to add some fun and personal touches, CatPilot has you covered! Some of the features include:
 
 ------
 ⚡ **Advanced Customizations:**
 
-  - "Alert Volume Controller" to set the volume level for each of of openpilot's sounds
+  - "Alert Volume Controller" to set the volume level for each of of catpilot's sounds
   - Customize the following distance and jerk values for each personality profile
   - Fine tune your car's "Steer Ratio" to perfect your lateral control
   - Increase the distance when stopped behind lead vehicles
   - Increase the max set speed by a custom interval (i.e. 2, 3, 4, 5, 6, etc. instead of just 1)
-  - Select between past, present, and future openpilot driving models
+  - Select between past, present, and future catpilot driving models
 ------
 🎨 **Custom Themes:**
 
@@ -44,7 +44,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1f7-1f1fa.png" width="15" height="12"> Russia / Joseph Stalin theme
   - 🔌 Tesla theme
   - Holiday themes! Minor holidays last a day, while major holidays (Easter, Halloween, Thanksgiving, Christmas) last a week
-  - Random events triggered by specific actions while driving with openpilot
+  - Random events triggered by specific actions while driving with catpilot
 
   - 📢 Want to add a theme? Request one in the "feature-request" channel in the CatPilot Discord!
 ------
@@ -89,7 +89,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Pause lateral control when pressing the brake
   - Pause lateral control when turn signals are active
   - Precise turns by using turn desires when below the minimum lane change speed
-  - [Twilsonco's NNFF](https://github.com/twilsonco/openpilot) for smoother steering control
+  - [Twilsonco's NNFF](https://github.com/twilsonco/catpilot) for smoother steering control
 ------
 🚘 **Longitudinal Adjustments:**
 
@@ -111,7 +111,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Custom map styles
   - Full screen map that takes up the entire screen for a more expansive map view
   - iOS shortcuts to quickly set navigation destinations
-  - Navigate on openpilot without a comma prime subscription
+  - Navigate on catpilot without a comma prime subscription
   - Offline maps
   - "Open Street Maps" integration for speed limit control and road name view
 ------
@@ -143,12 +143,12 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Automatic/manual fingerprint selection to force a selected fingerprint
   - Custom longitudinal tunings for GM EVs and trucks for smoother gas and brake control
   - Custom longitudinal tunings for Toyota/Lexus for smoother gas and brake control
-  - Disable openpilot longitudinal control to use your car's stock cruise control
+  - Disable catpilot longitudinal control to use your car's stock cruise control
   - GM Volt support
   - Honda Clarity support
   - Increased torque for the Subaru Crosstrek
   - Lock doors automatically when in the drive gear for Toyota/Lexus and unlock when in park
-  - openpilot longitudinal control for GM vehicles without ACC
+  - catpilot longitudinal control for GM vehicles without ACC
   - Pedal interceptor support for GM vehicles
   - "Stop and Go" hack for Toyota's without stop and go functionality
   - ZSS support for the Toyota Prius and Sienna
@@ -175,7 +175,7 @@ Easiest way to install CatPilot is via this URL at the installation screen:
 catpilot.download
 ```
 
-DO NOT install the "CatPilot-Development" branch. I'm constantly breaking things on there, so unless you don't want to use openpilot, NEVER install it!
+DO NOT install the "CatPilot-Development" branch. I'm constantly breaking things on there, so unless you don't want to use catpilot, NEVER install it!
 
 ![](https://i.imgur.com/swr0kqJ.png)
 
@@ -204,7 +204,7 @@ Credits
 * [Mike8643](https://github.com/mike8643)
 * [Neokii](https://github.com/Neokii)
 * [OPGM](https://github.com/opgm)
-* [OPKR](https://github.com/openpilotkr)
+* [OPKR](https://github.com/catpilotkr)
 * [Pfeiferj](https://github.com/pfeiferj)
 * [ServerDummy](https://github.com/ServerDummy)
 * [Twilsonco](https://github.com/twilsonco)
@@ -212,7 +212,7 @@ Credits
 Licensing
 ------
 
-openpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
+catpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
 
 Any user of this software shall indemnify and hold harmless Comma.ai, Inc. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
 
@@ -225,5 +225,5 @@ NO WARRANTY EXPRESSED OR IMPLIED.**
 <img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/1061157-bc7e9bf3b246ece7322e6ffe653f6af8-medium_jpg.jpg?buster=1458363130" width="75"></img> <img src="https://cdn-images-1.medium.com/max/1600/1*C87EjxGeMPrkTuVRVWVg4w.png" width="225"></img>
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CatAi/CatPilot)
-![openpilot tests](https://github.com/commaai/openpilot/actions/workflows/selfdrive_tests.yaml/badge.svg)
-[![codecov](https://codecov.io/gh/commaai/openpilot/branch/master/graph/badge.svg)](https://codecov.io/gh/commaai/openpilot)
+![catpilot tests](https://github.com/commaai/catpilot/actions/workflows/selfdrive_tests.yaml/badge.svg)
+[![codecov](https://codecov.io/gh/commaai/catpilot/branch/master/graph/badge.svg)](https://codecov.io/gh/commaai/catpilot)

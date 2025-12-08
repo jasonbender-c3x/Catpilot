@@ -4,11 +4,11 @@ from dataclasses import dataclass, field
 from enum import Enum, IntFlag
 
 from cereal import car
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms
-from openpilot.selfdrive.car import AngleRateLimit, dbc_dict
-from openpilot.selfdrive.car.docs_definitions import CarFootnote, CarDocs, Column, CarParts, CarHarness
-from openpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms
+from catpilot.selfdrive.car import AngleRateLimit, dbc_dict
+from catpilot.selfdrive.car.docs_definitions import CarFootnote, CarDocs, Column, CarParts, CarHarness
+from catpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 
 Ecu = car.CarParams.Ecu
 MIN_ACC_SPEED = 19. * CV.MPH_TO_MS
@@ -70,7 +70,7 @@ class ToyotaCatPilotFlags(IntFlag):
 
 class Footnote(Enum):
   CAMRY = CarFootnote(
-    "openpilot operates above 28mph for Camry 4CYL L, 4CYL LE and 4CYL SE which don't have Full-Speed Range Dynamic Radar Cruise Control.",
+    "catpilot operates above 28mph for Camry 4CYL L, 4CYL LE and 4CYL SE which don't have Full-Speed Range Dynamic Radar Cruise Control.",
     Column.FSR_LONGITUDINAL)
 
 
@@ -486,7 +486,7 @@ def match_fw_to_car_fuzzy(live_fw_versions, vin, offline_fw_versions) -> set[str
 # Regex patterns for parsing more general platform-specific identifiers from FW versions.
 # - Part number: Toyota part number (usually last character needs to be ignored to find a match).
 #    Each ECU address has just one part number.
-# - Platform: usually multiple codes per an openpilot platform, however this is the least variable and
+# - Platform: usually multiple codes per an catpilot platform, however this is the least variable and
 #    is usually shared across ECUs and model years signifying this describes something about the specific platform.
 #    This describes more generational changes (TSS-P vs TSS2), or manufacture region.
 # - Major version: second least variable part of the FW version. Seen splitting cars by model year/API such as
@@ -501,7 +501,7 @@ LONG_FW_PATTERN = re.compile(b'(?P<part>[A-Z0-9]{5})(?P<platform>[A-Z0-9]{2})(?P
 FW_LEN_CODE = re.compile(b'^[\x01-\x03]')  # highest seen is 3 chunks, 16 bytes each
 FW_CHUNK_LEN = 16
 
-# List of ECUs that are most unique across openpilot platforms
+# List of ECUs that are most unique across catpilot platforms
 # - fwdCamera: describes actual features related to ADAS. For example, on the Avalon it describes
 #    when TSS-P became standard, whether the car supports stop and go, and whether it's TSS2.
 #    On the RAV4, it describes the move to the radar doing ACC, and the use of LTA for lane keeping.

@@ -1,9 +1,9 @@
 import numpy as np
 from cereal import car, custom
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car.interfaces import CarStateBase
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.volkswagen.values import DBC, CANBUS, NetworkLocation, TransmissionType, GearShifter, \
+from catpilot.selfdrive.car.volkswagen.values import DBC, CANBUS, NetworkLocation, TransmissionType, GearShifter, \
                                             CarControllerParams, VolkswagenFlags
 
 
@@ -123,7 +123,7 @@ class CarState(CarStateBase):
 
     if self.CP.pcmCruise:
       # Cruise Control mode; check for distance UI setting from the radar.
-      # ECM does not manage this, so do not need to check for openpilot longitudinal
+      # ECM does not manage this, so do not need to check for catpilot longitudinal
       ret.cruiseState.nonAdaptive = ext_cp.vl["ACC_02"]["ACC_Gesetzte_Zeitluecke"] == 0
     else:
       # Speed limiter mode; ECM faults if we command ACC while not pcmCruise

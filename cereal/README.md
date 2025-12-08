@@ -28,11 +28,11 @@ things are not. Read more details [here](https://capnproto.org/language.html).
 
 ### Custom forks
 
-Forks of [openpilot](https://github.com/commaai/openpilot) might want to add things to the messaging
-spec, however this could conflict with future changes made in mainline cereal/openpilot. Rebasing against mainline openpilot
+Forks of [catpilot](https://github.com/commaai/catpilot) might want to add things to the messaging
+spec, however this could conflict with future changes made in mainline cereal/catpilot. Rebasing against mainline catpilot
 then means breaking backwards-compatibility with all old logs of your fork. So we added reserved events in
-[custom.capnp](custom.capnp) that we will leave empty in mainline cereal/openpilot. **If you only modify those, you can ensure your
-fork will remain backwards-compatible with all versions of mainline cereal/openpilot and your fork.**
+[custom.capnp](custom.capnp) that we will leave empty in mainline cereal/catpilot. **If you only modify those, you can ensure your
+fork will remain backwards-compatible with all versions of mainline cereal/catpilot and your fork.**
 
 ## Pub Sub Backends
 

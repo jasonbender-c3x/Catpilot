@@ -1,14 +1,14 @@
 import os
 from pathlib import Path
 
-from openpilot.system.hardware import PC
+from catpilot.system.hardware import PC
 
 DEFAULT_DOWNLOAD_CACHE_ROOT = "/tmp/comma_download_cache"
 
 class Paths:
   @staticmethod
   def comma_home() -> str:
-    return os.path.join(str(Path.home()), ".comma" + os.environ.get("OPENPILOT_PREFIX", ""))
+    return os.path.join(str(Path.home()), ".comma" + os.environ.get("CATPILOT_PREFIX", ""))
 
   @staticmethod
   def log_root(HD=False, konik=False, raw=False) -> str:
@@ -32,13 +32,13 @@ class Paths:
 
   @staticmethod
   def swaglog_ipc() -> str:
-    return "ipc:///tmp/logmessage" + os.environ.get("OPENPILOT_PREFIX", "")
+    return "ipc:///tmp/logmessage" + os.environ.get("CATPILOT_PREFIX", "")
 
   @staticmethod
   def download_cache_root() -> str:
     if os.environ.get('COMMA_CACHE', False):
       return os.environ['COMMA_CACHE'] + "/"
-    return DEFAULT_DOWNLOAD_CACHE_ROOT + os.environ.get("OPENPILOT_PREFIX", "") + "/"
+    return DEFAULT_DOWNLOAD_CACHE_ROOT + os.environ.get("CATPILOT_PREFIX", "") + "/"
 
   @staticmethod
   def persist_root() -> str:

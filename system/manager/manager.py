@@ -7,19 +7,19 @@ import traceback
 
 from cereal import log
 import cereal.messaging as messaging
-import openpilot.system.sentry as sentry
-from openpilot.common.params import Params, ParamKeyType
-from openpilot.common.text_window import TextWindow
-from openpilot.system.hardware import HARDWARE, PC
-from openpilot.system.manager.helpers import unblock_stdout, write_onroad_params, save_bootlog
-from openpilot.system.manager.process import ensure_running
-from openpilot.system.manager.process_config import managed_processes
-from openpilot.system.athena.registration import register, UNREGISTERED_DONGLE_ID
-from openpilot.common.swaglog import cloudlog, add_file_handler
-from openpilot.system.version import get_build_metadata, terms_version, training_version
+import catpilot.system.sentry as sentry
+from catpilot.common.params import Params, ParamKeyType
+from catpilot.common.text_window import TextWindow
+from catpilot.system.hardware import HARDWARE, PC
+from catpilot.system.manager.helpers import unblock_stdout, write_onroad_params, save_bootlog
+from catpilot.system.manager.process import ensure_running
+from catpilot.system.manager.process_config import managed_processes
+from catpilot.system.athena.registration import register, UNREGISTERED_DONGLE_ID
+from catpilot.common.swaglog import cloudlog, add_file_handler
+from catpilot.system.version import get_build_metadata, terms_version, training_version
 
-from openpilot.catpilot.common.catpilot_functions import convert_params, catpilot_boot_functions, setup_catpilot, uninstall_catpilot
-from openpilot.catpilot.common.catpilot_variables import catpilot_default_params, get_catpilot_toggles, params_cache, params_memory
+from catpilot.catpilot.common.catpilot_functions import convert_params, catpilot_boot_functions, setup_catpilot, uninstall_catpilot
+from catpilot.catpilot.common.catpilot_variables import catpilot_default_params, get_catpilot_toggles, params_cache, params_memory
 
 
 def manager_init() -> None:
@@ -44,7 +44,7 @@ def manager_init() -> None:
     ("GsmMetered", "1"),
     ("HasAcceptedTerms", "0"),
     ("LanguageSetting", "main_en"),
-    ("OpenpilotEnabledToggle", "1"),
+    ("CatpilotEnabledToggle", "1"),
     ("LongitudinalPersonality", str(log.LongitudinalPersonality.standard)),
   ]
   if not PC:
@@ -79,13 +79,13 @@ def manager_init() -> None:
     print("WARNING: failed to make /dev/shm")
 
   # set version params
-  params.put("Version", build_metadata.openpilot.version)
+  params.put("Version", build_metadata.catpilot.version)
   params.put("TermsVersion", terms_version)
   params.put("TrainingVersion", training_version)
-  params.put("GitCommit", build_metadata.openpilot.git_commit)
-  params.put("GitCommitDate", build_metadata.openpilot.git_commit_date)
+  params.put("GitCommit", build_metadata.catpilot.git_commit)
+  params.put("GitCommitDate", build_metadata.catpilot.git_commit_date)
   params.put("GitBranch", build_metadata.channel)
-  params.put("GitRemote", build_metadata.openpilot.git_origin)
+  params.put("GitRemote", build_metadata.catpilot.git_origin)
   params.put_bool("IsTestedBranch", build_metadata.tested_channel)
   params.put_bool("IsReleaseBranch", build_metadata.release_channel)
 
@@ -97,21 +97,21 @@ def manager_init() -> None:
     serial = params.get("HardwareSerial")
     raise Exception(f"Registration failed for device {serial}")
   os.environ['DONGLE_ID'] = dongle_id  # Needed for swaglog
-  os.environ['GIT_ORIGIN'] = build_metadata.openpilot.git_normalized_origin # Needed for swaglog
+  os.environ['GIT_ORIGIN'] = build_metadata.catpilot.git_normalized_origin # Needed for swaglog
   os.environ['GIT_BRANCH'] = build_metadata.channel # Needed for swaglog
-  os.environ['GIT_COMMIT'] = build_metadata.openpilot.git_commit # Needed for swaglog
+  os.environ['GIT_COMMIT'] = build_metadata.catpilot.git_commit # Needed for swaglog
 
-  if not build_metadata.openpilot.is_dirty:
+  if not build_metadata.catpilot.is_dirty:
     os.environ['CLEAN'] = '1'
 
   # init logging
   sentry.init(sentry.SentryProject.SELFDRIVE)
   cloudlog.bind_global(dongle_id=dongle_id,
-                       version=build_metadata.openpilot.version,
-                       origin=build_metadata.openpilot.git_normalized_origin,
+                       version=build_metadata.catpilot.version,
+                       origin=build_metadata.catpilot.git_normalized_origin,
                        branch=build_metadata.channel,
-                       commit=build_metadata.openpilot.git_commit,
-                       dirty=build_metadata.openpilot.is_dirty,
+                       commit=build_metadata.catpilot.git_commit,
+                       dirty=build_metadata.catpilot.is_dirty,
                        device=HARDWARE.get_device_type())
 
   # preimport all processes

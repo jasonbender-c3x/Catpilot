@@ -12,4 +12,4 @@ fi
 
 export STAGING_ROOT="/data/safe_staging"
 
-eval "$(/data/openpilot/catpilot/system/environment_variables)"
+eval "$(/data/catpilot/catpilot/system/environment_variables)"

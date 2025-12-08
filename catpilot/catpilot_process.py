@@ -4,20 +4,20 @@ import json
 import os
 import time
 
-import openpilot.system.sentry as sentry
+import catpilot.system.sentry as sentry
 
 from cereal import messaging
-from openpilot.common.realtime import DT_MDL, Priority, Ratekeeper, config_realtime_process
-from openpilot.common.time import system_time_valid
+from catpilot.common.realtime import DT_MDL, Priority, Ratekeeper, config_realtime_process
+from catpilot.common.time import system_time_valid
 
-from openpilot.catpilot.assets.model_manager import ModelManager, MODEL_DOWNLOAD_ALL_PARAM, MODEL_DOWNLOAD_PARAM
-from openpilot.catpilot.assets.theme_manager import ThemeManager
-from openpilot.catpilot.common.catpilot_functions import backup_toggles
-from openpilot.catpilot.common.catpilot_utilities import flash_panda, is_url_pingable, lock_doors, run_thread_with_lock, update_maps, update_openpilot
-from openpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, CatPilotVariables, get_catpilot_toggles, params, params_cache, params_memory
-from openpilot.catpilot.controls.catpilot_planner import CatPilotPlanner
-from openpilot.catpilot.controls.lib.catpilot_tracking import CatPilotTracking
-from openpilot.catpilot.system.catpilot_stats import send_stats
+from catpilot.catpilot.assets.model_manager import ModelManager, MODEL_DOWNLOAD_ALL_PARAM, MODEL_DOWNLOAD_PARAM
+from catpilot.catpilot.assets.theme_manager import ThemeManager
+from catpilot.catpilot.common.catpilot_functions import backup_toggles
+from catpilot.catpilot.common.catpilot_utilities import flash_panda, is_url_pingable, lock_doors, run_thread_with_lock, update_maps, update_catpilot
+from catpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, CatPilotVariables, get_catpilot_toggles, params, params_cache, params_memory
+from catpilot.catpilot.controls.catpilot_planner import CatPilotPlanner
+from catpilot.catpilot.controls.lib.catpilot_tracking import CatPilotTracking
+from catpilot.catpilot.system.catpilot_stats import send_stats
 
 ASSET_CHECK_RATE = (1 / DT_MDL)
 
@@ -61,7 +61,7 @@ def update_checks(manually_updated, model_manager, now, theme_manager, catpilot_
   run_thread_with_lock("update_maps", update_maps, (now,))
 
   if catpilot_toggles.automatic_updates and not manually_updated:
-    run_thread_with_lock("update_openpilot", update_openpilot)
+    run_thread_with_lock("update_catpilot", update_catpilot)
 
   time.sleep(1)
 

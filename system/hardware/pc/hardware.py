@@ -1,7 +1,7 @@
 import random
 
 from cereal import log
-from openpilot.system.hardware.base import HardwareBase, ThermalConfig
+from catpilot.system.hardware.base import HardwareBase, ThermalConfig
 
 NetworkType = log.DeviceState.NetworkType
 NetworkStrength = log.DeviceState.NetworkStrength

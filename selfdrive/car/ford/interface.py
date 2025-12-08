@@ -1,10 +1,10 @@
 from cereal import car, custom
 from panda import Panda
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.ford.fordcan import CanBus
-from openpilot.selfdrive.car.ford.values import Ecu, FordFlags
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.ford.fordcan import CanBus
+from catpilot.selfdrive.car.ford.values import Ecu, FordFlags
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
 
 ButtonType = car.CarState.ButtonEvent.Type
 CatPilotButtonType = custom.CatPilotCarState.ButtonEvent.Type
@@ -31,7 +31,7 @@ class CarInterface(CarInterfaceBase):
     ret.experimentalLongitudinalAvailable = True
     if experimental_long:
       ret.safetyConfigs[-1].safetyParam |= Panda.FLAG_FORD_LONG_CONTROL
-      ret.openpilotLongitudinalControl = True
+      ret.catpilotLongitudinalControl = True
 
     if ret.flags & FordFlags.CANFD:
       ret.safetyConfigs[-1].safetyParam |= Panda.FLAG_FORD_CANFD

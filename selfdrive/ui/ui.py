@@ -5,11 +5,11 @@ import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 import cereal.messaging as messaging
-from openpilot.system.hardware import HARDWARE
+from catpilot.system.hardware import HARDWARE
 
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QLabel, QWidget, QVBoxLayout, QStackedLayout, QApplication
-from openpilot.selfdrive.ui.qt.python_helpers import set_main_window
+from catpilot.selfdrive.ui.qt.python_helpers import set_main_window
 
 
 if __name__ == "__main__":

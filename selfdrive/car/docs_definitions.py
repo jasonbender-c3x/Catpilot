@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 
 from cereal import car
-from openpilot.common.conversions import Conversions as CV
+from catpilot.common.conversions import Conversions as CV
 
 GOOD_TORQUE_THRESHOLD = 1.0  # m/s^2
 MODEL_YEARS_RE = r"(?<= )((\d{4}-\d{2})|(\d{4}))(,|$)"
@@ -176,12 +176,12 @@ CarFootnote = namedtuple("CarFootnote", ["text", "column", "docs_only", "shop_fo
 
 class CommonFootnote(Enum):
   EXP_LONG_AVAIL = CarFootnote(
-    "openpilot Longitudinal Control (Alpha) is available behind a toggle; " +
+    "catpilot Longitudinal Control (Alpha) is available behind a toggle; " +
     "the toggle is only available in non-release branches such as `devel` or `master-ci`.",
     Column.LONGITUDINAL, docs_only=True)
   EXP_LONG_DSU = CarFootnote(
     "By default, this car will use the stock Adaptive Cruise Control (ACC) for longitudinal control. " +
-    "If the Driver Support Unit (DSU) is disconnected, openpilot ACC will replace " +
+    "If the Driver Support Unit (DSU) is disconnected, catpilot ACC will replace " +
     "stock ACC. <b><i>NOTE: disconnecting the DSU disables Automatic Emergency Braking (AEB).</i></b>",
     Column.LONGITUDINAL)
 
@@ -255,13 +255,13 @@ class CarDocs:
     # longitudinal column
     op_long = "Stock"
     if CP.experimentalLongitudinalAvailable or CP.enableDsu:
-      op_long = "openpilot available"
+      op_long = "catpilot available"
       if CP.enableDsu:
         self.footnotes.append(CommonFootnote.EXP_LONG_DSU)
       else:
         self.footnotes.append(CommonFootnote.EXP_LONG_AVAIL)
-    elif CP.openpilotLongitudinalControl and not CP.enableDsu:
-      op_long = "openpilot"
+    elif CP.catpilotLongitudinalControl and not CP.enableDsu:
+      op_long = "catpilot"
 
     # min steer & enable speed columns
     # TODO: set all the min steer speeds in carParams and remove this
@@ -321,7 +321,7 @@ class CarDocs:
 
   def get_detail_sentence(self, CP):
     if not CP.notCar:
-      sentence_builder = "openpilot upgrades your <strong>{car_model}</strong> with automated lane centering{alc} and adaptive cruise control{acc}."
+      sentence_builder = "catpilot upgrades your <strong>{car_model}</strong> with automated lane centering{alc} and adaptive cruise control{acc}."
 
       if self.min_steer_speed > self.min_enable_speed:
         alc = f" <strong>above {self.min_steer_speed * CV.MS_TO_MPH:.0f} mph</strong>," if self.min_steer_speed > 0 else " <strong>at all speeds</strong>,"
@@ -340,14 +340,14 @@ class CarDocs:
 
       # experimental mode
       exp_link = "<a href='https://blog.comma.ai/090release/#experimental-mode' target='_blank' class='link-light-new-regular-text'>Experimental mode</a>"
-      if CP.openpilotLongitudinalControl and not CP.experimentalLongitudinalAvailable:
+      if CP.catpilotLongitudinalControl and not CP.experimentalLongitudinalAvailable:
         sentence_builder += f" Traffic light and stop sign handling is also available in {exp_link}."
 
       return sentence_builder.format(car_model=f"{self.make} {self.model}", alc=alc, acc=acc)
 
     else:
       if CP.carFingerprint == "COMMA_BODY":
-        return "The body is a robotics dev kit that can run openpilot. <a href='https://www.commabody.com'>Learn more.</a>"
+        return "The body is a robotics dev kit that can run catpilot. <a href='https://www.commabody.com'>Learn more.</a>"
       else:
         raise Exception(f"This notCar does not have a detail sentence: {CP.carFingerprint}")
 

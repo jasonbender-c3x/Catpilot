@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from cereal import car
 from panda import Panda
-from openpilot.selfdrive.car.tesla.values import CANBUS, CAR
-from openpilot.selfdrive.car import get_safety_config
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car.tesla.values import CANBUS, CAR
+from catpilot.selfdrive.car import get_safety_config
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
 
 
 class CarInterface(CarInterfaceBase):
@@ -13,7 +13,7 @@ class CarInterface(CarInterfaceBase):
 
     # There is no safe way to do steer blending with user torque,
     # so the steering behaves like autopilot. This is not
-    # how openpilot should be, hence dashcamOnly
+    # how catpilot should be, hence dashcamOnly
     ret.dashcamOnly = True
 
     ret.steerControlType = car.CarParams.SteerControlType.angle
@@ -25,14 +25,14 @@ class CarInterface(CarInterfaceBase):
     # If so, we assume that it is connected to the longitudinal harness.
     flags = (Panda.FLAG_TESLA_RAVEN if candidate == CAR.TESLA_MODELS_RAVEN else 0)
     if (CANBUS.autopilot_powertrain in fingerprint.keys()) and (0x2bf in fingerprint[CANBUS.autopilot_powertrain].keys()):
-      ret.openpilotLongitudinalControl = not catpilot_toggles.disable_openpilot_long
+      ret.catpilotLongitudinalControl = not catpilot_toggles.disable_catpilot_long
       flags |= Panda.FLAG_TESLA_LONG_CONTROL
       ret.safetyConfigs = [
         get_safety_config(car.CarParams.SafetyModel.tesla, flags),
         get_safety_config(car.CarParams.SafetyModel.tesla, flags | Panda.FLAG_TESLA_POWERTRAIN),
       ]
     else:
-      ret.openpilotLongitudinalControl = False
+      ret.catpilotLongitudinalControl = False
       ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.tesla, flags)]
 
     ret.steerLimitTimer = 1.0

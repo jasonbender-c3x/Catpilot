@@ -8,17 +8,17 @@ from cereal import car, custom
 
 from panda import ALTERNATIVE_EXPERIENCE
 
-from openpilot.common.params import Params
-from openpilot.common.realtime import config_realtime_process, Priority, Ratekeeper, DT_CTRL
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.common.realtime import config_realtime_process, Priority, Ratekeeper, DT_CTRL
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.selfdrive.pandad import can_list_to_can_capnp
-from openpilot.selfdrive.car.car_helpers import get_car, get_one_can
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
-from openpilot.selfdrive.controls.lib.events import Events
+from catpilot.selfdrive.pandad import can_list_to_can_capnp
+from catpilot.selfdrive.car.car_helpers import get_car, get_one_can
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.controls.lib.events import Events
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, update_catpilot_toggles
-from openpilot.catpilot.controls.catpilot_card import CatPilotCard
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, update_catpilot_toggles
+from catpilot.catpilot.controls.catpilot_card import CatPilotCard
 
 REPLAY = "REPLAY" in os.environ
 
@@ -60,9 +60,9 @@ class Car:
     if not self.disengage_on_accelerator:
       self.CP.alternativeExperience |= ALTERNATIVE_EXPERIENCE.DISABLE_DISENGAGE_ON_GAS
 
-    openpilot_enabled_toggle = self.params.get_bool("OpenpilotEnabledToggle")
+    catpilot_enabled_toggle = self.params.get_bool("CatpilotEnabledToggle")
 
-    controller_available = self.CI.CC is not None and openpilot_enabled_toggle and not self.CP.dashcamOnly
+    controller_available = self.CI.CC is not None and catpilot_enabled_toggle and not self.CP.dashcamOnly
 
     self.CP.passive = not controller_available or self.CP.dashcamOnly
     if self.CP.passive:

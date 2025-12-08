@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 This process finds calibration values. More info on what these calibration values
-are can be found here https://github.com/commaai/openpilot/tree/master/common/transformations
+are can be found here https://github.com/commaai/catpilot/tree/master/common/transformations
 While the roll calibration is a real value that can be estimated, here we assume it's zero,
 and the image input into the neural network is not corrected for roll.
 '''
@@ -14,11 +14,11 @@ from typing import NoReturn
 
 from cereal import log
 import cereal.messaging as messaging
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.params import Params
-from openpilot.common.realtime import set_realtime_priority
-from openpilot.common.transformations.orientation import rot_from_euler, euler_from_rot
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.params import Params
+from catpilot.common.realtime import set_realtime_priority
+from catpilot.common.transformations.orientation import rot_from_euler, euler_from_rot
+from catpilot.common.swaglog import cloudlog
 
 MIN_SPEED_FILTER = 15 * CV.MPH_TO_MS
 MAX_VEL_ANGLE_STD = np.radians(0.25)

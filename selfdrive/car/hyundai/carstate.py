@@ -3,13 +3,13 @@ import copy
 import math
 
 from cereal import car, custom
-from openpilot.common.conversions import Conversions as CV
+from catpilot.common.conversions import Conversions as CV
 from opendbc.can.parser import CANParser
 from opendbc.can.can_define import CANDefine
-from openpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
-from openpilot.selfdrive.car.hyundai.values import HyundaiFlags, HyundaiCatPilotFlags, CAR, DBC, CAN_GEARS, CAMERA_SCC_CAR, \
+from catpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
+from catpilot.selfdrive.car.hyundai.values import HyundaiFlags, HyundaiCatPilotFlags, CAR, DBC, CAN_GEARS, CAMERA_SCC_CAR, \
                                                    CANFD_CAR, Buttons, CarControllerParams
-from openpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.selfdrive.car.interfaces import CarStateBase
 
 PREV_BUTTON_SAMPLES = 8
 CLUSTER_SAMPLE_RATE = 20  # frames
@@ -131,8 +131,8 @@ class CarState(CarStateBase):
     ret.steerFaultTemporary = cp.vl["MDPS12"]["CF_Mdps_ToiUnavail"] != 0 or cp.vl["MDPS12"]["CF_Mdps_ToiFlt"] != 0
 
     # cruise state
-    if self.CP.openpilotLongitudinalControl:
-      # These are not used for engage/disengage since openpilot keeps track of state using the buttons
+    if self.CP.catpilotLongitudinalControl:
+      # These are not used for engage/disengage since catpilot keeps track of state using the buttons
       ret.cruiseState.available = self.main_enabled
       ret.cruiseState.enabled = cp.vl["TCS13"]["ACC_REQ"] == 1
       ret.cruiseState.standstill = False
@@ -175,7 +175,7 @@ class CarState(CarStateBase):
 
     ret.gearShifter = self.parse_gear_shifter(self.shifter_values.get(gear))
 
-    if not self.CP.openpilotLongitudinalControl:
+    if not self.CP.catpilotLongitudinalControl:
       aeb_src = "FCA11" if self.CP.flags & HyundaiFlags.USE_FCA.value else "SCC12"
       aeb_sig = "FCA_CmdAct" if self.CP.flags & HyundaiFlags.USE_FCA.value else "AEB_CmdAct"
       aeb_warning = cp_cruise.vl[aeb_src]["CF_VSM_Warn"] != 0
@@ -266,9 +266,9 @@ class CarState(CarStateBase):
 
     # cruise state
     # CAN FD cars enable on main button press, set available if no TCS faults preventing engagement
-    if self.CP.openpilotLongitudinalControl:
+    if self.CP.catpilotLongitudinalControl:
       ret.cruiseState.available = self.main_enabled
-      # These are not used for engage/disengage since openpilot keeps track of state using the buttons
+      # These are not used for engage/disengage since catpilot keeps track of state using the buttons
       ret.cruiseState.enabled = cp.vl["TCS"]["ACC_REQ"] == 1
       ret.cruiseState.standstill = False
     else:
@@ -344,7 +344,7 @@ class CarState(CarStateBase):
       ("SAS11", 100),
     ]
 
-    if not CP.openpilotLongitudinalControl and CP.carFingerprint not in CAMERA_SCC_CAR:
+    if not CP.catpilotLongitudinalControl and CP.carFingerprint not in CAMERA_SCC_CAR:
       messages += [
         ("SCC11", 50),
         ("SCC12", 50),
@@ -389,7 +389,7 @@ class CarState(CarStateBase):
       ("LKAS11", 100)
     ]
 
-    if not CP.openpilotLongitudinalControl and CP.carFingerprint in CAMERA_SCC_CAR:
+    if not CP.catpilotLongitudinalControl and CP.carFingerprint in CAMERA_SCC_CAR:
       messages += [
         ("SCC11", 50),
         ("SCC12", 50),
@@ -432,7 +432,7 @@ class CarState(CarStateBase):
         ("BLINDSPOTS_REAR_CORNERS", 20),
       ]
 
-    if not (CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value) and not CP.openpilotLongitudinalControl:
+    if not (CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value) and not CP.catpilotLongitudinalControl:
       messages += [
         ("SCC_CONTROL", 50),
       ]

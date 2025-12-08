@@ -18,12 +18,12 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 FUN_LANG_KEYS = {"caveman", "duck", "cat", "pirate", "shakespearean"}
 
 FUN_PROMPT_TEMPLATE = """
-You are a safety-critical UI style transformer for an openpilot fork. Rewrite the user's message (an English source string) into the style '{language}'
+You are a safety-critical UI style transformer for an catpilot fork. Rewrite the user's message (an English source string) into the style '{language}'
 while preserving the original meaning, readability, and all functional elements. Output ONLY the transformed text, with no quotes or extra words.
 
 Hard requirements:
 1) Preserve placeholders, variables, and markup exactly as written: {{name}}, {{0}}, {{icu}}, %1, %n, %(speed)d, $SPEED, <b>…</b>, <a href="…">…</a>, etc.
-2) Keep all non-translatable tokens unchanged: product/brand names (e.g., openpilot, ACC), file paths, error codes, part numbers.
+2) Keep all non-translatable tokens unchanged: product/brand names (e.g., catpilot, ACC), file paths, error codes, part numbers.
 3) Do not add, remove, or reorder placeholders. If grammar absolutely requires reordering, keep all placeholders intact and still produce a correct sentence; prefer wordings that avoid reordering.
 4) Do not convert units or numbers (e.g., mph↔km/h). Translate unit labels only if standard in the style and not part of a preserved token.
 5) Maintain the same warning/priority level and imperative tone. Never soften or intensify safety messages (“Do not…”, “Warning”, “Critical”).
@@ -39,11 +39,11 @@ Your entire reply must be a single line containing only the final rewritten text
 """
 
 OPENAI_PROMPT = """
-You are a safety-critical UI translator for an openpilot fork. Translate the user's message (an English source string) into the locale '{language}'. Output ONLY the translated text, with no quotes or extra words.
+You are a safety-critical UI translator for an catpilot fork. Translate the user's message (an English source string) into the locale '{language}'. Output ONLY the translated text, with no quotes or extra words.
 
 Hard requirements:
 1) Preserve placeholders, variables, and markup exactly as written: {{name}}, {{0}}, {{icu}}, %1, %n, %(speed)d, $SPEED, <b>…</b>, <a href="…">…</a>, etc.
-2) Keep all non-translatable tokens unchanged: product/brand names (e.g., openpilot, ACC), file paths, error codes, part numbers.
+2) Keep all non-translatable tokens unchanged: product/brand names (e.g., catpilot, ACC), file paths, error codes, part numbers.
 3) Do not add, remove, or reorder placeholders. If grammar absolutely requires reordering, keep all placeholders intact and still produce a correct sentence; prefer wordings that avoid reordering.
 4) Do not convert units or numbers (e.g., mph↔km/h). Translate unit labels only if standard in the target locale and not part of a preserved token.
 5) Maintain the same warning/priority level and imperative tone. Never soften or intensify safety messages (“Do not…”, “Warning”, “Critical”).
@@ -58,7 +58,7 @@ Your entire reply must be a single line containing only the final translation.
 """
 
 OPENAI_EVAL_PROMPT = """
-You are a safety-critical reviewer for UI translations for an openpilot fork. Your job is to compare two candidate translations (A and B) of an English source string and select the safest, most accurate option in the locale '{language}'.
+You are a safety-critical reviewer for UI translations for an catpilot fork. Your job is to compare two candidate translations (A and B) of an English source string and select the safest, most accurate option in the locale '{language}'.
 
 Output rules:
 - Return ONLY one line containing exactly one of these: the full text of Translation A, or the full text of Translation B, or the exact Source string.
@@ -68,7 +68,7 @@ Decision criteria (apply in order):
 1) Hard correctness checks vs the Source:
    - All placeholders/variables/markup from the Source must be preserved verbatim and remain valid: {{name}}, {{0}}, {{icu}}, %1, %n, %(speed)d, $SPEED, <b>…</b>, <a href="…">…</a>, &amp;, etc.
    - Numbers and units must match; no unit conversion (mph↔km/h) and no number changes.
-   - Non-translatable tokens present in Source must remain unchanged (e.g., openpilot, ACC, file paths, error codes, part numbers).
+   - Non-translatable tokens present in Source must remain unchanged (e.g., catpilot, ACC, file paths, error codes, part numbers).
    - Hotkeys/accelerators such as &F or _O must be preserved with a sensible mnemonic letter in the target language; the marker must remain.
    - ICU MessageFormat/plural/select syntax must keep the same structure and variable names; translate only human-readable text.
    If only one candidate passes all hard checks, select it. If both fail, return the exact Source string.

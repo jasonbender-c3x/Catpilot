@@ -1,7 +1,7 @@
 import os
 import requests
 
-from openpilot.catpilot.common.catpilot_utilities import use_konik_server
+from catpilot.catpilot.common.catpilot_utilities import use_konik_server
 
 API_HOST = os.getenv('API_HOST', 'https://api.commadotai.com')
 KONIK_API_HOST = os.getenv('API_HOST', 'https://api.konik.ai')
@@ -9,7 +9,7 @@ KONIK_API_HOST = os.getenv('API_HOST', 'https://api.konik.ai')
 class CommaApi:
   def __init__(self, token=None):
     self.session = requests.Session()
-    self.session.headers['User-agent'] = 'OpenpilotTools'
+    self.session.headers['User-agent'] = 'CatpilotTools'
     if token:
       self.session.headers['Authorization'] = 'JWT ' + token
 

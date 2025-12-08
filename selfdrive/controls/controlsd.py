@@ -11,29 +11,29 @@ from cereal import car, custom, log
 from msgq.visionipc import VisionIpcClient, VisionStreamType
 
 
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.git import get_short_branch
-from openpilot.common.numpy_fast import clip
-from openpilot.common.params import Params
-from openpilot.common.realtime import config_realtime_process, Priority, Ratekeeper, DT_CTRL
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.git import get_short_branch
+from catpilot.common.numpy_fast import clip
+from catpilot.common.params import Params
+from catpilot.common.realtime import config_realtime_process, Priority, Ratekeeper, DT_CTRL
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.selfdrive.car.car_helpers import get_car_interface, get_startup_event
-from openpilot.selfdrive.car.gm.values import CC_ONLY_CAR, GMFlags
-from openpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
-from openpilot.selfdrive.controls.lib.drive_helpers import VCruiseHelper, clip_curvature
-from openpilot.selfdrive.controls.lib.events import Events, ET
-from openpilot.selfdrive.controls.lib.latcontrol import LatControl, MIN_LATERAL_CONTROL_SPEED
-from openpilot.selfdrive.controls.lib.latcontrol_pid import LatControlPID
-from openpilot.selfdrive.controls.lib.latcontrol_angle import LatControlAngle, STEER_ANGLE_SATURATION_THRESHOLD
-from openpilot.selfdrive.controls.lib.latcontrol_torque import LatControlTorque
-from openpilot.selfdrive.controls.lib.longcontrol import LongControl
-from openpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
+from catpilot.selfdrive.car.car_helpers import get_car_interface, get_startup_event
+from catpilot.selfdrive.car.gm.values import CC_ONLY_CAR, GMFlags
+from catpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
+from catpilot.selfdrive.controls.lib.drive_helpers import VCruiseHelper, clip_curvature
+from catpilot.selfdrive.controls.lib.events import Events, ET
+from catpilot.selfdrive.controls.lib.latcontrol import LatControl, MIN_LATERAL_CONTROL_SPEED
+from catpilot.selfdrive.controls.lib.latcontrol_pid import LatControlPID
+from catpilot.selfdrive.controls.lib.latcontrol_angle import LatControlAngle, STEER_ANGLE_SATURATION_THRESHOLD
+from catpilot.selfdrive.controls.lib.latcontrol_torque import LatControlTorque
+from catpilot.selfdrive.controls.lib.longcontrol import LongControl
+from catpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
 
-from openpilot.system.hardware import HARDWARE
+from catpilot.system.hardware import HARDWARE
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, params_memory
-from openpilot.catpilot.controls.lib.catpilot_acceleration import get_max_allowed_accel
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, params_memory
+from catpilot.catpilot.controls.lib.catpilot_acceleration import get_max_allowed_accel
 
 SOFT_DISABLE_TIME = 3  # seconds
 LDW_MIN_SPEED = 31 * CV.MPH_TO_MS
@@ -46,7 +46,7 @@ TESTING_CLOSET = "TESTING_CLOSET" in os.environ
 IGNORE_PROCESSES = {"loggerd", "encoderd", "statsd"}
 
 ThermalStatus = log.DeviceState.ThermalStatus
-State = log.ControlsState.OpenpilotState
+State = log.ControlsState.CatpilotState
 PandaType = log.PandaState.PandaType
 Desire = log.Desire
 LaneChangeState = log.LaneChangeState
@@ -123,7 +123,7 @@ class Controls:
     # cleanup old params
     if not self.CP.experimentalLongitudinalAvailable:
       self.params.remove("ExperimentalLongitudinalEnabled")
-    if not self.CP.openpilotLongitudinalControl:
+    if not self.CP.catpilotLongitudinalControl:
       self.params.remove("ExperimentalMode")
 
     self.CS_prev = car.CarState.new_message()
@@ -387,14 +387,14 @@ class Controls:
       self.events.add(EventName.sensorDataInvalid)
 
     if not REPLAY:
-      # Check for mismatch between openpilot and car's PCM
+      # Check for mismatch between catpilot and car's PCM
       cruise_mismatch = CS.cruiseState.enabled and (not self.enabled or not self.CP.pcmCruise)
       self.cruise_mismatch_counter = self.cruise_mismatch_counter + 1 if cruise_mismatch else 0
       if self.cruise_mismatch_counter > int(6. / DT_CTRL):
         self.events.add(EventName.cruiseMismatch)
 
     # Check for FCW
-    stock_long_is_braking = self.enabled and not self.CP.openpilotLongitudinalControl and CS.aEgo < -1.25
+    stock_long_is_braking = self.enabled and not self.CP.catpilotLongitudinalControl and CS.aEgo < -1.25
     model_fcw = self.sm['modelV2'].meta.hardBrakePredicted and not CS.brakePressed and not stock_long_is_braking
     planner_fcw = self.sm['longitudinalPlan'].fcw and self.enabled
     if (planner_fcw or model_fcw) and not (self.CP.notCar and self.joystick_mode):
@@ -486,13 +486,13 @@ class Controls:
         )
 
     # When the panda and controlsd do not agree on controls_allowed
-    # we want to disengage openpilot. However the status from the panda goes through
+    # we want to disengage catpilot. However the status from the panda goes through
     # another socket other than the CAN messages and one can arrive earlier than the other.
     # Therefore we allow a mismatch for two samples, then we trigger the disengagement.
     if not self.enabled:
       self.mismatch_counter = 0
 
-    # All pandas not in silent mode must have controlsAllowed when openpilot is enabled
+    # All pandas not in silent mode must have controlsAllowed when catpilot is enabled
     if self.enabled and any(not ps.controlsAllowed for ps in self.sm['pandaStates']
            if ps.safetyModel not in IGNORED_SAFETY_MODES):
       self.mismatch_counter += 1
@@ -579,7 +579,7 @@ class Controls:
           self.current_alert_types.append(ET.ENABLE)
           self.v_cruise_helper.initialize_v_cruise(CS, self.experimental_mode, self.sm['catpilotPlan'].slcSpeedLimit + self.sm['catpilotPlan'].slcSpeedLimitOffset, self.catpilot_toggles)
 
-    # Check if openpilot is engaged and actuators are enabled
+    # Check if catpilot is engaged and actuators are enabled
     self.enabled = self.state in ENABLED_STATES
     self.active = self.state in ACTIVE_STATES
     if self.active or self.sm['catpilotCarState'].alwaysOnLateralEnabled:
@@ -614,7 +614,7 @@ class Controls:
     standstill = CS.vEgo <= max(self.CP.minSteerSpeed, MIN_LATERAL_CONTROL_SPEED) or CS.standstill
     CC.latActive = (self.active or self.sm['catpilotCarState'].alwaysOnLateralEnabled) and not CS.steerFaultTemporary and not CS.steerFaultPermanent and \
                    (not standstill or self.joystick_mode) and self.sm['catpilotPlan'].lateralCheck and not self.sm['catpilotCarState'].pauseLateral
-    CC.longActive = self.enabled and not self.events.contains(ET.OVERRIDE_LONGITUDINAL) and not self.sm['catpilotCarState'].pauseLongitudinal and self.CP.openpilotLongitudinalControl
+    CC.longActive = self.enabled and not self.events.contains(ET.OVERRIDE_LONGITUDINAL) and not self.sm['catpilotCarState'].pauseLongitudinal and self.CP.catpilotLongitudinalControl
 
     actuators = CC.actuators
     actuators.longControlState = self.LoC.long_control_state
@@ -723,7 +723,7 @@ class Controls:
         setattr(actuators, p, 0.0)
 
     # decrement personality on distance button press
-    if self.CP.openpilotLongitudinalControl:
+    if self.CP.catpilotLongitudinalControl:
       distance_pressed = params_memory.get_bool("OnroadDistanceButtonPressed")
 
       if self.catpilot_toggles.personality_profile_via_distance:
@@ -770,7 +770,7 @@ class Controls:
     if len(angular_rate_value) > 2:
       CC.angularVelocity = angular_rate_value
 
-    CC.cruiseControl.override = self.enabled and not CC.longActive and self.CP.openpilotLongitudinalControl
+    CC.cruiseControl.override = self.enabled and not CC.longActive and self.CP.catpilotLongitudinalControl
     CC.cruiseControl.cancel = CS.cruiseState.enabled and (not self.enabled or not self.CP.pcmCruise)
     if self.joystick_mode and self.sm.recv_frame['testJoystick'] > 0 and self.sm['testJoystick'].buttons[0]:
       CC.cruiseControl.cancel = True
@@ -932,7 +932,7 @@ class Controls:
   def params_thread(self, evt):
     while not evt.is_set():
       self.is_metric = self.params.get_bool("IsMetric")
-      self.experimental_mode = self.params.get_bool("ExperimentalMode") and self.CP.openpilotLongitudinalControl
+      self.experimental_mode = self.params.get_bool("ExperimentalMode") and self.CP.catpilotLongitudinalControl
       self.personality = self.read_personality_param()
       if self.CP.notCar:
         self.joystick_mode = self.params.get_bool("JoystickDebugMode")

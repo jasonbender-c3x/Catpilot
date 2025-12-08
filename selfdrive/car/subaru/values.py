@@ -3,9 +3,9 @@ from enum import Enum, IntFlag
 
 from cereal import car
 from panda.python import uds
-from openpilot.selfdrive.car import CarSpecs, DbcDict, PlatformConfig, Platforms, dbc_dict
-from openpilot.selfdrive.car.docs_definitions import CarFootnote, CarHarness, CarDocs, CarParts, Tool, Column
-from openpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries, p16
+from catpilot.selfdrive.car import CarSpecs, DbcDict, PlatformConfig, Platforms, dbc_dict
+from catpilot.selfdrive.car.docs_definitions import CarFootnote, CarHarness, CarDocs, CarParts, Tool, Column
+from catpilot.selfdrive.car.fw_query_definitions import FwQueryConfig, Request, StdQueries, p16
 
 Ecu = car.CarParams.Ecu
 
@@ -82,7 +82,7 @@ class CanBus:
 
 class Footnote(Enum):
   GLOBAL = CarFootnote(
-    "In the non-US market, openpilot requires the car to come equipped with EyeSight with Lane Keep Assistance.",
+    "In the non-US market, catpilot requires the car to come equipped with EyeSight with Lane Keep Assistance.",
     Column.PACKAGE)
   EXP_LONG = CarFootnote(
     "Enabling longitudinal control (alpha) will disable all EyeSight functionality, including AEB, LDW, and RAB.",

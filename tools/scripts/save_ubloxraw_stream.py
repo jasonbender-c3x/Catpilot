@@ -2,8 +2,8 @@
 import argparse
 import os
 import sys
-from openpilot.common.basedir import BASEDIR
-from openpilot.tools.lib.logreader import LogReader
+from catpilot.common.basedir import BASEDIR
+from catpilot.tools.lib.logreader import LogReader
 
 os.environ['BASEDIR'] = BASEDIR
 

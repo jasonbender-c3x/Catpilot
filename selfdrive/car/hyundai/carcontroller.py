@@ -1,15 +1,15 @@
 from cereal import car
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.numpy_fast import clip
-from openpilot.common.realtime import DT_CTRL
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.numpy_fast import clip
+from catpilot.common.realtime import DT_CTRL
 from opendbc.can.packer import CANPacker
-from openpilot.selfdrive.car import apply_driver_steer_torque_limits, common_fault_avoidance
-from openpilot.selfdrive.car.hyundai import hyundaicanfd, hyundaican
-from openpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
-from openpilot.selfdrive.car.hyundai.values import HyundaiFlags, Buttons, CarControllerParams, CANFD_CAR, CAR
-from openpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.car import apply_driver_steer_torque_limits, common_fault_avoidance
+from catpilot.selfdrive.car.hyundai import hyundaicanfd, hyundaican
+from catpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
+from catpilot.selfdrive.car.hyundai.values import HyundaiFlags, Buttons, CarControllerParams, CANFD_CAR, CAR
+from catpilot.selfdrive.car.interfaces import CarControllerBase
 
-from openpilot.selfdrive.car.interfaces import get_max_allowed_accel
+from catpilot.selfdrive.car.interfaces import get_max_allowed_accel
 
 GearShifter = car.CarState.GearShifter
 VisualAlert = car.CarControl.HUDControl.VisualAlert
@@ -100,7 +100,7 @@ class CarController(CarControllerBase):
     # *** common hyundai stuff ***
 
     # tester present - w/ no response (keeps relevant ECU disabled)
-    if self.frame % 100 == 0 and not (self.CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value) and self.CP.openpilotLongitudinalControl:
+    if self.frame % 100 == 0 and not (self.CP.flags & HyundaiFlags.CANFD_CAMERA_SCC.value) and self.CP.catpilotLongitudinalControl:
       # for longitudinal control, either radar or ADAS driving ECU
       addr, bus = 0x7d0, 0
       if self.CP.flags & HyundaiFlags.CANFD_HDA2.value:
@@ -114,7 +114,7 @@ class CarController(CarControllerBase):
     # CAN-FD platforms
     if self.CP.carFingerprint in CANFD_CAR:
       hda2 = self.CP.flags & HyundaiFlags.CANFD_HDA2
-      hda2_long = hda2 and self.CP.openpilotLongitudinalControl
+      hda2_long = hda2 and self.CP.catpilotLongitudinalControl
 
       # steering control
       can_sends.extend(hyundaicanfd.create_steering_messages(self.packer, self.CP, self.CAN, CC.enabled, apply_steer_req, apply_steer))
@@ -132,7 +132,7 @@ class CarController(CarControllerBase):
       if hda2 and self.CP.flags & HyundaiFlags.ENABLE_BLINKERS:
         can_sends.extend(hyundaicanfd.create_spas_messages(self.packer, self.CAN, self.frame, CC.leftBlinker, CC.rightBlinker))
 
-      if self.CP.openpilotLongitudinalControl:
+      if self.CP.catpilotLongitudinalControl:
         if hda2:
           can_sends.extend(hyundaicanfd.create_adrv_messages(self.packer, self.CAN, self.frame))
         if self.frame % 2 == 0:
@@ -148,10 +148,10 @@ class CarController(CarControllerBase):
                                                 hud_control.leftLaneVisible, hud_control.rightLaneVisible,
                                                 left_lane_warning, right_lane_warning))
 
-      if not self.CP.openpilotLongitudinalControl:
+      if not self.CP.catpilotLongitudinalControl:
         can_sends.extend(self.create_button_messages(CC, CS, use_clu11=True))
 
-      if self.frame % 2 == 0 and self.CP.openpilotLongitudinalControl:
+      if self.frame % 2 == 0 and self.CP.catpilotLongitudinalControl:
         # TODO: unclear if this is needed
         jerk = 3.0 if actuators.longControlState == LongCtrlState.pid else 1.0
         use_fca = self.CP.flags & HyundaiFlags.USE_FCA.value
@@ -164,11 +164,11 @@ class CarController(CarControllerBase):
         can_sends.append(hyundaican.create_lfahda_mfc(self.packer, CC.enabled, CC.latActive))
 
       # 5 Hz ACC options
-      if self.frame % 20 == 0 and self.CP.openpilotLongitudinalControl:
+      if self.frame % 20 == 0 and self.CP.catpilotLongitudinalControl:
         can_sends.extend(hyundaican.create_acc_opt(self.packer))
 
       # 2 Hz front radar options
-      if self.frame % 50 == 0 and self.CP.openpilotLongitudinalControl:
+      if self.frame % 50 == 0 and self.CP.catpilotLongitudinalControl:
         can_sends.append(hyundaican.create_frt_radar_opt(self.packer))
 
     new_actuators = actuators.as_builder()

@@ -15,11 +15,11 @@ from collections.abc import Callable, Iterable, Iterator
 from urllib.parse import parse_qs, urlparse
 
 from cereal import log as capnp_log
-from openpilot.common.swaglog import cloudlog
-from openpilot.tools.lib.comma_car_segments import get_url as get_comma_segments_url
-from openpilot.tools.lib.openpilotci import get_url
-from openpilot.tools.lib.filereader import FileReader, file_exists, internal_source_available
-from openpilot.tools.lib.route import Route, SegmentRange
+from catpilot.common.swaglog import cloudlog
+from catpilot.tools.lib.comma_car_segments import get_url as get_comma_segments_url
+from catpilot.tools.lib.catpilotci import get_url
+from catpilot.tools.lib.filereader import FileReader, file_exists, internal_source_available
+from catpilot.tools.lib.route import Route, SegmentRange
 
 LogMessage = type[capnp._DynamicStructReader]
 LogIterable = Iterable[LogMessage]
@@ -139,7 +139,7 @@ def internal_source(sr: SegmentRange, mode: ReadMode) -> LogPaths:
   return apply_strategy(mode, rlog_paths, qlog_paths)
 
 
-def openpilotci_source(sr: SegmentRange, mode: ReadMode) -> LogPaths:
+def catpilotci_source(sr: SegmentRange, mode: ReadMode) -> LogPaths:
   rlog_paths = [get_url(sr.route_name, seg, "rlog") for seg in sr.seg_idxs]
   qlog_paths = [get_url(sr.route_name, seg, "qlog") for seg in sr.seg_idxs]
 
@@ -170,7 +170,7 @@ def auto_source(sr: SegmentRange, mode=ReadMode.RLOG) -> LogPaths:
   if mode == ReadMode.SANITIZED:
     return comma_car_segments_source(sr, mode)
 
-  SOURCES: list[Source] = [internal_source, openpilotci_source, comma_api_source, comma_car_segments_source,]
+  SOURCES: list[Source] = [internal_source, catpilotci_source, comma_api_source, comma_car_segments_source,]
   exceptions = []
 
   # for automatic fallback modes, auto_source needs to first check if rlogs exist for any source

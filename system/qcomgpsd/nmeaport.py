@@ -118,13 +118,13 @@ def process_nmea_port_messages(device:str="/dev/ttyUSB1") -> NoReturn:
       sleep(1)
 
 def main() -> NoReturn:
-  from openpilot.common.gpio import gpio_init, gpio_set
-  from openpilot.system.hardware.tici.pins import GPIO
-  from openpilot.system.qcomgpsd.qcomgpsd import at_cmd
+  from catpilot.common.gpio import gpio_init, gpio_set
+  from catpilot.system.hardware.tici.pins import GPIO
+  from catpilot.system.qcomgpsd.qcomgpsd import at_cmd
 
   try:
     check_output(["pidof", "qcomgpsd"])
-    print("qcomgpsd is running, please kill openpilot before running this script! (aborted)")
+    print("qcomgpsd is running, please kill catpilot before running this script! (aborted)")
     sys.exit(1)
   except CalledProcessError as e:
     if e.returncode != 1: # 1 == no process found (pandad not running)

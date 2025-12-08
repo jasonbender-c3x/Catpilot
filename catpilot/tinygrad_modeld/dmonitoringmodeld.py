@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import os
-from openpilot.system.hardware import TICI
+from catpilot.system.hardware import TICI
 from tinygrad.tensor import Tensor
 from tinygrad.dtype import dtypes
 if TICI:
-  from openpilot.catpilot.tinygrad_modeld.runners.tinygrad_helpers import qcom_tensor_from_opencl_address
+  from catpilot.catpilot.tinygrad_modeld.runners.tinygrad_helpers import qcom_tensor_from_opencl_address
   os.environ['QCOM'] = '1'
 else:
   os.environ['LLVM'] = '1'
@@ -19,13 +19,13 @@ from setproctitle import setproctitle
 from cereal import messaging
 from cereal.messaging import PubMaster, SubMaster
 from msgq.visionipc import VisionIpcClient, VisionStreamType, VisionBuf
-from openpilot.common.swaglog import cloudlog
-from openpilot.common.realtime import config_realtime_process
-from openpilot.common.transformations.model import dmonitoringmodel_intrinsics, DM_INPUT_SIZE
-from openpilot.common.transformations.camera import _ar_ox_fisheye, _os_fisheye
-from openpilot.catpilot.tinygrad_modeld.models.commonmodel_pyx import CLContext, MonitoringModelFrame
-from openpilot.catpilot.tinygrad_modeld.parse_model_outputs import sigmoid
-from openpilot.system import sentry
+from catpilot.common.swaglog import cloudlog
+from catpilot.common.realtime import config_realtime_process
+from catpilot.common.transformations.model import dmonitoringmodel_intrinsics, DM_INPUT_SIZE
+from catpilot.common.transformations.camera import _ar_ox_fisheye, _os_fisheye
+from catpilot.catpilot.tinygrad_modeld.models.commonmodel_pyx import CLContext, MonitoringModelFrame
+from catpilot.catpilot.tinygrad_modeld.parse_model_outputs import sigmoid
+from catpilot.system import sentry
 
 MODEL_WIDTH, MODEL_HEIGHT = DM_INPUT_SIZE
 CALIB_LEN = 3

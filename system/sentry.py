@@ -6,13 +6,13 @@ from datetime import datetime
 from enum import Enum
 from sentry_sdk.integrations.threading import ThreadingIntegration
 
-from openpilot.common.params import Params
-from openpilot.system.athena.registration import is_registered_device
-from openpilot.system.hardware import HARDWARE, PC
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.version import get_build_metadata, get_version
+from catpilot.common.params import Params
+from catpilot.system.athena.registration import is_registered_device
+from catpilot.system.hardware import HARDWARE, PC
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.version import get_build_metadata, get_version
 
-from openpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, params
+from catpilot.catpilot.common.catpilot_variables import ERROR_LOGS_PATH, params
 
 class SentryProject(Enum):
   # python project
@@ -86,7 +86,7 @@ def save_exception(exc_text: str, crash_log) -> None:
 
 def init(project: SentryProject) -> bool:
   build_metadata = get_build_metadata()
-  CatPilot = "catai" in build_metadata.openpilot.git_origin.lower()
+  CatPilot = "catai" in build_metadata.catpilot.git_origin.lower()
   if not CatPilot or PC:
     return False
 
@@ -122,9 +122,9 @@ def init(project: SentryProject) -> bool:
                   environment=env)
 
   sentry_sdk.set_user({"id": dongle_id})
-  sentry_sdk.set_tag("origin", build_metadata.openpilot.git_origin)
+  sentry_sdk.set_tag("origin", build_metadata.catpilot.git_origin)
   sentry_sdk.set_tag("branch", short_branch)
-  sentry_sdk.set_tag("commit", build_metadata.openpilot.git_commit)
+  sentry_sdk.set_tag("commit", build_metadata.catpilot.git_commit)
   sentry_sdk.set_tag("updated", updated)
   sentry_sdk.set_tag("installed", installed)
 

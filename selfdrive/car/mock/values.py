@@ -1,4 +1,4 @@
-from openpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms
+from catpilot.selfdrive.car import CarSpecs, PlatformConfig, Platforms
 
 
 class CAR(Platforms):

@@ -1,17 +1,17 @@
-from openpilot.selfdrive.car.interfaces import get_interface_attr
-from openpilot.selfdrive.car.body.values import CAR as BODY
-from openpilot.selfdrive.car.chrysler.values import CAR as CHRYSLER
-from openpilot.selfdrive.car.ford.values import CAR as FORD
-from openpilot.selfdrive.car.gm.values import CAR as GM
-from openpilot.selfdrive.car.honda.values import CAR as HONDA
-from openpilot.selfdrive.car.hyundai.values import CAR as HYUNDAI
-from openpilot.selfdrive.car.mazda.values import CAR as MAZDA
-from openpilot.selfdrive.car.mock.values import CAR as MOCK
-from openpilot.selfdrive.car.nissan.values import CAR as NISSAN
-from openpilot.selfdrive.car.subaru.values import CAR as SUBARU
-from openpilot.selfdrive.car.tesla.values import CAR as TESLA
-from openpilot.selfdrive.car.toyota.values import CAR as TOYOTA
-from openpilot.selfdrive.car.volkswagen.values import CAR as VW
+from catpilot.selfdrive.car.interfaces import get_interface_attr
+from catpilot.selfdrive.car.body.values import CAR as BODY
+from catpilot.selfdrive.car.chrysler.values import CAR as CHRYSLER
+from catpilot.selfdrive.car.ford.values import CAR as FORD
+from catpilot.selfdrive.car.gm.values import CAR as GM
+from catpilot.selfdrive.car.honda.values import CAR as HONDA
+from catpilot.selfdrive.car.hyundai.values import CAR as HYUNDAI
+from catpilot.selfdrive.car.mazda.values import CAR as MAZDA
+from catpilot.selfdrive.car.mock.values import CAR as MOCK
+from catpilot.selfdrive.car.nissan.values import CAR as NISSAN
+from catpilot.selfdrive.car.subaru.values import CAR as SUBARU
+from catpilot.selfdrive.car.tesla.values import CAR as TESLA
+from catpilot.selfdrive.car.toyota.values import CAR as TOYOTA
+from catpilot.selfdrive.car.volkswagen.values import CAR as VW
 
 FW_VERSIONS = get_interface_attr('FW_VERSIONS', combine_brands=True, ignore_none=True)
 _FINGERPRINTS = get_interface_attr('FINGERPRINTS', combine_brands=True, ignore_none=True)
@@ -128,7 +128,7 @@ MIGRATION = {
   "KIA SORENTO PLUG-IN HYBRID 4TH GEN": HYUNDAI.KIA_SORENTO_HEV_4TH_GEN,
   "CADILLAC ESCALADE ESV PLATINUM 2019": GM.CADILLAC_ESCALADE_ESV_2019,
 
-  # Removal of platform_str, see https://github.com/commaai/openpilot/pull/31868/
+  # Removal of platform_str, see https://github.com/commaai/catpilot/pull/31868/
   "COMMA BODY": BODY.COMMA_BODY,
   "CHRYSLER PACIFICA HYBRID 2017": CHRYSLER.CHRYSLER_PACIFICA_2017_HYBRID,
   "CHRYSLER PACIFICA HYBRID 2018": CHRYSLER.CHRYSLER_PACIFICA_2018_HYBRID,

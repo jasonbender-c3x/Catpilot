@@ -1,9 +1,9 @@
-from openpilot.common.numpy_fast import clip
+from catpilot.common.numpy_fast import clip
 from opendbc.can.packer import CANPacker
-from openpilot.selfdrive.car import apply_std_steer_angle_limits
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.car.tesla.teslacan import TeslaCAN
-from openpilot.selfdrive.car.tesla.values import DBC, CANBUS, CarControllerParams
+from catpilot.selfdrive.car import apply_std_steer_angle_limits
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.car.tesla.teslacan import TeslaCAN
+from catpilot.selfdrive.car.tesla.values import DBC, CANBUS, CarControllerParams
 
 
 class CarController(CarControllerBase):
@@ -39,7 +39,7 @@ class CarController(CarControllerBase):
       can_sends.append(self.tesla_can.create_steering_control(apply_angle, lkas_enabled, (self.frame // 2) % 16))
 
     # Longitudinal control (in sync with stock message, about 40Hz)
-    if self.CP.openpilotLongitudinalControl:
+    if self.CP.catpilotLongitudinalControl:
       target_accel = actuators.accel
       target_speed = max(CS.out.vEgo + (target_accel * CarControllerParams.ACCEL_TO_SPEED_MULTIPLIER), 0)
       max_accel = 0 if target_accel < 0 else target_accel

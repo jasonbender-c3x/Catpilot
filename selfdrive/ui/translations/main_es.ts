@@ -144,8 +144,8 @@
 <context>
     <name>DeclinePage</name>
     <message>
-        <source>You must accept the Terms and Conditions in order to use openpilot.</source>
-        <translation>Debe aceptar los terminos y condiciones para poder utilizar openpilot.</translation>
+        <source>You must accept the Terms and Conditions in order to use catpilot.</source>
+        <translation>Debe aceptar los terminos y condiciones para poder utilizar catpilot.</translation>
     </message>
     <message>
         <source>Back</source>
@@ -317,8 +317,8 @@
         <translation>REVISAR</translation>
     </message>
     <message>
-        <source>Review the rules, features, and limitations of openpilot</source>
-        <translation>Revisar las reglas, características y limitaciones de openpilot</translation>
+        <source>Review the rules, features, and limitations of catpilot</source>
+        <translation>Revisar las reglas, características y limitaciones de catpilot</translation>
     </message>
     <message>
         <source>Are you sure you want to review the training guide?</source>
@@ -357,8 +357,8 @@
         <translation>Apagar</translation>
     </message>
     <message>
-        <source>openpilot requires the device to be mounted within 4° left or right and within 5° up or 9° down. openpilot is continuously calibrating, resetting is rarely required.</source>
-        <translation>openpilot requiere que el dispositivo sea montado entre 4° izquierda o derecha y entre 5° arriba o 9° abajo. openpilot está constantemente en calibración, reiniciar es rara vez necesario.</translation>
+        <source>catpilot requires the device to be mounted within 4° left or right and within 5° up or 9° down. catpilot is continuously calibrating, resetting is rarely required.</source>
+        <translation>catpilot requiere que el dispositivo sea montado entre 4° izquierda o derecha y entre 5° arriba o 9° abajo. catpilot está constantemente en calibración, reiniciar es rara vez necesario.</translation>
     </message>
     <message>
         <source> Your device is pointed %1° %2 and %3° %4.</source>
@@ -901,8 +901,8 @@
         <translation type="gpt-4o-generated">Sintonización Lateral Avanzada</translation>
     </message>
     <message>
-        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">Configuraciones avanzadas para ajustar los controles laterales de openpilot.</translation>
+        <source>Advanced settings for fine-tuning catpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">Configuraciones avanzadas para ajustar los controles laterales de catpilot.</translation>
     </message>
     <message>
         <source>Actuator Delay (Default: %1)</source>
@@ -937,8 +937,8 @@
         <translation type="gpt-4o-generated">Factor Kp</translation>
     </message>
     <message>
-        <source>How aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values are smoother but slower.</source>
-        <translation type="gpt-4o-generated">Qué tan agresivamente openpilot corrige la dirección. Valores más altos responden más rápido pero pueden sentirse bruscos; valores más bajos son más suaves pero más lentos.</translation>
+        <source>How aggressively catpilot corrects steering. Higher values respond faster but may feel jerky; lower values are smoother but slower.</source>
+        <translation type="gpt-4o-generated">Qué tan agresivamente catpilot corrige la dirección. Valores más altos responden más rápido pero pueden sentirse bruscos; valores más bajos son más suaves pero más lentos.</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -949,8 +949,8 @@
         <translation type="gpt-4o-generated">Aceleración lateral</translation>
     </message>
     <message>
-        <source>How quickly openpilot makes lateral adjustments. Higher values allow sharper turns; lower values provide smoother steering.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido openpilot realiza ajustes laterales. Valores más altos permiten giros más cerrados; valores más bajos proporcionan una dirección más suave.</translation>
+        <source>How quickly catpilot makes lateral adjustments. Higher values allow sharper turns; lower values provide smoother steering.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido catpilot realiza ajustes laterales. Valores más altos permiten giros más cerrados; valores más bajos proporcionan una dirección más suave.</translation>
     </message>
     <message>
         <source>Steer Ratio (Default: %1)</source>
@@ -985,24 +985,24 @@
         <translation type="gpt-4o-generated">Siempre en Lateral</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.&lt;br&gt;&lt;br&gt;Deactivation only occurs with the &lt;b&gt;Cruise Control&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">El control de dirección de openpilot permanece activo incluso cuando se presionan los pedales de freno o acelerador.&lt;br&gt;&lt;br&gt;La desactivación solo ocurre con el botón de &lt;b&gt;Cruise Control&lt;/b&gt;.</translation>
+        <source>catpilot's steering control stays active even when the brake or gas pedals are pressed.&lt;br&gt;&lt;br&gt;Deactivation only occurs with the &lt;b&gt;Cruise Control&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">El control de dirección de catpilot permanece activo incluso cuando se presionan los pedales de freno o acelerador.&lt;br&gt;&lt;br&gt;La desactivación solo ocurre con el botón de &lt;b&gt;Cruise Control&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
         <translation type="gpt-4o-generated">Habilitar con control de crucero</translation>
     </message>
     <message>
-        <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;Cruise Control&lt;/b&gt; is active, bypassing the need to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">Permitir que &lt;b&gt;Always on Lateral&lt;/b&gt; esté activo siempre que &lt;b&gt;Cruise Control&lt;/b&gt; esté activo, omitiendo la necesidad de habilitar openpilot primero.</translation>
+        <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;Cruise Control&lt;/b&gt; is active, bypassing the need to enable catpilot first.</source>
+        <translation type="gpt-4o-generated">Permitir que &lt;b&gt;Always on Lateral&lt;/b&gt; esté activo siempre que &lt;b&gt;Cruise Control&lt;/b&gt; esté activo, omitiendo la necesidad de habilitar catpilot primero.</translation>
     </message>
     <message>
         <source>Enable With LKAS Button</source>
         <translation type="gpt-4o-generated">Habilitar con botón LKAS</translation>
     </message>
     <message>
-        <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;LKAS&lt;/b&gt; is active, bypassing the need to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">Permitir que &lt;b&gt;Always on Lateral&lt;/b&gt; esté activo siempre que &lt;b&gt;LKAS&lt;/b&gt; esté activo, omitiendo la necesidad de habilitar openpilot primero.</translation>
+        <source>Allow &lt;b&gt;Always on Lateral&lt;/b&gt; to be active whenever &lt;b&gt;LKAS&lt;/b&gt; is active, bypassing the need to enable catpilot first.</source>
+        <translation type="gpt-4o-generated">Permitir que &lt;b&gt;Always on Lateral&lt;/b&gt; esté activo siempre que &lt;b&gt;LKAS&lt;/b&gt; esté activo, omitiendo la necesidad de habilitar catpilot primero.</translation>
     </message>
     <message>
         <source>Pause on Brake Below</source>
@@ -1017,8 +1017,8 @@
         <translation type="gpt-4o-generated">Cambios de carril</translation>
     </message>
     <message>
-        <source>Customize how openpilot performs lane changes.</source>
-        <translation type="gpt-4o-generated">Personaliza cómo openpilot realiza los cambios de carril.</translation>
+        <source>Customize how catpilot performs lane changes.</source>
+        <translation type="gpt-4o-generated">Personaliza cómo catpilot realiza los cambios de carril.</translation>
     </message>
     <message>
         <source>Automatic Lane Changes</source>
@@ -1041,16 +1041,16 @@
         <translation type="gpt-4o-generated">Velocidad Mínima de Cambio de Carril</translation>
     </message>
     <message>
-        <source>Minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">Velocidad mínima requerida para que openpilot realice un cambio de carril.</translation>
+        <source>Minimum speed required for catpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">Velocidad mínima requerida para que catpilot realice un cambio de carril.</translation>
     </message>
     <message>
         <source>Minimum Lane Width</source>
         <translation type="gpt-4o-generated">Ancho mínimo de carril</translation>
     </message>
     <message>
-        <source>openpilot won't initiate a lane change into a lane narrower than this width.</source>
-        <translation type="gpt-4o-generated">openpilot no iniciará un cambio de carril hacia un carril más estrecho que este ancho.</translation>
+        <source>catpilot won't initiate a lane change into a lane narrower than this width.</source>
+        <translation type="gpt-4o-generated">catpilot no iniciará un cambio de carril hacia un carril más estrecho que este ancho.</translation>
     </message>
     <message>
         <source>One Lane Change Per Signal</source>
@@ -1065,8 +1065,8 @@
         <translation type="gpt-4o-generated">Sintonización lateral</translation>
     </message>
     <message>
-        <source>Settings for fine-tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">Configuraciones para el ajuste fino de los controles laterales de openpilot.</translation>
+        <source>Settings for fine-tuning catpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">Configuraciones para el ajuste fino de los controles laterales de catpilot.</translation>
     </message>
     <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
@@ -1212,16 +1212,16 @@
         <translation type="gpt-4o-generated">Datos de navegación</translation>
     </message>
     <message>
-        <source>Switch to &lt;b&gt;Experimental Mode&lt;/b&gt; when approaching intersections or turns on the active route while using &lt;b&gt;Navigate on openpilot (NOO)&lt;/b&gt;. Useful for letting the model choose the appropriate speed for upcoming navigation maneuvers.</source>
-        <translation type="gpt-4o-generated">Cambiar a &lt;b&gt;Modo Experimental&lt;/b&gt; al acercarse a intersecciones o giros en la ruta activa mientras se utiliza &lt;b&gt;Navegar con openpilot (NOO)&lt;/b&gt;. Útil para permitir que el modelo elija la velocidad adecuada para las maniobras de navegación próximas.</translation>
+        <source>Switch to &lt;b&gt;Experimental Mode&lt;/b&gt; when approaching intersections or turns on the active route while using &lt;b&gt;Navigate on catpilot (NOO)&lt;/b&gt;. Useful for letting the model choose the appropriate speed for upcoming navigation maneuvers.</source>
+        <translation type="gpt-4o-generated">Cambiar a &lt;b&gt;Modo Experimental&lt;/b&gt; al acercarse a intersecciones o giros en la ruta activa mientras se utiliza &lt;b&gt;Navegar con catpilot (NOO)&lt;/b&gt;. Útil para permitir que el modelo elija la velocidad adecuada para las maniobras de navegación próximas.</translation>
     </message>
     <message>
-        <source>openpilot Wants to Stop In</source>
-        <translation type="gpt-4o-generated">openpilot quiere detenerse en</translation>
+        <source>catpilot Wants to Stop In</source>
+        <translation type="gpt-4o-generated">catpilot quiere detenerse en</translation>
     </message>
     <message>
-        <source>Switch to &lt;b&gt;Experimental Mode&lt;/b&gt; when openpilot wants to stop within the set amount of time. This is typically triggered by the driving model "detecting" a red light or stop sign.</source>
-        <translation type="gpt-4o-generated">Cambiar a &lt;b&gt;Modo Experimental&lt;/b&gt; cuando openpilot quiera detenerse dentro del tiempo establecido. Esto generalmente se activa cuando el modelo de conducción "detecta" un semáforo en rojo o una señal de alto.</translation>
+        <source>Switch to &lt;b&gt;Experimental Mode&lt;/b&gt; when catpilot wants to stop within the set amount of time. This is typically triggered by the driving model "detecting" a red light or stop sign.</source>
+        <translation type="gpt-4o-generated">Cambiar a &lt;b&gt;Modo Experimental&lt;/b&gt; cuando catpilot quiera detenerse dentro del tiempo establecido. Esto generalmente se activa cuando el modelo de conducción "detecta" un semáforo en rojo o una señal de alto.</translation>
     </message>
     <message>
         <source>Turn Signal Below</source>
@@ -1264,48 +1264,48 @@
         <translation type="gpt-4o-generated">Distancia de seguimiento</translation>
     </message>
     <message>
-        <source>The minimum following distance while in &lt;b&gt;Traffic Mode&lt;/b&gt;. openpilot will dynamically adjust between this value and the value in the &lt;b&gt;Aggressive&lt;/b&gt; profile based on your current speed.</source>
-        <translation type="gpt-4o-generated">La distancia mínima de seguimiento mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. openpilot se ajustará dinámicamente entre este valor y el valor en el perfil &lt;b&gt;Agresivo&lt;/b&gt; según su velocidad actual.</translation>
+        <source>The minimum following distance while in &lt;b&gt;Traffic Mode&lt;/b&gt;. catpilot will dynamically adjust between this value and the value in the &lt;b&gt;Aggressive&lt;/b&gt; profile based on your current speed.</source>
+        <translation type="gpt-4o-generated">La distancia mínima de seguimiento mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. catpilot se ajustará dinámicamente entre este valor y el valor en el perfil &lt;b&gt;Agresivo&lt;/b&gt; según su velocidad actual.</translation>
     </message>
     <message>
         <source>Acceleration Sensitivity</source>
         <translation type="gpt-4o-generated">Sensibilidad a la aceleración</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in acceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la aceleración mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos resultan en una aceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in acceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la aceleración mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos resultan en una aceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Deceleration Sensitivity</source>
         <translation type="gpt-4o-generated">Sensibilidad de desaceleración</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in deceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la desaceleración mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in deceleration while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la desaceleración mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Safety Distance Sensitivity</source>
         <translation type="gpt-4o-generated">Sensibilidad de la Distancia de Seguridad</translation>
     </message>
     <message>
-        <source>How cautious openpilot is around other vehicles or obstacles while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">Qué tan cauteloso es openpilot alrededor de otros vehículos u obstáculos mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
+        <source>How cautious catpilot is around other vehicles or obstacles while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
+        <translation type="gpt-4o-generated">Qué tan cauteloso es catpilot alrededor de otros vehículos u obstáculos mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
     </message>
     <message>
         <source>Speed Increase Response</source>
         <translation type="gpt-4o-generated">Respuesta de aumento de velocidad</translation>
     </message>
     <message>
-        <source>How quickly openpilot increases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad openpilot mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot increases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad catpilot mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Speed Decrease Response</source>
         <translation type="gpt-4o-generated">Respuesta de disminución de velocidad</translation>
     </message>
     <message>
-        <source>How quickly openpilot decreases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad openpilot mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot decreases speed while in &lt;b&gt;Traffic Mode&lt;/b&gt;. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad catpilot mientras está en &lt;b&gt;Modo de Tráfico&lt;/b&gt;. Valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Reset Settings</source>
@@ -1324,28 +1324,28 @@
         <translation type="gpt-4o-generated">Personaliza el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Diseñado para un estilo de conducción más asertivo.</translation>
     </message>
     <message>
-        <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.25 seconds.</source>
-        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá openpilot a los vehículos delanteros mientras usa el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.25 segundos.</translation>
+        <source>How many seconds catpilot will follow behind lead vehicles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.25 seconds.</source>
+        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá catpilot a los vehículos delanteros mientras usa el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.25 segundos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos resultan en una aceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in acceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos resultan en una aceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in deceleration while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">Qué tan cauteloso es openpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que los valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
+        <source>How cautious catpilot is around other vehicles or obstacles while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
+        <translation type="gpt-4o-generated">Qué tan cauteloso es catpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que los valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
     </message>
     <message>
-        <source>How quickly openpilot increases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot increases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How quickly openpilot decreases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot decreases speed while using the &lt;b&gt;Aggressive&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Aggressive&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Aggressive&lt;/b&gt; personality profile settings to default values.</source>
@@ -1360,28 +1360,28 @@
         <translation type="gpt-4o-generated">Personaliza el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Diseñado para un estilo de conducción equilibrado.</translation>
     </message>
     <message>
-        <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.45 seconds.</source>
-        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá openpilot a los vehículos delanteros mientras se utiliza el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.45 segundos.</translation>
+        <source>How many seconds catpilot will follow behind lead vehicles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.45 seconds.</source>
+        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá catpilot a los vehículos delanteros mientras se utiliza el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.45 segundos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Valores más altos resultan en una aceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in acceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Valores más altos resultan en una aceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos resultan en una desaceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in deceleration while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos resultan en una desaceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">Qué tan cauteloso es openpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
+        <source>How cautious catpilot is around other vehicles or obstacles while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
+        <translation type="gpt-4o-generated">Qué tan cauteloso es catpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
     </message>
     <message>
-        <source>How quickly openpilot increases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot increases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How quickly openpilot decreases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot decreases speed while using the &lt;b&gt;Standard&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Estándar&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Standard&lt;/b&gt; personality profile settings to default values.</source>
@@ -1396,28 +1396,28 @@
         <translation type="gpt-4o-generated">Personaliza el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Diseñado para un estilo de conducción más tranquilo.</translation>
     </message>
     <message>
-        <source>How many seconds openpilot will follow behind lead vehicles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.75 seconds.</source>
-        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá openpilot a los vehículos delanteros mientras se utiliza el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.75 segundos.</translation>
+        <source>How many seconds catpilot will follow behind lead vehicles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile.&lt;br&gt;&lt;br&gt;Default: 1.75 seconds.</source>
+        <translation type="gpt-4o-generated">¿Cuántos segundos seguirá catpilot a los vehículos delanteros mientras se utiliza el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;?&lt;br&gt;&lt;br&gt;Por defecto: 1.75 segundos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in acceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos resultan en una aceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in acceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual acceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la aceleración al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos resultan en una aceleración más suave y gradual, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to changes in deceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How sensitive catpilot is to changes in deceleration while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values result in smoother, more gradual deceleration, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot a los cambios en la desaceleración al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Valores más altos resultan en una desaceleración más suave y gradual, mientras que valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How cautious openpilot is around other vehicles or obstacles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
-        <translation type="gpt-4o-generated">Qué tan cauteloso es openpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
+        <source>How cautious catpilot is around other vehicles or obstacles while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values increase following distances and prioritize safety, leading to more cautious driving, while lower values allow for closer following but may reduce reaction time.</source>
+        <translation type="gpt-4o-generated">Qué tan cauteloso es catpilot alrededor de otros vehículos u obstáculos al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Valores más altos aumentan las distancias de seguimiento y priorizan la seguridad, lo que lleva a una conducción más cautelosa, mientras que valores más bajos permiten un seguimiento más cercano pero pueden reducir el tiempo de reacción.</translation>
     </message>
     <message>
-        <source>How quickly openpilot increases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot increases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when accelerating, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido aumenta la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al acelerar, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
-        <source>How quickly openpilot decreases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
-        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad openpilot al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
+        <source>How quickly catpilot decreases speed while using the &lt;b&gt;Relaxed&lt;/b&gt; personality profile. Higher values ensure smoother, more gradual speed changes when slowing down, while lower values allow for quicker, more responsive changes that may feel abrupt.</source>
+        <translation type="gpt-4o-generated">Qué tan rápido disminuye la velocidad catpilot al usar el perfil de personalidad &lt;b&gt;Relajado&lt;/b&gt;. Los valores más altos aseguran cambios de velocidad más suaves y graduales al reducir la velocidad, mientras que los valores más bajos permiten cambios más rápidos y receptivos que pueden sentirse bruscos.</translation>
     </message>
     <message>
         <source>Reset the &lt;b&gt;Relaxed&lt;/b&gt; personality profile settings to default values.</source>
@@ -1428,16 +1428,16 @@
         <translation type="gpt-4o-generated">Sintonización longitudinal</translation>
     </message>
     <message>
-        <source>Settings that control how openpilot manages speed and acceleration.</source>
-        <translation type="gpt-4o-generated">Configuraciones que controlan cómo openpilot gestiona la velocidad y la aceleración.</translation>
+        <source>Settings that control how catpilot manages speed and acceleration.</source>
+        <translation type="gpt-4o-generated">Configuraciones que controlan cómo catpilot gestiona la velocidad y la aceleración.</translation>
     </message>
     <message>
         <source>Acceleration Profile</source>
         <translation type="gpt-4o-generated">Perfil de Aceleración</translation>
     </message>
     <message>
-        <source>Enable either a sporty or eco-friendly acceleration profile. &lt;b&gt;Sport+&lt;/b&gt; aims to make openpilot accelerate as fast as possible!</source>
-        <translation type="gpt-4o-generated">Habilita un perfil de aceleración deportivo o ecológico. &lt;b&gt;Sport+&lt;/b&gt; tiene como objetivo hacer que openpilot acelere lo más rápido posible.</translation>
+        <source>Enable either a sporty or eco-friendly acceleration profile. &lt;b&gt;Sport+&lt;/b&gt; aims to make catpilot accelerate as fast as possible!</source>
+        <translation type="gpt-4o-generated">Habilita un perfil de aceleración deportivo o ecológico. &lt;b&gt;Sport+&lt;/b&gt; tiene como objetivo hacer que catpilot acelere lo más rápido posible.</translation>
     </message>
     <message>
         <source>Deceleration Profile</source>
@@ -1468,16 +1468,16 @@
         <translation type="gpt-4o-generated">Confianza en la detección de clientes potenciales</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is to detecting vehicles ahead. A lower value can help detect vehicles sooner and from farther away, but increases the chance openpilot mistakes other objects for vehicles.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot para detectar vehículos adelante. Un valor más bajo puede ayudar a detectar vehículos más pronto y desde más lejos, pero aumenta la posibilidad de que openpilot confunda otros objetos con vehículos.</translation>
+        <source>How sensitive catpilot is to detecting vehicles ahead. A lower value can help detect vehicles sooner and from farther away, but increases the chance catpilot mistakes other objects for vehicles.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot para detectar vehículos adelante. Un valor más bajo puede ayudar a detectar vehículos más pronto y desde más lejos, pero aumenta la posibilidad de que catpilot confunda otros objetos con vehículos.</translation>
     </message>
     <message>
         <source>Maximum Acceleration Rate</source>
         <translation type="gpt-4o-generated">Tasa Máxima de Aceleración</translation>
     </message>
     <message>
-        <source>Set a cap on how fast openpilot can accelerate.</source>
-        <translation type="gpt-4o-generated">Establecer un límite en la velocidad a la que openpilot puede acelerar.</translation>
+        <source>Set a cap on how fast catpilot can accelerate.</source>
+        <translation type="gpt-4o-generated">Establecer un límite en la velocidad a la que catpilot puede acelerar.</translation>
     </message>
     <message>
         <source>"Taco Bell Run" Turn Speed Hack</source>
@@ -1512,28 +1512,28 @@
         <translation type="gpt-4o-generated">El intervalo utilizado al cambiar la velocidad del control de crucero mientras se mantiene presionado el botón durante más de 0,5 segundos.</translation>
     </message>
     <message>
-        <source>Force Keep openpilot in the Standstill State</source>
-        <translation type="gpt-4o-generated">Forzar mantener openpilot en el estado de parada</translation>
+        <source>Force Keep catpilot in the Standstill State</source>
+        <translation type="gpt-4o-generated">Forzar mantener catpilot en el estado de parada</translation>
     </message>
     <message>
-        <source>Keep openpilot in the standstill state until either the gas pedal or &lt;b&gt;resume&lt;/b&gt; button is pressed.</source>
-        <translation type="gpt-4o-generated">Mantén openpilot en el estado de parada hasta que se presione el pedal del acelerador o el botón &lt;b&gt;reanudar&lt;/b&gt;.</translation>
+        <source>Keep catpilot in the standstill state until either the gas pedal or &lt;b&gt;resume&lt;/b&gt; button is pressed.</source>
+        <translation type="gpt-4o-generated">Mantén catpilot en el estado de parada hasta que se presione el pedal del acelerador o el botón &lt;b&gt;reanudar&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Force Stop for "Detected" Stop Lights/Signs</source>
         <translation type="gpt-4o-generated">Detención forzada para luces/señales de alto "detectadas"</translation>
     </message>
     <message>
-        <source>Force a stop whenever openpilot &lt;b&gt;detects&lt;/b&gt; a potential red light/stop sign to prevent it from running the red light/stop sign.</source>
-        <translation type="gpt-4o-generated">Forzar una parada cada vez que openpilot &lt;b&gt;detecta&lt;/b&gt; una posible luz roja/señal de alto para evitar que se pase la luz roja/señal de alto.</translation>
+        <source>Force a stop whenever catpilot &lt;b&gt;detects&lt;/b&gt; a potential red light/stop sign to prevent it from running the red light/stop sign.</source>
+        <translation type="gpt-4o-generated">Forzar una parada cada vez que catpilot &lt;b&gt;detecta&lt;/b&gt; una posible luz roja/señal de alto para evitar que se pase la luz roja/señal de alto.</translation>
     </message>
     <message>
         <source>Increase Stopped Distance</source>
         <translation type="gpt-4o-generated">Aumentar la distancia de detención</translation>
     </message>
     <message>
-        <source>Increase the distance openpilot stops behind vehicles.</source>
-        <translation type="gpt-4o-generated">Aumentar la distancia a la que openpilot se detiene detrás de los vehículos.</translation>
+        <source>Increase the distance catpilot stops behind vehicles.</source>
+        <translation type="gpt-4o-generated">Aumentar la distancia a la que catpilot se detiene detrás de los vehículos.</translation>
     </message>
     <message>
         <source>Set Speed Offset</source>
@@ -1564,8 +1564,8 @@
         <translation type="gpt-4o-generated">Controlador de límite de velocidad</translation>
     </message>
     <message>
-        <source>Limit openpilot's maximum driving speed based on data from downloaded maps, &lt;b&gt;Mapbox&lt;/b&gt;, &lt;b&gt;Navigate on openpilot&lt;/b&gt;, or the dashboard (supported vehicles: &lt;b&gt;Ford&lt;/b&gt;, &lt;b&gt;Genesis&lt;/b&gt;, &lt;b&gt;Hyundai&lt;/b&gt;, &lt;b&gt;Kia&lt;/b&gt;, &lt;b&gt;Lexus&lt;/b&gt;, &lt;b&gt;Toyota&lt;/b&gt;).</source>
-        <translation type="gpt-4o-generated">Limitar la velocidad máxima de conducción de openpilot según los datos de los mapas descargados, &lt;b&gt;Mapbox&lt;/b&gt;, &lt;b&gt;Navigate on openpilot&lt;/b&gt; o el tablero (vehículos compatibles: &lt;b&gt;Ford&lt;/b&gt;, &lt;b&gt;Genesis&lt;/b&gt;, &lt;b&gt;Hyundai&lt;/b&gt;, &lt;b&gt;Kia&lt;/b&gt;, &lt;b&gt;Lexus&lt;/b&gt;, &lt;b&gt;Toyota&lt;/b&gt;).</translation>
+        <source>Limit catpilot's maximum driving speed based on data from downloaded maps, &lt;b&gt;Mapbox&lt;/b&gt;, &lt;b&gt;Navigate on catpilot&lt;/b&gt;, or the dashboard (supported vehicles: &lt;b&gt;Ford&lt;/b&gt;, &lt;b&gt;Genesis&lt;/b&gt;, &lt;b&gt;Hyundai&lt;/b&gt;, &lt;b&gt;Kia&lt;/b&gt;, &lt;b&gt;Lexus&lt;/b&gt;, &lt;b&gt;Toyota&lt;/b&gt;).</source>
+        <translation type="gpt-4o-generated">Limitar la velocidad máxima de conducción de catpilot según los datos de los mapas descargados, &lt;b&gt;Mapbox&lt;/b&gt;, &lt;b&gt;Navigate on catpilot&lt;/b&gt; o el tablero (vehículos compatibles: &lt;b&gt;Ford&lt;/b&gt;, &lt;b&gt;Genesis&lt;/b&gt;, &lt;b&gt;Hyundai&lt;/b&gt;, &lt;b&gt;Kia&lt;/b&gt;, &lt;b&gt;Lexus&lt;/b&gt;, &lt;b&gt;Toyota&lt;/b&gt;).</translation>
     </message>
     <message>
         <source>Fallback Speed</source>
@@ -1580,8 +1580,8 @@
         <translation type="gpt-4o-generated">Anular velocidad</translation>
     </message>
     <message>
-        <source>The speed openpilot uses after manually exceeding the posted speed limit.&lt;br&gt;&lt;br&gt;&lt;b&gt;- Set With Gas Pedal&lt;/b&gt;: Uses the speed obtained while pressing the gas&lt;br&gt;&lt;b&gt;- Max Set Speed&lt;/b&gt;: Uses the cruise control set speed&lt;br&gt;&lt;br&gt;Overrides clear upon disengagement.</source>
-        <translation type="gpt-4o-generated">La velocidad que openpilot utiliza después de exceder manualmente el límite de velocidad publicado.&lt;br&gt;&lt;br&gt;&lt;b&gt;- Establecer con el pedal del acelerador&lt;/b&gt;: Usa la velocidad obtenida al presionar el acelerador&lt;br&gt;&lt;b&gt;- Velocidad máxima establecida&lt;/b&gt;: Usa la velocidad establecida del control de crucero&lt;br&gt;&lt;br&gt;Las anulaciones se borran al desactivar.</translation>
+        <source>The speed catpilot uses after manually exceeding the posted speed limit.&lt;br&gt;&lt;br&gt;&lt;b&gt;- Set With Gas Pedal&lt;/b&gt;: Uses the speed obtained while pressing the gas&lt;br&gt;&lt;b&gt;- Max Set Speed&lt;/b&gt;: Uses the cruise control set speed&lt;br&gt;&lt;br&gt;Overrides clear upon disengagement.</source>
+        <translation type="gpt-4o-generated">La velocidad que catpilot utiliza después de exceder manualmente el límite de velocidad publicado.&lt;br&gt;&lt;br&gt;&lt;b&gt;- Establecer con el pedal del acelerador&lt;/b&gt;: Usa la velocidad obtenida al presionar el acelerador&lt;br&gt;&lt;b&gt;- Velocidad máxima establecida&lt;/b&gt;: Usa la velocidad establecida del control de crucero&lt;br&gt;&lt;br&gt;Las anulaciones se borran al desactivar.</translation>
     </message>
     <message>
         <source>Miscellaneous features to improve the &lt;b&gt;Speed Limit Controller&lt;/b&gt; experience.</source>
@@ -1608,24 +1608,24 @@
         <translation type="gpt-4o-generated">Tiempo de anticipación de límite superior</translation>
     </message>
     <message>
-        <source>How far ahead openpilot anticipates upcoming higher speed limits from the downloaded map data.</source>
-        <translation type="gpt-4o-generated">Hasta qué punto openpilot anticipa los próximos límites de velocidad más altos a partir de los datos del mapa descargado.</translation>
+        <source>How far ahead catpilot anticipates upcoming higher speed limits from the downloaded map data.</source>
+        <translation type="gpt-4o-generated">Hasta qué punto catpilot anticipa los próximos límites de velocidad más altos a partir de los datos del mapa descargado.</translation>
     </message>
     <message>
         <source>Lower Limit Lookahead Time</source>
         <translation type="gpt-4o-generated">Tiempo de anticipación del límite inferior</translation>
     </message>
     <message>
-        <source>How far ahead openpilot anticipates upcoming lower speed limits from the downloaded map data.</source>
-        <translation type="gpt-4o-generated">¿Cuánto anticipa openpilot los próximos límites de velocidad más bajos a partir de los datos del mapa descargado?</translation>
+        <source>How far ahead catpilot anticipates upcoming lower speed limits from the downloaded map data.</source>
+        <translation type="gpt-4o-generated">¿Cuánto anticipa catpilot los próximos límites de velocidad más bajos a partir de los datos del mapa descargado?</translation>
     </message>
     <message>
         <source>Match Speed Limit on Engage</source>
         <translation type="gpt-4o-generated">Coincidir con el límite de velocidad en Engage</translation>
     </message>
     <message>
-        <source>Automatically set cruise control speed to match the current speed limit when first enabling openpilot.</source>
-        <translation type="gpt-4o-generated">Configurar automáticamente la velocidad del control de crucero para que coincida con el límite de velocidad actual al habilitar openpilot por primera vez.</translation>
+        <source>Automatically set cruise control speed to match the current speed limit when first enabling catpilot.</source>
+        <translation type="gpt-4o-generated">Configurar automáticamente la velocidad del control de crucero para que coincida con el límite de velocidad actual al habilitar catpilot por primera vez.</translation>
     </message>
     <message>
         <source>Use Mapbox as Fallback</source>
@@ -1916,8 +1916,8 @@
         <translation type="gpt-4o-generated">Sintonización Longitudinal Avanzada</translation>
     </message>
     <message>
-        <source>Advanced settings for customizing how openpilot handles acceleration and braking.</source>
-        <translation type="gpt-4o-generated">Configuraciones avanzadas para personalizar cómo openpilot maneja la aceleración y el frenado.</translation>
+        <source>Advanced settings for customizing how catpilot handles acceleration and braking.</source>
+        <translation type="gpt-4o-generated">Configuraciones avanzadas para personalizar cómo catpilot maneja la aceleración y el frenado.</translation>
     </message>
     <message>
         <source>Actuator Delay (Default: %1)</source>
@@ -1952,8 +1952,8 @@
         <translation type="gpt-4o-generated">Iniciar velocidad</translation>
     </message>
     <message>
-        <source>Speed where openpilot begins to exit the stopped state. Higher values avoid creeping but may feel sluggish; lower values move sooner but risk creeping.</source>
-        <translation type="gpt-4o-generated">Velocidad a la que openpilot comienza a salir del estado detenido. Valores más altos evitan el avance lento pero pueden sentirse lentos; valores más bajos se mueven antes pero corren el riesgo de avanzar lentamente.</translation>
+        <source>Speed where catpilot begins to exit the stopped state. Higher values avoid creeping but may feel sluggish; lower values move sooner but risk creeping.</source>
+        <translation type="gpt-4o-generated">Velocidad a la que catpilot comienza a salir del estado detenido. Valores más altos evitan el avance lento pero pueden sentirse lentos; valores más bajos se mueven antes pero corren el riesgo de avanzar lentamente.</translation>
     </message>
     <message>
         <source>Stop Acceleration (Default: %1)</source>
@@ -1988,8 +1988,8 @@
         <translation type="gpt-4o-generated">Detener velocidad</translation>
     </message>
     <message>
-        <source>Speed where openpilot beings to enter the stopped state. Higher values brake earlier for smoother stops but might stop too soon; lower values wait longer and can overshoot.</source>
-        <translation type="gpt-4o-generated">Velocidad a la que openpilot comienza a entrar en el estado detenido. Valores más altos frenan antes para paradas más suaves, pero podrían detenerse demasiado pronto; valores más bajos esperan más tiempo y pueden pasarse de largo.</translation>
+        <source>Speed where catpilot beings to enter the stopped state. Higher values brake earlier for smoother stops but might stop too soon; lower values wait longer and can overshoot.</source>
+        <translation type="gpt-4o-generated">Velocidad a la que catpilot comienza a entrar en el estado detenido. Valores más altos frenan antes para paradas más suaves, pero podrían detenerse demasiado pronto; valores más bajos esperan más tiempo y pueden pasarse de largo.</translation>
     </message>
     <message>
         <source>Speed Offset (0–24 mph)</source>
@@ -2080,16 +2080,16 @@
         <translation type="gpt-4o-generated">Sensibilidad de Detección de Curvas</translation>
     </message>
     <message>
-        <source>How sensitive openpilot is when detecting curves. Higher values trigger earlier responses at the risk of triggering too often, while lower values increase confidence at the risk of triggering too infrequently.</source>
-        <translation type="gpt-4o-generated">Qué tan sensible es openpilot al detectar curvas. Valores más altos activan respuestas más tempranas con el riesgo de activarse con demasiada frecuencia, mientras que valores más bajos aumentan la confianza con el riesgo de activarse con poca frecuencia.</translation>
+        <source>How sensitive catpilot is when detecting curves. Higher values trigger earlier responses at the risk of triggering too often, while lower values increase confidence at the risk of triggering too infrequently.</source>
+        <translation type="gpt-4o-generated">Qué tan sensible es catpilot al detectar curvas. Valores más altos activan respuestas más tempranas con el riesgo de activarse con demasiada frecuencia, mientras que valores más bajos aumentan la confianza con el riesgo de activarse con poca frecuencia.</translation>
     </message>
     <message>
         <source>Curve Speed Aggressiveness</source>
         <translation type="gpt-4o-generated">Agresividad de Velocidad en Curvas</translation>
     </message>
     <message>
-        <source>How aggressive openpilot is when navigating through curves. Higher values result in faster turns but may reduce comfort or stability, while lower values result in slower, smoother turns at the risk of being overly cautious.</source>
-        <translation type="gpt-4o-generated">Qué tan agresivo es openpilot al navegar por curvas. Valores más altos resultan en giros más rápidos pero pueden reducir la comodidad o estabilidad, mientras que valores más bajos resultan en giros más lentos y suaves con el riesgo de ser demasiado cautelosos.</translation>
+        <source>How aggressive catpilot is when navigating through curves. Higher values result in faster turns but may reduce comfort or stability, while lower values result in slower, smoother turns at the risk of being overly cautious.</source>
+        <translation type="gpt-4o-generated">Qué tan agresivo es catpilot al navegar por curvas. Valores más altos resultan en giros más rápidos pero pueden reducir la comodidad o estabilidad, mientras que valores más bajos resultan en giros más lentos y suaves con el riesgo de ser demasiado cautelosos.</translation>
     </message>
     <message>
         <source>Map Based</source>
@@ -2512,8 +2512,8 @@
         <translation type="gpt-4o-generated">Proveedor de búsqueda de destinos</translation>
     </message>
     <message>
-        <source>The search provider used for destination queries in "Navigate on Openpilot". Options include "MapBox" (recommended), "Amap", and "Google Maps".</source>
-        <translation type="gpt-4o-generated">El proveedor de búsqueda utilizado para consultas de destino en "Navigate on Openpilot". Las opciones incluyen "MapBox" (recomendado), "Amap" y "Google Maps".</translation>
+        <source>The search provider used for destination queries in "Navigate on Catpilot". Options include "MapBox" (recommended), "Amap", and "Google Maps".</source>
+        <translation type="gpt-4o-generated">El proveedor de búsqueda utilizado para consultas de destino en "Navigate on Catpilot". Las opciones incluyen "MapBox" (recomendado), "Amap" y "Google Maps".</translation>
     </message>
     <message>
         <source>Amap Key #1</source>
@@ -2600,8 +2600,8 @@ Se restablecerá en %1 horas y %2 minutos.</translation>
         <translation type="gpt-4o-generated">Actualizar manualmente los límites de velocidad</translation>
     </message>
     <message>
-        <source>Automatically collect missing or incorrect speed limits from your dashboard (if supported), &lt;b&gt;Mapbox&lt;/b&gt;, and &lt;b&gt;Navigate-on-openpilot&lt;/b&gt; while driving.&lt;br&gt;&lt;br&gt;When the car is turned off and connected to Wi-Fi, your speed limit data is automatically processed into a compiled file formatted for the tool located at &lt;b&gt;SpeedLimitFiller.catpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;You can grab the processed file from &lt;b&gt;The Pond&lt;/b&gt; via the &lt;b&gt;Download Speed Limits&lt;/b&gt; menu.&lt;br&gt;&lt;br&gt;Want a more thorough walkthrough? Check out the &lt;b&gt;#speed-limit-filler&lt;/b&gt; channel in the &lt;b&gt;CatPilot Discord&lt;/b&gt;!</source>
-        <translation type="gpt-4o-generated">Recoge automáticamente los límites de velocidad faltantes o incorrectos desde tu tablero (si es compatible), &lt;b&gt;Mapbox&lt;/b&gt; y &lt;b&gt;Navigate-on-openpilot&lt;/b&gt; mientras conduces.&lt;br&gt;&lt;br&gt;Cuando el coche está apagado y conectado a Wi-Fi, tus datos de límites de velocidad se procesan automáticamente en un archivo compilado y formateado para la herramienta ubicada en &lt;b&gt;SpeedLimitFiller.catpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Puedes obtener el archivo procesado desde &lt;b&gt;The Pond&lt;/b&gt; a través del menú &lt;b&gt;Download Speed Limits&lt;/b&gt;.&lt;br&gt;&lt;br&gt;¿Quieres una guía más detallada? ¡Consulta el canal &lt;b&gt;#speed-limit-filler&lt;/b&gt; en el &lt;b&gt;CatPilot Discord&lt;/b&gt;!</translation>
+        <source>Automatically collect missing or incorrect speed limits from your dashboard (if supported), &lt;b&gt;Mapbox&lt;/b&gt;, and &lt;b&gt;Navigate-on-catpilot&lt;/b&gt; while driving.&lt;br&gt;&lt;br&gt;When the car is turned off and connected to Wi-Fi, your speed limit data is automatically processed into a compiled file formatted for the tool located at &lt;b&gt;SpeedLimitFiller.catpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;You can grab the processed file from &lt;b&gt;The Pond&lt;/b&gt; via the &lt;b&gt;Download Speed Limits&lt;/b&gt; menu.&lt;br&gt;&lt;br&gt;Want a more thorough walkthrough? Check out the &lt;b&gt;#speed-limit-filler&lt;/b&gt; channel in the &lt;b&gt;CatPilot Discord&lt;/b&gt;!</source>
+        <translation type="gpt-4o-generated">Recoge automáticamente los límites de velocidad faltantes o incorrectos desde tu tablero (si es compatible), &lt;b&gt;Mapbox&lt;/b&gt; y &lt;b&gt;Navigate-on-catpilot&lt;/b&gt; mientras conduces.&lt;br&gt;&lt;br&gt;Cuando el coche está apagado y conectado a Wi-Fi, tus datos de límites de velocidad se procesan automáticamente en un archivo compilado y formateado para la herramienta ubicada en &lt;b&gt;SpeedLimitFiller.catpilot.download&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Puedes obtener el archivo procesado desde &lt;b&gt;The Pond&lt;/b&gt; a través del menú &lt;b&gt;Download Speed Limits&lt;/b&gt;.&lt;br&gt;&lt;br&gt;¿Quieres una guía más detallada? ¡Consulta el canal &lt;b&gt;#speed-limit-filler&lt;/b&gt; en el &lt;b&gt;CatPilot Discord&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Cancelled...</source>
@@ -2691,8 +2691,8 @@ Se restablecerá en %1 horas y %2 minutos.</translation>
         <translation type="gpt-4o-generated">Navegación</translation>
     </message>
     <message>
-        <source>Download map data for &lt;b&gt;Curve Speed Control&lt;/b&gt;, &lt;b&gt;Speed Limit Controller&lt;/b&gt;, and set up &lt;b&gt;Navigate on openpilot (NOO)&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">Descargar datos de mapas para &lt;b&gt;Control de Velocidad en Curvas&lt;/b&gt;, &lt;b&gt;Controlador de Límite de Velocidad&lt;/b&gt;, y configurar &lt;b&gt;Navegar en openpilot (NOO)&lt;/b&gt;.</translation>
+        <source>Download map data for &lt;b&gt;Curve Speed Control&lt;/b&gt;, &lt;b&gt;Speed Limit Controller&lt;/b&gt;, and set up &lt;b&gt;Navigate on catpilot (NOO)&lt;/b&gt;.</source>
+        <translation type="gpt-4o-generated">Descargar datos de mapas para &lt;b&gt;Control de Velocidad en Curvas&lt;/b&gt;, &lt;b&gt;Controlador de Límite de Velocidad&lt;/b&gt;, y configurar &lt;b&gt;Navegar en catpilot (NOO)&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>System Management</source>
@@ -2764,8 +2764,8 @@ Desarrollador - Desbloquea configuraciones altamente personalizables para entusi
         <translation type="gpt-4o-generated">Control de volumen de alerta</translation>
     </message>
     <message>
-        <source>Adjust the volume for each alert in openpilot.</source>
-        <translation type="gpt-4o-generated">Ajusta el volumen para cada alerta en openpilot.</translation>
+        <source>Adjust the volume for each alert in catpilot.</source>
+        <translation type="gpt-4o-generated">Ajusta el volumen para cada alerta en catpilot.</translation>
     </message>
     <message>
         <source>Disengage Volume</source>
@@ -2780,8 +2780,8 @@ Desarrollador - Desbloquea configuraciones altamente personalizables para entusi
         <translation type="gpt-4o-generated">Involucrar Volumen</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller loaded&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot engaged&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">Ajusta el volumen para alertas como:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller cargado&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot activado&lt;/b&gt;</translation>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller loaded&lt;/b&gt;&lt;br&gt;&lt;b&gt;catpilot engaged&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">Ajusta el volumen para alertas como:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller cargado&lt;/b&gt;&lt;br&gt;&lt;b&gt;catpilot activado&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Prompt Volume</source>
@@ -2804,8 +2804,8 @@ Desarrollador - Desbloquea configuraciones altamente personalizables para entusi
         <translation type="gpt-4o-generated">Volumen de residuos</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;openpilot Unavailable&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">Ajusta el volumen para alertas como:&lt;br&gt;&lt;br&gt;&lt;b&gt;openpilot No Disponible&lt;/b&gt;</translation>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;catpilot Unavailable&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">Ajusta el volumen para alertas como:&lt;br&gt;&lt;br&gt;&lt;b&gt;catpilot No Disponible&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Warning Soft Volume</source>
@@ -2828,8 +2828,8 @@ Desarrollador - Desbloquea configuraciones altamente personalizables para entusi
         <translation type="gpt-4o-generated">Alertas de CatPilot</translation>
     </message>
     <message>
-        <source>CatPilot alerts for various events in openpilot.</source>
-        <translation type="gpt-4o-generated">Alertas de CatPilot para varios eventos en openpilot.</translation>
+        <source>CatPilot alerts for various events in catpilot.</source>
+        <translation type="gpt-4o-generated">Alertas de CatPilot para varios eventos en catpilot.</translation>
     </message>
     <message>
         <source>Goat Scream Steering Saturated Alert</source>
@@ -2891,18 +2891,18 @@ Desarrollador - Desbloquea configuraciones altamente personalizables para entusi
         <translation type="gpt-4o-generated">Tema personalizado</translation>
     </message>
     <message>
-        <source>The overall appearance of openpilot.</source>
-        <translation type="gpt-4o-generated">La apariencia general de openpilot.</translation>
+        <source>The overall appearance of catpilot.</source>
+        <translation type="gpt-4o-generated">La apariencia general de catpilot.</translation>
     </message>
     <message>
         <source>Color Scheme</source>
         <translation type="gpt-4o-generated">Esquema de colores</translation>
     </message>
     <message>
-        <source>openpilot's color scheme.
+        <source>catpilot's color scheme.
 
 Want to submit your own color scheme? Share it in the "custom-themes" channel on the CatPilot Discord!</source>
-        <translation type="gpt-4o-generated">Esquema de colores de openpilot.
+        <translation type="gpt-4o-generated">Esquema de colores de catpilot.
 
 ¿Quieres enviar tu propio esquema de colores? ¡Compártelo en el canal "custom-themes" en el Discord de CatPilot!</translation>
     </message>
@@ -2911,10 +2911,10 @@ Want to submit your own color scheme? Share it in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Paquete de iconos</translation>
     </message>
     <message>
-        <source>openpilot's icon pack.
+        <source>catpilot's icon pack.
 
 Want to submit your own icons? Share them in the "custom-themes" channel on the CatPilot Discord!</source>
-        <translation type="gpt-4o-generated">Paquete de iconos de openpilot.
+        <translation type="gpt-4o-generated">Paquete de iconos de catpilot.
 
 ¿Quieres enviar tus propios iconos? Compártelos en el canal "custom-themes" en el Discord de CatPilot.</translation>
     </message>
@@ -2923,10 +2923,10 @@ Want to submit your own icons? Share them in the "custom-themes" channel on the 
         <translation type="gpt-4o-generated">Paquete de sonidos</translation>
     </message>
     <message>
-        <source>openpilot's sound effects.
+        <source>catpilot's sound effects.
 
 Want to submit your own sounds? Share them in the "custom-themes" channel on the CatPilot Discord!</source>
-        <translation type="gpt-4o-generated">Efectos de sonido de openpilot.
+        <translation type="gpt-4o-generated">Efectos de sonido de catpilot.
 
 ¿Quieres enviar tus propios sonidos? Compártelos en el canal "custom-themes" en el Discord de CatPilot.</translation>
     </message>
@@ -2955,8 +2955,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Temas de vacaciones</translation>
     </message>
     <message>
-        <source>Holiday-based visual themes for openpilot. Minor holidays last one day; major holidays (Christmas, Easter, Halloween, etc.) continue all week.</source>
-        <translation type="gpt-4o-generated">Temas visuales basados en días festivos para openpilot. Los días festivos menores duran un día; los días festivos mayores (Navidad, Pascua, Halloween, etc.) continúan toda la semana.</translation>
+        <source>Holiday-based visual themes for catpilot. Minor holidays last one day; major holidays (Christmas, Easter, Halloween, etc.) continue all week.</source>
+        <translation type="gpt-4o-generated">Temas visuales basados en días festivos para catpilot. Los días festivos menores duran un día; los días festivos mayores (Navidad, Pascua, Halloween, etc.) continúan toda la semana.</translation>
     </message>
     <message>
         <source>Rainbow Path</source>
@@ -3194,8 +3194,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Estado de inicio forzado</translation>
     </message>
     <message>
-        <source>Force openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">Forzar openpilot ya sea fuera de carretera o en carretera.</translation>
+        <source>Force catpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">Forzar catpilot ya sea fuera de carretera o en carretera.</translation>
     </message>
     <message>
         <source>OFFROAD</source>
@@ -3222,8 +3222,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">¡Hazle saber a CatsGoMoo sobre un problema que estás enfrentando!</translation>
     </message>
     <message>
-        <source>I saw an alert that said "openpilot crashed"</source>
-        <translation type="gpt-4o-generated">Vi una alerta que decía "openpilot crashed"</translation>
+        <source>I saw an alert that said "catpilot crashed"</source>
+        <translation type="gpt-4o-generated">Vi una alerta que decía "catpilot crashed"</translation>
     </message>
     <message>
         <source>What's going on?</source>
@@ -3274,16 +3274,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">¡Restablecer!</translation>
     </message>
     <message>
-        <source>Reset Toggles to Match Stock openpilot</source>
-        <translation type="gpt-4o-generated">Restablecer los interruptores para que coincidan con el openpilot de serie</translation>
+        <source>Reset Toggles to Match Stock catpilot</source>
+        <translation type="gpt-4o-generated">Restablecer los interruptores para que coincidan con el catpilot de serie</translation>
     </message>
     <message>
-        <source>Reset all toggles to match stock openpilot.</source>
-        <translation type="gpt-4o-generated">Restablecer todos los interruptores para que coincidan con el openpilot de fábrica.</translation>
+        <source>Reset all toggles to match stock catpilot.</source>
+        <translation type="gpt-4o-generated">Restablecer todos los interruptores para que coincidan con el catpilot de fábrica.</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all toggles to match stock openpilot?</source>
-        <translation type="gpt-4o-generated">¿Está seguro de que desea restablecer todos los interruptores para que coincidan con el openpilot de fábrica?</translation>
+        <source>Are you sure you want to reset all toggles to match stock catpilot?</source>
+        <translation type="gpt-4o-generated">¿Está seguro de que desea restablecer todos los interruptores para que coincidan con el catpilot de fábrica?</translation>
     </message>
     <message>
         <source>Ensure your device has an internet connection before sending a report!</source>
@@ -3318,20 +3318,20 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Los botones del volante no funcionan.</translation>
     </message>
     <message>
-        <source>openpilot disengages when I don't expect it</source>
-        <translation type="gpt-4o-generated">openpilot se desactiva cuando no lo espero</translation>
+        <source>catpilot disengages when I don't expect it</source>
+        <translation type="gpt-4o-generated">catpilot se desactiva cuando no lo espero</translation>
     </message>
     <message>
-        <source>openpilot doesn’t resume after I stop</source>
-        <translation type="gpt-4o-generated">openpilot no se reanuda después de que me detengo</translation>
+        <source>catpilot doesn’t resume after I stop</source>
+        <translation type="gpt-4o-generated">catpilot no se reanuda después de que me detengo</translation>
     </message>
     <message>
-        <source>openpilot doesn't react to stopped vehicles ahead</source>
-        <translation type="gpt-4o-generated">openpilot no reacciona a los vehículos detenidos adelante</translation>
+        <source>catpilot doesn't react to stopped vehicles ahead</source>
+        <translation type="gpt-4o-generated">catpilot no reacciona a los vehículos detenidos adelante</translation>
     </message>
     <message>
-        <source>openpilot feels sluggish or slow to respond</source>
-        <translation type="gpt-4o-generated">openpilot se siente lento o tarda en responder</translation>
+        <source>catpilot feels sluggish or slow to respond</source>
+        <translation type="gpt-4o-generated">catpilot se siente lento o tarda en responder</translation>
     </message>
     <message>
         <source>Steering feels twitchy or unnatural</source>
@@ -3385,16 +3385,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Fuerza la huella digital seleccionada y evita que cambie nunca.</translation>
     </message>
     <message>
-        <source>Disable openpilot Longitudinal Control</source>
-        <translation type="gpt-4o-generated">Desactivar el control longitudinal de openpilot</translation>
+        <source>Disable catpilot Longitudinal Control</source>
+        <translation type="gpt-4o-generated">Desactivar el control longitudinal de catpilot</translation>
     </message>
     <message>
-        <source>Disables openpilot longitudinal control and uses the car's stock ACC instead.</source>
-        <translation type="gpt-4o-generated">Desactiva el control longitudinal de openpilot y utiliza el ACC de serie del coche en su lugar.</translation>
+        <source>Disables catpilot longitudinal control and uses the car's stock ACC instead.</source>
+        <translation type="gpt-4o-generated">Desactiva el control longitudinal de catpilot y utiliza el ACC de serie del coche en su lugar.</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely disable openpilot longitudinal control?</source>
-        <translation type="gpt-4o-generated">¿Está seguro de que desea desactivar completamente el control longitudinal de openpilot?</translation>
+        <source>Are you sure you want to completely disable catpilot longitudinal control?</source>
+        <translation type="gpt-4o-generated">¿Está seguro de que desea desactivar completamente el control longitudinal de catpilot?</translation>
     </message>
     <message>
         <source>General Motors Settings</source>
@@ -3473,8 +3473,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Desplazamiento de Velocidad del Clúster</translation>
     </message>
     <message>
-        <source>The cluster speed offset used by openpilot to match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">El desplazamiento de velocidad del clúster utilizado por openpilot para igualar la velocidad mostrada en el tablero.</translation>
+        <source>The cluster speed offset used by catpilot to match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">El desplazamiento de velocidad del clúster utilizado por catpilot para igualar la velocidad mostrada en el tablero.</translation>
     </message>
     <message>
         <source>CatsGoMoo's Personal Tweaks</source>
@@ -3524,8 +3524,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Controles de UI avanzados</translation>
     </message>
     <message>
-        <source>Advanced settings for fine-tuning openpilot's driving screen.</source>
-        <translation type="gpt-4o-generated">Configuración avanzada para ajustar la pantalla de conducción de openpilot.</translation>
+        <source>Advanced settings for fine-tuning catpilot's driving screen.</source>
+        <translation type="gpt-4o-generated">Configuración avanzada para ajustar la pantalla de conducción de catpilot.</translation>
     </message>
     <message>
         <source>Hide Current Speed</source>
@@ -3580,16 +3580,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Usar velocidad de la rueda</translation>
     </message>
     <message>
-        <source>Use the vehicle's wheel speed instead of the cluster speed. This is purely a visual change and doesn't impact how openpilot drives.</source>
-        <translation type="gpt-4o-generated">Usa la velocidad de las ruedas del vehículo en lugar de la velocidad del clúster. Este es un cambio puramente visual y no afecta cómo conduce openpilot.</translation>
+        <source>Use the vehicle's wheel speed instead of the cluster speed. This is purely a visual change and doesn't impact how catpilot drives.</source>
+        <translation type="gpt-4o-generated">Usa la velocidad de las ruedas del vehículo en lugar de la velocidad del clúster. Este es un cambio puramente visual y no afecta cómo conduce catpilot.</translation>
     </message>
     <message>
         <source>Developer UI</source>
         <translation type="gpt-4o-generated">Interfaz de usuario del desarrollador</translation>
     </message>
     <message>
-        <source>Detailed information about openpilot's internal operations.</source>
-        <translation type="gpt-4o-generated">Información detallada sobre las operaciones internas de openpilot.</translation>
+        <source>Detailed information about catpilot's internal operations.</source>
+        <translation type="gpt-4o-generated">Información detallada sobre las operaciones internas de catpilot.</translation>
     </message>
     <message>
         <source>Adjacent Path Metrics</source>
@@ -3604,8 +3604,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Métricas del desarrollador</translation>
     </message>
     <message>
-        <source>Performance data, sensor readings, and system metrics for debugging and optimizing openpilot.</source>
-        <translation type="gpt-4o-generated">Datos de rendimiento, lecturas de sensores y métricas del sistema para depurar y optimizar openpilot.</translation>
+        <source>Performance data, sensor readings, and system metrics for debugging and optimizing catpilot.</source>
+        <translation type="gpt-4o-generated">Datos de rendimiento, lecturas de sensores y métricas del sistema para depurar y optimizar catpilot.</translation>
     </message>
     <message>
         <source>Border Metrics</source>
@@ -3736,8 +3736,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Punto de parada del modelo</translation>
     </message>
     <message>
-        <source>Display an image on the screen where openpilot is wanting to stop.</source>
-        <translation type="gpt-4o-generated">Mostrar una imagen en la pantalla donde openpilot quiere detenerse.</translation>
+        <source>Display an image on the screen where catpilot is wanting to stop.</source>
+        <translation type="gpt-4o-generated">Mostrar una imagen en la pantalla donde catpilot quiere detenerse.</translation>
     </message>
     <message>
         <source>Radar Tracks</source>
@@ -3760,8 +3760,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Ruta de Aceleración</translation>
     </message>
     <message>
-        <source>Colorize the driving path based on openpilot's current desired acceleration and deceleration rate.</source>
-        <translation type="gpt-4o-generated">Colorea la ruta de conducción según la tasa actual de aceleración y desaceleración deseada de openpilot.</translation>
+        <source>Colorize the driving path based on catpilot's current desired acceleration and deceleration rate.</source>
+        <translation type="gpt-4o-generated">Colorea la ruta de conducción según la tasa actual de aceleración y desaceleración deseada de catpilot.</translation>
     </message>
     <message>
         <source>Adjacent Lanes</source>
@@ -3800,8 +3800,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Indicadores de Pedal de Gas/Freno</translation>
     </message>
     <message>
-        <source>Pedals to indicate when either of the pedals are currently being used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Dynamic&lt;/b&gt;: The pedals change in opacity in accordance to how much openpilot is accelerating or decelerating&lt;br&gt;&lt;b&gt;Static&lt;/b&gt;: The pedals are displayed with full opacity when active, and dimmed when not in use</source>
-        <translation type="gpt-4o-generated">Pedales para indicar cuándo se está utilizando alguno de los pedales.&lt;br&gt;&lt;br&gt;&lt;b&gt;Dinámico&lt;/b&gt;: Los pedales cambian de opacidad de acuerdo a cuánto está acelerando o desacelerando openpilot&lt;br&gt;&lt;b&gt;Estático&lt;/b&gt;: Los pedales se muestran con opacidad completa cuando están activos y atenuados cuando no están en uso</translation>
+        <source>Pedals to indicate when either of the pedals are currently being used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Dynamic&lt;/b&gt;: The pedals change in opacity in accordance to how much catpilot is accelerating or decelerating&lt;br&gt;&lt;b&gt;Static&lt;/b&gt;: The pedals are displayed with full opacity when active, and dimmed when not in use</source>
+        <translation type="gpt-4o-generated">Pedales para indicar cuándo se está utilizando alguno de los pedales.&lt;br&gt;&lt;br&gt;&lt;b&gt;Dinámico&lt;/b&gt;: Los pedales cambian de opacidad de acuerdo a cuánto está acelerando o desacelerando catpilot&lt;br&gt;&lt;b&gt;Estático&lt;/b&gt;: Los pedales se muestran con opacidad completa cuando están activos y atenuados cuando no están en uso</translation>
     </message>
     <message>
         <source>Rotating Steering Wheel</source>
@@ -3884,8 +3884,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Estilo de mapa</translation>
     </message>
     <message>
-        <source>The map style used for &lt;b&gt;Navigate on openpilot (NOO)&lt;/b&gt;:&lt;br&gt;&lt;br&gt;&lt;b&gt;Stock&lt;/b&gt;: Default comma.ai style&lt;br&gt;&lt;b&gt;Mapbox Streets&lt;/b&gt;: Standard street-focused view&lt;br&gt;&lt;b&gt;Mapbox Outdoors&lt;/b&gt;: Emphasizes outdoor and terrain features&lt;br&gt;&lt;b&gt;Mapbox Light&lt;/b&gt;: Minimalist, bright theme&lt;br&gt;&lt;b&gt;Mapbox Dark&lt;/b&gt;: Minimalist, dark theme&lt;br&gt;&lt;b&gt;Mapbox Navigation Day&lt;/b&gt;: Optimized for daytime navigation&lt;br&gt;&lt;b&gt;Mapbox Navigation Night&lt;/b&gt;: Optimized for nighttime navigation&lt;br&gt;&lt;b&gt;Mapbox Satellite&lt;/b&gt;: Satellite imagery only&lt;br&gt;&lt;b&gt;Mapbox Satellite Streets&lt;/b&gt;: Hybrid satellite imagery with street labels&lt;br&gt;&lt;b&gt;Mapbox Traffic Night&lt;/b&gt;: Dark theme emphasizing traffic conditions&lt;br&gt;&lt;b&gt;mike854's (Satellite hybrid)&lt;/b&gt;: Customized hybrid satellite view</source>
-        <translation type="gpt-4o-generated">El estilo de mapa utilizado para &lt;b&gt;Navegar en openpilot (NOO)&lt;/b&gt;:&lt;br&gt;&lt;br&gt;&lt;b&gt;Stock&lt;/b&gt;: Estilo predeterminado de comma.ai&lt;br&gt;&lt;b&gt;Mapbox Streets&lt;/b&gt;: Vista estándar centrada en calles&lt;br&gt;&lt;b&gt;Mapbox Outdoors&lt;/b&gt;: Destaca características al aire libre y de terreno&lt;br&gt;&lt;b&gt;Mapbox Light&lt;/b&gt;: Tema minimalista y brillante&lt;br&gt;&lt;b&gt;Mapbox Dark&lt;/b&gt;: Tema minimalista y oscuro&lt;br&gt;&lt;b&gt;Mapbox Navigation Day&lt;/b&gt;: Optimizado para navegación diurna&lt;br&gt;&lt;b&gt;Mapbox Navigation Night&lt;/b&gt;: Optimizado para navegación nocturna&lt;br&gt;&lt;b&gt;Mapbox Satellite&lt;/b&gt;: Solo imágenes satelitales&lt;br&gt;&lt;b&gt;Mapbox Satellite Streets&lt;/b&gt;: Imágenes satelitales híbridas con etiquetas de calles&lt;br&gt;&lt;b&gt;Mapbox Traffic Night&lt;/b&gt;: Tema oscuro que enfatiza las condiciones de tráfico&lt;br&gt;&lt;b&gt;mike854's (Satellite hybrid)&lt;/b&gt;: Vista híbrida satelital personalizada</translation>
+        <source>The map style used for &lt;b&gt;Navigate on catpilot (NOO)&lt;/b&gt;:&lt;br&gt;&lt;br&gt;&lt;b&gt;Stock&lt;/b&gt;: Default comma.ai style&lt;br&gt;&lt;b&gt;Mapbox Streets&lt;/b&gt;: Standard street-focused view&lt;br&gt;&lt;b&gt;Mapbox Outdoors&lt;/b&gt;: Emphasizes outdoor and terrain features&lt;br&gt;&lt;b&gt;Mapbox Light&lt;/b&gt;: Minimalist, bright theme&lt;br&gt;&lt;b&gt;Mapbox Dark&lt;/b&gt;: Minimalist, dark theme&lt;br&gt;&lt;b&gt;Mapbox Navigation Day&lt;/b&gt;: Optimized for daytime navigation&lt;br&gt;&lt;b&gt;Mapbox Navigation Night&lt;/b&gt;: Optimized for nighttime navigation&lt;br&gt;&lt;b&gt;Mapbox Satellite&lt;/b&gt;: Satellite imagery only&lt;br&gt;&lt;b&gt;Mapbox Satellite Streets&lt;/b&gt;: Hybrid satellite imagery with street labels&lt;br&gt;&lt;b&gt;Mapbox Traffic Night&lt;/b&gt;: Dark theme emphasizing traffic conditions&lt;br&gt;&lt;b&gt;mike854's (Satellite hybrid)&lt;/b&gt;: Customized hybrid satellite view</source>
+        <translation type="gpt-4o-generated">El estilo de mapa utilizado para &lt;b&gt;Navegar en catpilot (NOO)&lt;/b&gt;:&lt;br&gt;&lt;br&gt;&lt;b&gt;Stock&lt;/b&gt;: Estilo predeterminado de comma.ai&lt;br&gt;&lt;b&gt;Mapbox Streets&lt;/b&gt;: Vista estándar centrada en calles&lt;br&gt;&lt;b&gt;Mapbox Outdoors&lt;/b&gt;: Destaca características al aire libre y de terreno&lt;br&gt;&lt;b&gt;Mapbox Light&lt;/b&gt;: Tema minimalista y brillante&lt;br&gt;&lt;b&gt;Mapbox Dark&lt;/b&gt;: Tema minimalista y oscuro&lt;br&gt;&lt;b&gt;Mapbox Navigation Day&lt;/b&gt;: Optimizado para navegación diurna&lt;br&gt;&lt;b&gt;Mapbox Navigation Night&lt;/b&gt;: Optimizado para navegación nocturna&lt;br&gt;&lt;b&gt;Mapbox Satellite&lt;/b&gt;: Solo imágenes satelitales&lt;br&gt;&lt;b&gt;Mapbox Satellite Streets&lt;/b&gt;: Imágenes satelitales híbridas con etiquetas de calles&lt;br&gt;&lt;b&gt;Mapbox Traffic Night&lt;/b&gt;: Tema oscuro que enfatiza las condiciones de tráfico&lt;br&gt;&lt;b&gt;mike854's (Satellite hybrid)&lt;/b&gt;: Vista híbrida satelital personalizada</translation>
     </message>
     <message>
         <source>Road Name</source>
@@ -3924,16 +3924,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Calidad de vida</translation>
     </message>
     <message>
-        <source>Visual features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">Funciones visuales para mejorar su experiencia general con openpilot.</translation>
+        <source>Visual features to improve your overall catpilot experience.</source>
+        <translation type="gpt-4o-generated">Funciones visuales para mejorar su experiencia general con catpilot.</translation>
     </message>
     <message>
         <source>Camera View</source>
         <translation type="gpt-4o-generated">Vista de cámara</translation>
     </message>
     <message>
-        <source>The active camera view display. This is purely a visual change and doesn't impact how openpilot drives!</source>
-        <translation type="gpt-4o-generated">La visualización de la vista de la cámara activa. ¡Este es un cambio puramente visual y no afecta cómo conduce openpilot!</translation>
+        <source>The active camera view display. This is purely a visual change and doesn't impact how catpilot drives!</source>
+        <translation type="gpt-4o-generated">La visualización de la vista de la cámara activa. ¡Este es un cambio puramente visual y no afecta cómo conduce catpilot!</translation>
     </message>
     <message>
         <source>Show Driver Camera When In Reverse</source>
@@ -4100,8 +4100,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Mapa completo</translation>
     </message>
     <message>
-        <source>Stock openpilot</source>
-        <translation type="gpt-4o-generated">Stock openpilot</translation>
+        <source>Stock catpilot</source>
+        <translation type="gpt-4o-generated">Stock catpilot</translation>
     </message>
     <message>
         <source>CatsGoMoo's Personalized Style</source>
@@ -4259,8 +4259,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Perfil de Personalidad</translation>
     </message>
     <message>
-        <source>Force openpilot to Coast</source>
-        <translation type="gpt-4o-generated">Forzar a openpilot a deslizarse</translation>
+        <source>Force catpilot to Coast</source>
+        <translation type="gpt-4o-generated">Forzar a catpilot a deslizarse</translation>
     </message>
     <message>
         <source>Pause Longitudinal</source>
@@ -4437,12 +4437,12 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation>Temperatura de dispositivo muy alta. Systema enfriando antes de iniciar. Temperatura actual del componente interno: %1</translation>
     </message>
     <message>
-        <source>Immediately connect to the internet to check for updates. If you do not connect to the internet, openpilot won't engage in %1</source>
-        <translation>Inmediatamente conectar al internet para buscar actualizaciones. Si no se conecta al internet, openpilot no iniciara en %1</translation>
+        <source>Immediately connect to the internet to check for updates. If you do not connect to the internet, catpilot won't engage in %1</source>
+        <translation>Inmediatamente conectar al internet para buscar actualizaciones. Si no se conecta al internet, catpilot no iniciara en %1</translation>
     </message>
     <message>
-        <source>Connect to internet to check for updates. openpilot won't automatically start until it connects to internet to check for updates.</source>
-        <translation>Conectar al internet para buscar actualizaciones. openpilot no iniciara automáticamente hasta conectarse al internet para buscar actualizaciones.</translation>
+        <source>Connect to internet to check for updates. catpilot won't automatically start until it connects to internet to check for updates.</source>
+        <translation>Conectar al internet para buscar actualizaciones. catpilot no iniciara automáticamente hasta conectarse al internet para buscar actualizaciones.</translation>
     </message>
     <message>
         <source>Unable to download updates
@@ -4471,16 +4471,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation>Se detectó una unidad NVMe no compatible. El dispositivo puede consumir mucha más energía y sobrecalentarse debido a que NVMe no es compatible.</translation>
     </message>
     <message>
-        <source>openpilot was unable to identify your car. Your car is either unsupported or its ECUs are not recognized. Please submit a pull request to add the firmware versions to the proper vehicle. Need help? Join discord.comma.ai.</source>
-        <translation>openpilot no pudo identificar su automóvil. Su automóvil no es compatible o no se reconocen sus ECU. Envíe una solicitud de extracción para agregar las versiones de firmware al vehículo adecuado. ¿Necesitas ayuda? Únase a discord.comma.ai.</translation>
+        <source>catpilot was unable to identify your car. Your car is either unsupported or its ECUs are not recognized. Please submit a pull request to add the firmware versions to the proper vehicle. Need help? Join discord.comma.ai.</source>
+        <translation>catpilot no pudo identificar su automóvil. Su automóvil no es compatible o no se reconocen sus ECU. Envíe una solicitud de extracción para agregar las versiones de firmware al vehículo adecuado. ¿Necesitas ayuda? Únase a discord.comma.ai.</translation>
     </message>
     <message>
-        <source>openpilot was unable to identify your car. Check integrity of cables and ensure all connections are secure, particularly that the comma power is fully inserted in the OBD-II port of the vehicle. Need help? Join discord.comma.ai.</source>
-        <translation>openpilot no pudo identificar su automóvil. Verifique la integridad de los cables y asegúrese de que todas las conexiones estén seguras, en particular que comma power esté completamente insertada en el puerto OBD-II del vehículo. ¿Necesitas ayuda? Únase a discord.comma.ai.</translation>
+        <source>catpilot was unable to identify your car. Check integrity of cables and ensure all connections are secure, particularly that the comma power is fully inserted in the OBD-II port of the vehicle. Need help? Join discord.comma.ai.</source>
+        <translation>catpilot no pudo identificar su automóvil. Verifique la integridad de los cables y asegúrese de que todas las conexiones estén seguras, en particular que comma power esté completamente insertada en el puerto OBD-II del vehículo. ¿Necesitas ayuda? Únase a discord.comma.ai.</translation>
     </message>
     <message>
-        <source>openpilot detected a change in the device's mounting position. Ensure the device is fully seated in the mount and the mount is firmly secured to the windshield.</source>
-        <translation>openpilot detectó un cambio en la posición de montaje del dispositivo. Asegúrese de que el dispositivo esté completamente asentado en el soporte y que el soporte esté firmemente asegurado al parabrisas.</translation>
+        <source>catpilot detected a change in the device's mounting position. Ensure the device is fully seated in the mount and the mount is firmly secured to the windshield.</source>
+        <translation>catpilot detectó un cambio en la posición de montaje del dispositivo. Asegúrese de que el dispositivo esté completamente asentado en el soporte y que el soporte esté firmemente asegurado al parabrisas.</translation>
     </message>
 </context>
 <context>
@@ -4501,8 +4501,8 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
 <context>
     <name>OnroadAlerts</name>
     <message>
-        <source>openpilot Unavailable</source>
-        <translation>openpilot no disponible</translation>
+        <source>catpilot Unavailable</source>
+        <translation>catpilot no disponible</translation>
     </message>
     <message>
         <source>Waiting for controls to start</source>
@@ -4521,12 +4521,12 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation>Reiniciar Dispositivo</translation>
     </message>
     <message>
-        <source>openpilot crashed 💩</source>
-        <translation type="gpt-4o-generated">openpilot se estrelló 💩</translation>
+        <source>catpilot crashed 💩</source>
+        <translation type="gpt-4o-generated">catpilot se estrelló 💩</translation>
     </message>
     <message>
-        <source>openpilot crashed</source>
-        <translation type="gpt-4o-generated">openpilot se estrelló</translation>
+        <source>catpilot crashed</source>
+        <translation type="gpt-4o-generated">catpilot se estrelló</translation>
     </message>
     <message>
         <source>Please post the "Error Log" in the CatPilot Discord!</source>
@@ -4748,8 +4748,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation type="gpt-4o-generated">Dado que eres bastante nuevo en CatPilot, se ha aplicado el ajuste preestablecido "Minimal", ¡pero puedes cambiarlo en cualquier momento a través del botón "Tuning Level"!</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">Dado que tienes experiencia con openpilot, se ha aplicado el ajuste preestablecido "Estándar", ¡pero puedes cambiarlo en cualquier momento a través del botón "Nivel de ajuste"!</translation>
+        <source>Since you're experienced with catpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
+        <translation type="gpt-4o-generated">Dado que tienes experiencia con catpilot, se ha aplicado el ajuste preestablecido "Estándar", ¡pero puedes cambiarlo en cualquier momento a través del botón "Nivel de ajuste"!</translation>
     </message>
     <message>
         <source>Since you're experienced with CatPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
@@ -4760,8 +4760,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation type="gpt-4o-generated">Dado que tienes mucha experiencia con CatPilot, se ha aplicado el ajuste preestablecido "Avanzado", pero puedes cambiarlo en cualquier momento a través del botón "Nivel de ajuste".</translation>
     </message>
     <message>
-        <source>Welcome to CatPilot! Since you're new to openpilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
-        <translation type="gpt-4o-generated">¡Bienvenido a CatPilot! Como eres nuevo en openpilot, se ha aplicado el ajuste preestablecido "Minimal", pero puedes cambiarlo en cualquier momento a través del botón "Tuning Level".</translation>
+        <source>Welcome to CatPilot! Since you're new to catpilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the "Tuning Level" button!</source>
+        <translation type="gpt-4o-generated">¡Bienvenido a CatPilot! Como eres nuevo en catpilot, se ha aplicado el ajuste preestablecido "Minimal", pero puedes cambiarlo en cualquier momento a través del botón "Tuning Level".</translation>
     </message>
 </context>
 <context>
@@ -4823,8 +4823,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation>Elija el software para instalar</translation>
     </message>
     <message>
-        <source>openpilot</source>
-        <translation>openpilot</translation>
+        <source>catpilot</source>
+        <translation>catpilot</translation>
     </message>
     <message>
         <source>Custom Software</source>
@@ -5080,8 +5080,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation type="gpt-4o-generated">VER</translation>
     </message>
     <message>
-        <source>View the error log for openpilot crashes.</source>
-        <translation type="gpt-4o-generated">Ver el registro de errores para fallos de openpilot.</translation>
+        <source>View the error log for catpilot crashes.</source>
+        <translation type="gpt-4o-generated">Ver el registro de errores para fallos de catpilot.</translation>
     </message>
     <message>
         <source>This branch must be downloaded before switching. Would you like to download it now?</source>
@@ -5160,24 +5160,24 @@ Esto puede tardar hasta un minuto.</translation>
 <context>
     <name>TogglesPanel</name>
     <message>
-        <source>Enable openpilot</source>
-        <translation>Activar openpilot</translation>
+        <source>Enable catpilot</source>
+        <translation>Activar catpilot</translation>
     </message>
     <message>
-        <source>Use the openpilot system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off.</source>
-        <translation>Utilice el sistema openpilot para control de crucero adaptativo y asistencia al conductor para mantenerse en el carril. Se requiere su atención en todo momento para utilizar esta función. Cambiar esta configuración solo tendrá efecto con el auto apagado.</translation>
+        <source>Use the catpilot system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off.</source>
+        <translation>Utilice el sistema catpilot para control de crucero adaptativo y asistencia al conductor para mantenerse en el carril. Se requiere su atención en todo momento para utilizar esta función. Cambiar esta configuración solo tendrá efecto con el auto apagado.</translation>
     </message>
     <message>
-        <source>openpilot Longitudinal Control (Alpha)</source>
-        <translation>Control longitudinal de openpilot (Alfa)</translation>
+        <source>catpilot Longitudinal Control (Alpha)</source>
+        <translation>Control longitudinal de catpilot (Alfa)</translation>
     </message>
     <message>
-        <source>WARNING: openpilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB).</source>
-        <translation>Aviso: el control longitudinal de openpilot está en fase alfa para este automóvil y desactivará el Frenado Automático de Emergencia (AEB).</translation>
+        <source>WARNING: catpilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB).</source>
+        <translation>Aviso: el control longitudinal de catpilot está en fase alfa para este automóvil y desactivará el Frenado Automático de Emergencia (AEB).</translation>
     </message>
     <message>
-        <source>On this car, openpilot defaults to the car's built-in ACC instead of openpilot's longitudinal control. Enable this to switch to openpilot longitudinal control. Enabling Experimental mode is recommended when enabling openpilot longitudinal control alpha.</source>
-        <translation>En este vehículo, openpilot se configura de manera predeterminada con el Control de Crucero Adaptativo (ACC) incorporado en el automóvil en lugar del control longitudinal de openpilot. Habilita esta opción para cambiar al control longitudinal de openpilot. Se recomienda activar el modo experimental al habilitar el control longitudinal alfa de openpilot.</translation>
+        <source>On this car, catpilot defaults to the car's built-in ACC instead of catpilot's longitudinal control. Enable this to switch to catpilot longitudinal control. Enabling Experimental mode is recommended when enabling catpilot longitudinal control alpha.</source>
+        <translation>En este vehículo, catpilot se configura de manera predeterminada con el Control de Crucero Adaptativo (ACC) incorporado en el automóvil en lugar del control longitudinal de catpilot. Habilita esta opción para cambiar al control longitudinal de catpilot. Se recomienda activar el modo experimental al habilitar el control longitudinal alfa de catpilot.</translation>
     </message>
     <message>
         <source>Experimental Mode</source>
@@ -5188,8 +5188,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation>Desactivar con el Acelerador</translation>
     </message>
     <message>
-        <source>When enabled, pressing the accelerator pedal will disengage openpilot.</source>
-        <translation>Cuando esté activado, presionar el acelerador deshabilitará el openpilot.</translation>
+        <source>When enabled, pressing the accelerator pedal will disengage catpilot.</source>
+        <translation>Cuando esté activado, presionar el acelerador deshabilitará el catpilot.</translation>
     </message>
     <message>
         <source>Enable Lane Departure Warnings</source>
@@ -5232,20 +5232,20 @@ Esto puede tardar hasta un minuto.</translation>
         <translation>Personalidad de conducción</translation>
     </message>
     <message>
-        <source>Standard is recommended. In aggressive mode, openpilot will follow lead cars closer and be more aggressive with the gas and brake. In relaxed mode openpilot will stay further away from lead cars. On supported cars, you can cycle through these personalities with your steering wheel distance button.</source>
-        <translation>Se recomienda estándar. En el modo agresivo, openpilot seguirá a los autos líderes más cerca y será más agresivo con el acelerador y el freno. En modo relajado, openpilot se mantendrá más alejado de los coches líderes. En automóviles compatibles, puede recorrer estas personalidades con el botón de distancia del volante.</translation>
+        <source>Standard is recommended. In aggressive mode, catpilot will follow lead cars closer and be more aggressive with the gas and brake. In relaxed mode catpilot will stay further away from lead cars. On supported cars, you can cycle through these personalities with your steering wheel distance button.</source>
+        <translation>Se recomienda estándar. En el modo agresivo, catpilot seguirá a los autos líderes más cerca y será más agresivo con el acelerador y el freno. En modo relajado, catpilot se mantendrá más alejado de los coches líderes. En automóviles compatibles, puede recorrer estas personalidades con el botón de distancia del volante.</translation>
     </message>
     <message>
-        <source>openpilot defaults to driving in &lt;b&gt;chill mode&lt;/b&gt;. Experimental mode enables &lt;b&gt;alpha-level features&lt;/b&gt; that aren't ready for chill mode. Experimental features are listed below:</source>
-        <translation>openpilot por defecto conduce en &lt;b&gt;modo chill&lt;/b&gt;. El modo Experimental activa &lt;b&gt;recursos de nível-alfa&lt;/b&gt; que no están listos para el modo chill. Los recursos del modo expeimental están listados abajo:</translation>
+        <source>catpilot defaults to driving in &lt;b&gt;chill mode&lt;/b&gt;. Experimental mode enables &lt;b&gt;alpha-level features&lt;/b&gt; that aren't ready for chill mode. Experimental features are listed below:</source>
+        <translation>catpilot por defecto conduce en &lt;b&gt;modo chill&lt;/b&gt;. El modo Experimental activa &lt;b&gt;recursos de nível-alfa&lt;/b&gt; que no están listos para el modo chill. Los recursos del modo expeimental están listados abajo:</translation>
     </message>
     <message>
         <source>End-to-End Longitudinal Control</source>
         <translation>🌮 Control Longitudinal de Punta a Punta 🌮</translation>
     </message>
     <message>
-        <source>Let the driving model control the gas and brakes. openpilot will drive as it thinks a human would, including stopping for red lights and stop signs. Since the driving model decides the speed to drive, the set speed will only act as an upper bound. This is an alpha quality feature; mistakes should be expected.</source>
-        <translation>Dajar que el modelo de conducción controle la aceleración y el frenado. openpilot va a conducir como lo haría una persona, incluiyendo parar en los semaforos en rojo y las señales de stop. Dado que el modelo decide la velocidad de conducción, la velocidad de crucero establecida actuará como limitador. Este recurso es de una calidad alfa; errores pueden ocurrir.</translation>
+        <source>Let the driving model control the gas and brakes. catpilot will drive as it thinks a human would, including stopping for red lights and stop signs. Since the driving model decides the speed to drive, the set speed will only act as an upper bound. This is an alpha quality feature; mistakes should be expected.</source>
+        <translation>Dajar que el modelo de conducción controle la aceleración y el frenado. catpilot va a conducir como lo haría una persona, incluiyendo parar en los semaforos en rojo y las señales de stop. Dado que el modelo decide la velocidad de conducción, la velocidad de crucero establecida actuará como limitador. Este recurso es de una calidad alfa; errores pueden ocurrir.</translation>
     </message>
     <message>
         <source>New Driving Visualization</source>
@@ -5260,11 +5260,11 @@ Esto puede tardar hasta un minuto.</translation>
         <translation>El modo Experimental no está disponible actualmente para este auto, ya que el ACC del auto está siendo usado para el control longitudinal.</translation>
     </message>
     <message>
-        <source>openpilot longitudinal control may come in a future update.</source>
-        <translation>El control longitudinal de openpilot podrá llegar en futuras actualizaciones.</translation>
+        <source>catpilot longitudinal control may come in a future update.</source>
+        <translation>El control longitudinal de catpilot podrá llegar en futuras actualizaciones.</translation>
     </message>
     <message>
-        <source>Enable the openpilot longitudinal control (alpha) toggle to allow Experimental mode.</source>
+        <source>Enable the catpilot longitudinal control (alpha) toggle to allow Experimental mode.</source>
         <translation>Activar el control longitudinal experimental para permitir el modo Experimental.</translation>
     </message>
     <message>
@@ -5326,8 +5326,8 @@ Esto puede tardar hasta un minuto.</translation>
         <translation>Configurar Wi-Fi</translation>
     </message>
     <message>
-        <source>Connect to Wi-Fi to upload driving data and help improve openpilot</source>
-        <translation>Conectar a Wi-Fi para subir los datos de conducir para mejorar openpilot</translation>
+        <source>Connect to Wi-Fi to upload driving data and help improve catpilot</source>
+        <translation>Conectar a Wi-Fi para subir los datos de conducir para mejorar catpilot</translation>
     </message>
     <message>
         <source>Open Settings</source>

@@ -7,14 +7,14 @@ import numpy as np
 import cereal.messaging as messaging
 from cereal import car
 from cereal import log
-from openpilot.common.params import Params
-from openpilot.common.realtime import config_realtime_process, DT_MDL
-from openpilot.common.numpy_fast import clip
-from openpilot.selfdrive.locationd.models.car_kf import CarKalman, ObservationKind, States
-from openpilot.selfdrive.locationd.models.constants import GENERATED_DIR
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.common.realtime import config_realtime_process, DT_MDL
+from catpilot.common.numpy_fast import clip
+from catpilot.selfdrive.locationd.models.car_kf import CarKalman, ObservationKind, States
+from catpilot.selfdrive.locationd.models.constants import GENERATED_DIR
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
 
 MAX_ANGLE_OFFSET_DELTA = 20 * DT_MDL  # Max 20 deg/s
 ROLL_MAX_DELTA = math.radians(20.0) * DT_MDL  # 20deg in 1 second is well within curvature limits

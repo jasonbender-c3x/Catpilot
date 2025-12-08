@@ -4,7 +4,7 @@ import os
 import struct
 from enum import IntEnum
 
-from openpilot.tools.lib.filereader import FileReader
+from catpilot.tools.lib.filereader import FileReader
 
 DEBUG = int(os.getenv("DEBUG", "0"))
 

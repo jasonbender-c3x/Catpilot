@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from cereal import car, custom
 from panda import Panda
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.chrysler.values import CAR, RAM_HD, RAM_DT, RAM_CARS, ChryslerFlags
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.chrysler.values import CAR, RAM_HD, RAM_DT, RAM_CARS, ChryslerFlags
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
 
 ButtonType = car.CarState.ButtonEvent.Type
 CatPilotButtonType = custom.CatPilotCarState.ButtonEvent.Type
@@ -14,7 +14,7 @@ class CarInterface(CarInterfaceBase):
   def _get_params(ret, candidate, fingerprint, car_fw, experimental_long, docs, catpilot_toggles):
     ret.carName = "chrysler"
 
-    # radar parsing needs some work, see https://github.com/commaai/openpilot/issues/26842
+    # radar parsing needs some work, see https://github.com/commaai/catpilot/issues/26842
     ret.radarUnavailable = True # DBC[candidate]['radar'] is None
     ret.steerActuatorDelay = 0.1
     ret.steerLimitTimer = 0.4

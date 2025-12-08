@@ -17,7 +17,7 @@ from aiohttp import web
 if TYPE_CHECKING:
   from aiortc.rtcdatachannel import RTCDataChannel
 
-from openpilot.system.webrtc.schema import generate_field
+from catpilot.system.webrtc.schema import generate_field
 from cereal import messaging, log
 
 
@@ -120,8 +120,8 @@ class StreamSession:
   def __init__(self, sdp: str, cameras: list[str], incoming_services: list[str], outgoing_services: list[str], debug_mode: bool = False):
     from aiortc.mediastreams import VideoStreamTrack, AudioStreamTrack
     from aiortc.contrib.media import MediaBlackhole
-    from openpilot.system.webrtc.device.video import LiveStreamVideoStreamTrack
-    from openpilot.system.webrtc.device.audio import AudioInputStreamTrack, AudioOutputSpeaker
+    from catpilot.system.webrtc.device.video import LiveStreamVideoStreamTrack
+    from catpilot.system.webrtc.device.audio import AudioInputStreamTrack, AudioOutputSpeaker
     from teleoprtc import WebRTCAnswerBuilder
     from teleoprtc.info import parse_info_from_offer
 

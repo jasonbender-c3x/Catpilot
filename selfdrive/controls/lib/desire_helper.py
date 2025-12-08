@@ -1,6 +1,6 @@
 from cereal import log
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_MDL
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_MDL
 
 LaneChangeState = log.LaneChangeState
 LaneChangeDirection = log.LaneChangeDirection

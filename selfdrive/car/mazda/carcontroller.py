@@ -1,9 +1,9 @@
 from cereal import car
 from opendbc.can.packer import CANPacker
-from openpilot.selfdrive.car import apply_driver_steer_torque_limits
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.car.mazda import mazdacan
-from openpilot.selfdrive.car.mazda.values import CarControllerParams, Buttons
+from catpilot.selfdrive.car import apply_driver_steer_torque_limits
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.car.mazda import mazdacan
+from catpilot.selfdrive.car.mazda.values import CarControllerParams, Buttons
 
 VisualAlert = car.CarControl.HUDControl.VisualAlert
 
@@ -29,7 +29,7 @@ class CarController(CarControllerBase):
 
     if CC.cruiseControl.cancel:
       # If brake is pressed, let us wait >70ms before trying to disable crz to avoid
-      # a race condition with the stock system, where the second cancel from openpilot
+      # a race condition with the stock system, where the second cancel from catpilot
       # will disable the crz 'main on'. crz ctrl msg runs at 50hz. 70ms allows us to
       # read 3 messages and most likely sync state before we attempt cancel.
       self.brake_counter = self.brake_counter + 1

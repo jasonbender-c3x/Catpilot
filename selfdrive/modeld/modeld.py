@@ -9,22 +9,22 @@ from pathlib import Path
 from setproctitle import setproctitle
 from cereal.messaging import PubMaster, SubMaster
 from msgq.visionipc import VisionIpcClient, VisionStreamType, VisionBuf
-from openpilot.common.swaglog import cloudlog
-from openpilot.common.params import Params
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.realtime import config_realtime_process
-from openpilot.common.transformations.camera import DEVICE_CAMERAS
-from openpilot.common.transformations.model import get_warp_matrix
-from openpilot.system import sentry
-from openpilot.selfdrive.car.car_helpers import get_demo_car_params
-from openpilot.selfdrive.controls.lib.desire_helper import DesireHelper
-from openpilot.selfdrive.modeld.runners import ModelRunner, Runtime
-from openpilot.selfdrive.modeld.parse_model_outputs import Parser
-from openpilot.selfdrive.modeld.fill_model_msg import fill_model_msg, fill_pose_msg, PublishState
-from openpilot.selfdrive.modeld.constants import ModelConstants
-from openpilot.selfdrive.modeld.models.commonmodel_pyx import ModelFrame, CLContext
+from catpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import config_realtime_process
+from catpilot.common.transformations.camera import DEVICE_CAMERAS
+from catpilot.common.transformations.model import get_warp_matrix
+from catpilot.system import sentry
+from catpilot.selfdrive.car.car_helpers import get_demo_car_params
+from catpilot.selfdrive.controls.lib.desire_helper import DesireHelper
+from catpilot.selfdrive.modeld.runners import ModelRunner, Runtime
+from catpilot.selfdrive.modeld.parse_model_outputs import Parser
+from catpilot.selfdrive.modeld.fill_model_msg import fill_model_msg, fill_pose_msg, PublishState
+from catpilot.selfdrive.modeld.constants import ModelConstants
+from catpilot.selfdrive.modeld.models.commonmodel_pyx import ModelFrame, CLContext
 
-from openpilot.catpilot.common.catpilot_variables import METADATAS_PATH, MODELS_PATH, get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import METADATAS_PATH, MODELS_PATH, get_catpilot_toggles
 
 PROCESS_NAME = "selfdrive.modeld.modeld"
 SEND_RAW_PRED = os.getenv('SEND_RAW_PRED')

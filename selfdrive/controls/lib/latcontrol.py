@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
-from openpilot.common.numpy_fast import clip
-from openpilot.common.realtime import DT_CTRL
+from catpilot.common.numpy_fast import clip
+from catpilot.common.realtime import DT_CTRL
 
 MIN_LATERAL_CONTROL_SPEED = 0.3  # m/s
 

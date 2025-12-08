@@ -14,20 +14,20 @@ import threading
 import time
 import zstandard as zstd
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.params import Params
-from openpilot.common.time import system_time_valid
-from openpilot.system.athena.registration import register
-from openpilot.system.hardware import HARDWARE
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.params import Params
+from catpilot.common.time import system_time_valid
+from catpilot.system.athena.registration import register
+from catpilot.system.hardware import HARDWARE
 
-from openpilot.catpilot.assets.model_manager import ModelManager
-from openpilot.catpilot.assets.theme_manager import HOLIDAY_THEME_PATH, ThemeManager
-from openpilot.catpilot.common.catpilot_utilities import delete_file, run_cmd, use_konik_server
-from openpilot.catpilot.common.catpilot_variables import (
+from catpilot.catpilot.assets.model_manager import ModelManager
+from catpilot.catpilot.assets.theme_manager import HOLIDAY_THEME_PATH, ThemeManager
+from catpilot.catpilot.common.catpilot_utilities import delete_file, run_cmd, use_konik_server
+from catpilot.catpilot.common.catpilot_variables import (
   ERROR_LOGS_PATH, EXCLUDED_KEYS, HD_LOGS_PATH, KONIK_LOGS_PATH, MODELS_PATH, SCREEN_RECORDINGS_PATH,
   THEME_SAVE_PATH, CatPilotVariables, catpilot_default_params, get_catpilot_toggles, params
 )
-from openpilot.catpilot.system.catpilot_stats import send_stats
+from catpilot.catpilot.system.catpilot_stats import send_stats
 
 def backup_directory(backup, destination, success_message, fail_message, minimum_backup_size=0, compressed=False):
   in_progress_destination = destination.parent / (destination.name + "_in_progress")
@@ -95,7 +95,7 @@ def backup_catpilot(build_metadata):
   minimum_backup_size = params.get_int("MinimumBackupSize")
   if free > minimum_backup_size * maximum_backups:
     directory = Path(BASEDIR)
-    destination_directory = backup_path / f"{build_metadata.channel}_{build_metadata.openpilot.git_commit_date[12:-16]}_auto"
+    destination_directory = backup_path / f"{build_metadata.channel}_{build_metadata.catpilot.git_commit_date[12:-16]}_auto"
     backup_directory(directory, destination_directory, f"Successfully backed up CatPilot to {destination_directory}", f"Failed to backup CatPilot to {destination_directory}", minimum_backup_size, compressed=True)
 
 def backup_toggles(params_cache):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-from openpilot.system.hardware import TICI
+from catpilot.system.hardware import TICI
 os.environ['DEV'] = 'QCOM' if TICI else 'LLVM'
 USBGPU = "USBGPU" in os.environ
 if USBGPU:
@@ -17,23 +17,23 @@ from pathlib import Path
 from setproctitle import setproctitle
 from cereal.messaging import PubMaster, SubMaster
 from msgq.visionipc import VisionIpcClient, VisionStreamType, VisionBuf
-from openpilot.common.swaglog import cloudlog
-from openpilot.common.params import Params
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.realtime import config_realtime_process, DT_MDL
-from openpilot.common.transformations.camera import DEVICE_CAMERAS
-from openpilot.common.transformations.model import get_warp_matrix
-from openpilot.system import sentry
-from openpilot.selfdrive.car.car_helpers import get_demo_car_params
-from openpilot.selfdrive.controls.lib.desire_helper import DesireHelper
-from openpilot.selfdrive.controls.lib.drive_helpers import get_accel_from_plan, smooth_value, get_curvature_from_plan
-from openpilot.catpilot.tinygrad_modeld.parse_model_outputs import Parser
-from openpilot.catpilot.tinygrad_modeld.fill_model_msg import fill_model_msg, fill_pose_msg, PublishState
-from openpilot.catpilot.tinygrad_modeld.constants import ModelConstants, Plan
-from openpilot.catpilot.tinygrad_modeld.models.commonmodel_pyx import DrivingModelFrame, CLContext
-from openpilot.catpilot.tinygrad_modeld.runners.tinygrad_helpers import qcom_tensor_from_opencl_address
+from catpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import config_realtime_process, DT_MDL
+from catpilot.common.transformations.camera import DEVICE_CAMERAS
+from catpilot.common.transformations.model import get_warp_matrix
+from catpilot.system import sentry
+from catpilot.selfdrive.car.car_helpers import get_demo_car_params
+from catpilot.selfdrive.controls.lib.desire_helper import DesireHelper
+from catpilot.selfdrive.controls.lib.drive_helpers import get_accel_from_plan, smooth_value, get_curvature_from_plan
+from catpilot.catpilot.tinygrad_modeld.parse_model_outputs import Parser
+from catpilot.catpilot.tinygrad_modeld.fill_model_msg import fill_model_msg, fill_pose_msg, PublishState
+from catpilot.catpilot.tinygrad_modeld.constants import ModelConstants, Plan
+from catpilot.catpilot.tinygrad_modeld.models.commonmodel_pyx import DrivingModelFrame, CLContext
+from catpilot.catpilot.tinygrad_modeld.runners.tinygrad_helpers import qcom_tensor_from_opencl_address
 
-from openpilot.catpilot.common.catpilot_variables import MODELS_PATH, get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import MODELS_PATH, get_catpilot_toggles
 
 
 PROCESS_NAME = "catpilot.tinygrad_modeld.tinygrad_modeld"

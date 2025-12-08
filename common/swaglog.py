@@ -7,8 +7,8 @@ from logging.handlers import BaseRotatingHandler
 
 import zmq
 
-from openpilot.common.logging_extra import SwagLogger, SwagFormatter, SwagLogFileFormatter
-from openpilot.system.hardware.hw import Paths
+from catpilot.common.logging_extra import SwagLogger, SwagFormatter, SwagLogFileFormatter
+from catpilot.system.hardware.hw import Paths
 
 
 def get_file_handler():

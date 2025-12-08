@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-from openpilot.catpilot.common.catpilot_utilities import use_konik_server
+from catpilot.catpilot.common.catpilot_utilities import use_konik_server
 
 if len(sys.argv) < 4:
   print(f"{sys.argv[0]} <route> <segment> <frame number> [front|wide|driver]")
@@ -16,8 +16,8 @@ cameras = {
 
 import requests
 from PIL import Image
-from openpilot.tools.lib.auth_config import get_token
-from openpilot.tools.lib.framereader import FrameReader
+from catpilot.tools.lib.auth_config import get_token
+from catpilot.tools.lib.framereader import FrameReader
 
 jwt = get_token()
 

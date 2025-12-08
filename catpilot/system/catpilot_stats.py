@@ -8,12 +8,12 @@ import sys
 from collections import Counter
 from datetime import datetime, timezone
 
-from openpilot.common.conversions import Conversions as CV
-from openpilot.system.hardware import HARDWARE
-from openpilot.system.version import get_build_metadata
+from catpilot.common.conversions import Conversions as CV
+from catpilot.system.hardware import HARDWARE
+from catpilot.system.version import get_build_metadata
 
-from openpilot.catpilot.common.catpilot_utilities import run_cmd
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, params, params_tracking
+from catpilot.catpilot.common.catpilot_utilities import run_cmd
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles, params, params_tracking
 
 BASE_URL = "https://nominatim.openstreetmap.org"
 MINIMUM_POPULATION = 100_000
@@ -110,7 +110,7 @@ def is_up_to_date(build_metadata):
   remote_commit = subprocess.check_output(["git", "ls-remote", "origin", build_metadata.channel], text=True, stderr=subprocess.DEVNULL).strip()
 
   if remote_commit:
-    return build_metadata.openpilot.git_commit == remote_commit.split()[0]
+    return build_metadata.catpilot.git_commit == remote_commit.split()[0]
 
   return True
 
@@ -171,7 +171,7 @@ def send_stats():
       .field("catpilot_miles", params_tracking.get_int("CatPilotKilometers") * CV.KPH_TO_MPH)
       .field("goat_scream", catpilot_toggles.goat_scream_alert)
       .field("has_cc_long", catpilot_toggles.has_cc_long)
-      .field("has_openpilot_longitudinal", catpilot_toggles.openpilot_longitudinal)
+      .field("has_catpilot_longitudinal", catpilot_toggles.catpilot_longitudinal)
       .field("has_pedal", catpilot_toggles.has_pedal)
       .field("has_sdsu", catpilot_toggles.has_sdsu)
       .field("has_zss", catpilot_toggles.has_zss)
@@ -187,7 +187,7 @@ def send_stats():
       .field("total_tracked_seconds", float(catpilot_stats.get("TotalTrackedTime", 0)))
       .field("tuning_level", params.get_int("TuningLevel") + 1 if params.get_bool("TuningLevelConfirmed") else 0)
       .field("up_to_date", is_up_to_date(build_metadata))
-      .field("using_stock_acc", not (catpilot_toggles.has_cc_long or catpilot_toggles.openpilot_longitudinal))
+      .field("using_stock_acc", not (catpilot_toggles.has_cc_long or catpilot_toggles.catpilot_longitudinal))
 
       .tag("branch", build_metadata.channel)
       .tag("dongle_id", params.get("CatPilotDongleId", encoding="utf-8"))

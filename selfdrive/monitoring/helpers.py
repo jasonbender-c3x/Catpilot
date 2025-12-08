@@ -2,12 +2,12 @@ from math import atan2
 
 from cereal import car
 import cereal.messaging as messaging
-from openpilot.selfdrive.controls.lib.events import Events
-from openpilot.common.numpy_fast import interp
-from openpilot.common.realtime import DT_DMON
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.stat_live import RunningStatFilter
-from openpilot.common.transformations.camera import DEVICE_CAMERAS
+from catpilot.selfdrive.controls.lib.events import Events
+from catpilot.common.numpy_fast import interp
+from catpilot.common.realtime import DT_DMON
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.stat_live import RunningStatFilter
+from catpilot.common.transformations.camera import DEVICE_CAMERAS
 
 EventName = car.CarEvent.EventName
 

@@ -1,6 +1,6 @@
 # ruff: noqa: E501
 from cereal import car
-from openpilot.selfdrive.car.hyundai.values import CAR
+from catpilot.selfdrive.car.hyundai.values import CAR
 
 # The existence of SCC or RDR in the fwdRadar FW usually determines the radar's function,
 # i.e. if it sends the SCC messages or if another ECU like the camera or ADAS Driving ECU does

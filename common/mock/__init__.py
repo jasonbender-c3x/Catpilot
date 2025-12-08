@@ -8,8 +8,8 @@ import functools
 import threading
 from cereal.messaging import PubMaster
 from cereal.services import SERVICE_LIST
-from openpilot.common.mock.generators import generate_liveLocationKalman
-from openpilot.common.realtime import Ratekeeper
+from catpilot.common.mock.generators import generate_liveLocationKalman
+from catpilot.common.realtime import Ratekeeper
 
 
 MOCK_GENERATOR = {

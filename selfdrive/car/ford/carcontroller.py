@@ -1,13 +1,13 @@
 from cereal import car
 from opendbc.can.packer import CANPacker
-from openpilot.common.numpy_fast import clip
-from openpilot.selfdrive.car import apply_std_steer_angle_limits
-from openpilot.selfdrive.car.ford import fordcan
-from openpilot.selfdrive.car.ford.values import CarControllerParams, FordFlags
-from openpilot.selfdrive.car.interfaces import CarControllerBase
-from openpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX
+from catpilot.common.numpy_fast import clip
+from catpilot.selfdrive.car import apply_std_steer_angle_limits
+from catpilot.selfdrive.car.ford import fordcan
+from catpilot.selfdrive.car.ford.values import CarControllerParams, FordFlags
+from catpilot.selfdrive.car.interfaces import CarControllerBase
+from catpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX
 
-from openpilot.selfdrive.car.interfaces import get_max_allowed_accel
+from catpilot.selfdrive.car.interfaces import get_max_allowed_accel
 
 GearShifter = car.CarState.GearShifter
 LongCtrlState = car.CarControl.Actuators.LongControlState
@@ -95,7 +95,7 @@ class CarController(CarControllerBase):
 
     ### longitudinal control ###
     # send acc msg at 50Hz
-    if self.CP.openpilotLongitudinalControl and (self.frame % CarControllerParams.ACC_CONTROL_STEP) == 0:
+    if self.CP.catpilotLongitudinalControl and (self.frame % CarControllerParams.ACC_CONTROL_STEP) == 0:
       # Both gas and accel are in m/s^2, accel is used solely for braking
       if catpilot_toggles.sport_plus and (CS.out.gearShifter == GearShifter.sport or not catpilot_toggles.map_acceleration):
         accel = clip(actuators.accel, CarControllerParams.ACCEL_MIN, get_max_allowed_accel(CS.out.vEgo))

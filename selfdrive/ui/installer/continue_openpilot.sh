@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-cd /data/openpilot
-exec ./launch_openpilot.sh
+cd /data/catpilot
+exec ./launch_catpilot.sh

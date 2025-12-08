@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_MDL
-from openpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import COMFORT_BRAKE
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_MDL
+from catpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import COMFORT_BRAKE
 
-from openpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, PLANNER_TIME
-from openpilot.catpilot.controls.lib.map_turn_speed_controller import MapTurnSpeedController
-from openpilot.catpilot.controls.lib.speed_limit_controller import SpeedLimitController
+from catpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, PLANNER_TIME
+from catpilot.catpilot.controls.lib.map_turn_speed_controller import MapTurnSpeedController
+from catpilot.catpilot.controls.lib.speed_limit_controller import SpeedLimitController
 
 TARGET_LAT_A = 2.0
 

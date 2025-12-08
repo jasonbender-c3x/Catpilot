@@ -1,6 +1,6 @@
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car import CanBusBase
-from openpilot.selfdrive.car.honda.values import HondaFlags, HONDA_BOSCH, HONDA_BOSCH_RADARLESS, CAR, CarControllerParams
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car import CanBusBase
+from catpilot.selfdrive.car.honda.values import HondaFlags, HONDA_BOSCH, HONDA_BOSCH_RADARLESS, CAR, CarControllerParams
 
 # CAN bus layout with relay
 # 0 = ACC-CAN - radar side
@@ -142,10 +142,10 @@ def create_bosch_supplemental_1(packer, CAN, car_fingerprint):
 
 def create_ui_commands(packer, CAN, CP, enabled, pcm_speed, hud, is_metric, acc_hud, lkas_hud, lat_active):
   commands = []
-  radar_disabled = CP.carFingerprint in (HONDA_BOSCH - HONDA_BOSCH_RADARLESS) and CP.openpilotLongitudinalControl
+  radar_disabled = CP.carFingerprint in (HONDA_BOSCH - HONDA_BOSCH_RADARLESS) and CP.catpilotLongitudinalControl
   bus_lkas = get_lkas_cmd_bus(CAN, CP.carFingerprint, radar_disabled)
 
-  if CP.openpilotLongitudinalControl:
+  if CP.catpilotLongitudinalControl:
     acc_hud_values = {
       'CRUISE_SPEED': hud.v_cruise,
       'ENABLE_MINI_CAR': 1 if enabled else 0,
@@ -188,7 +188,7 @@ def create_ui_commands(packer, CAN, CP, enabled, pcm_speed, hud, is_metric, acc_
   if not (CP.flags & HondaFlags.BOSCH_EXT_HUD):
     lkas_hud_values['SET_ME_X48'] = 0x48
 
-  if CP.flags & HondaFlags.BOSCH_EXT_HUD and not CP.openpilotLongitudinalControl:
+  if CP.flags & HondaFlags.BOSCH_EXT_HUD and not CP.catpilotLongitudinalControl:
     commands.append(packer.make_can_msg('LKAS_HUD_A', bus_lkas, lkas_hud_values))
     commands.append(packer.make_can_msg('LKAS_HUD_B', bus_lkas, lkas_hud_values))
   else:

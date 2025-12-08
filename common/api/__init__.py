@@ -2,10 +2,10 @@ import jwt
 import os
 import requests
 from datetime import datetime, timedelta
-from openpilot.system.hardware.hw import Paths
-from openpilot.system.version import get_version
+from catpilot.system.hardware.hw import Paths
+from catpilot.system.version import get_version
 
-from openpilot.catpilot.common.catpilot_utilities import use_konik_server
+from catpilot.catpilot.common.catpilot_utilities import use_konik_server
 
 API_HOST = os.getenv('API_HOST', 'https://api.commadotai.com')
 KONIK_API_HOST = os.getenv('API_HOST', 'https://api.konik.ai')
@@ -44,6 +44,6 @@ def api_get(endpoint, method='GET', timeout=None, access_token=None, **params):
   if access_token is not None:
     headers['Authorization'] = "JWT " + access_token
 
-  headers['User-Agent'] = "openpilot-" + get_version()
+  headers['User-Agent'] = "catpilot-" + get_version()
 
   return requests.request(method, (KONIK_API_HOST if use_konik_server() else API_HOST) + "/" + endpoint, timeout=timeout, headers=headers, params=params)

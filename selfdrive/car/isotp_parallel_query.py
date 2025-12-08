@@ -3,9 +3,9 @@ from collections import defaultdict
 from functools import partial
 
 import cereal.messaging as messaging
-from openpilot.common.swaglog import cloudlog
-from openpilot.selfdrive.pandad import can_list_to_can_capnp
-from openpilot.selfdrive.car.fw_query_definitions import AddrType
+from catpilot.common.swaglog import cloudlog
+from catpilot.selfdrive.pandad import can_list_to_can_capnp
+from catpilot.selfdrive.car.fw_query_definitions import AddrType
 from panda.python.uds import CanClient, IsoTpMessage, FUNCTIONAL_ADDRS, get_rx_addr_for_tx_addr
 
 

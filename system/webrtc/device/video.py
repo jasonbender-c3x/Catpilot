@@ -4,7 +4,7 @@ import av
 from teleoprtc.tracks import TiciVideoStreamTrack
 
 from cereal import messaging
-from openpilot.common.realtime import DT_MDL, DT_DMON
+from catpilot.common.realtime import DT_MDL, DT_DMON
 
 
 class LiveStreamVideoStreamTrack(TiciVideoStreamTrack):

@@ -1,8 +1,8 @@
 from cereal import car
 from panda import Panda
-from openpilot.selfdrive.car import get_safety_config
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase
-from openpilot.selfdrive.car.volkswagen.values import CAR, CANBUS, CarControllerParams, NetworkLocation, TransmissionType, GearShifter, VolkswagenFlags
+from catpilot.selfdrive.car import get_safety_config
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase
+from catpilot.selfdrive.car.volkswagen.values import CAR, CANBUS, CarControllerParams, NetworkLocation, TransmissionType, GearShifter, VolkswagenFlags
 
 ButtonType = car.CarState.ButtonEvent.Type
 EventName = car.CarEvent.EventName
@@ -86,12 +86,12 @@ class CarInterface(CarInterfaceBase):
     ret.experimentalLongitudinalAvailable = ret.networkLocation == NetworkLocation.gateway or docs
     if experimental_long:
       # Proof-of-concept, prep for E2E only. No radar points available. Panda ALLOW_DEBUG firmware required.
-      ret.openpilotLongitudinalControl = True
+      ret.catpilotLongitudinalControl = True
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_VOLKSWAGEN_LONG_CONTROL
       if ret.transmissionType == TransmissionType.manual:
         ret.minEnableSpeed = 4.5
 
-    ret.pcmCruise = not ret.openpilotLongitudinalControl
+    ret.pcmCruise = not ret.catpilotLongitudinalControl
     ret.stoppingControl = True
     ret.stopAccel = -0.55
     ret.vEgoStarting = 0.1
@@ -105,7 +105,7 @@ class CarInterface(CarInterfaceBase):
     ret, fp_ret = self.CS.update(self.cp, self.cp_cam, self.cp_ext, self.CP.transmissionType, catpilot_toggles)
 
     events = self.create_common_events(ret, extra_gears=[GearShifter.eco, GearShifter.sport, GearShifter.manumatic],
-                                       pcm_enable=not self.CS.CP.openpilotLongitudinalControl,
+                                       pcm_enable=not self.CS.CP.catpilotLongitudinalControl,
                                        enable_buttons=(ButtonType.setCruise, ButtonType.resumeCruise))
 
     # Low speed steer alert hysteresis logic
@@ -116,7 +116,7 @@ class CarInterface(CarInterfaceBase):
     if self.low_speed_alert:
       events.add(EventName.belowSteerSpeed)
 
-    if self.CS.CP.openpilotLongitudinalControl:
+    if self.CS.CP.catpilotLongitudinalControl:
       if ret.vEgo < self.CP.minEnableSpeed + 0.5:
         events.add(EventName.belowEngageSpeed)
       if c.enabled and ret.vEgo < self.CP.minEnableSpeed:

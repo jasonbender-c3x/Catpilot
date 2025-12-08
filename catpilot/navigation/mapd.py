@@ -11,8 +11,8 @@ import urllib.request
 
 from pathlib import Path
 
-from openpilot.catpilot.common.catpilot_utilities import is_url_pingable
-from openpilot.catpilot.common.catpilot_variables import MAPD_PATH, RESOURCES_REPO, params_memory
+from catpilot.catpilot.common.catpilot_utilities import is_url_pingable
+from catpilot.catpilot.common.catpilot_variables import MAPD_PATH, RESOURCES_REPO, params_memory
 
 VERSION = "v2"
 
@@ -49,7 +49,7 @@ def download():
 
   latest_version = get_latest_version()
   urls = [
-    f"https://github.com/pfeiferj/openpilot-mapd/releases/download/{latest_version}/mapd",
+    f"https://github.com/pfeiferj/catpilot-mapd/releases/download/{latest_version}/mapd",
     f"https://gitlab.com/{RESOURCES_REPO}/-/raw/Mapd/{latest_version}"
   ]
   for url in urls:

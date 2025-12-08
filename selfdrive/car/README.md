@@ -10,7 +10,7 @@ Fingerprints for matching to a specific car
 Builds CAN messages to send to car
 
 ##### carstate.py
-Reads CAN from car and builds openpilot CarState message
+Reads CAN from car and builds catpilot CarState message
 
 ##### values.py
 Limits for actuation, general constants for cars, and supported car documentation

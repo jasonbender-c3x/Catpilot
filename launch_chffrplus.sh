@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 if [ -z "$BASEDIR" ]; then
-  BASEDIR="/data/openpilot"
+  BASEDIR="/data/catpilot"
 fi
 
 source "$BASEDIR/launch_env.sh"
@@ -51,11 +51,11 @@ function launch {
       echo "${BASEDIR} has been modified, skipping overlay update installation"
     else
       if [ -f "${STAGING_ROOT}/finalized/.overlay_consistent" ]; then
-        if [ ! -d /data/safe_staging/old_openpilot ]; then
+        if [ ! -d /data/safe_staging/old_catpilot ]; then
           echo "Valid overlay update found, installing"
           LAUNCHER_LOCATION="${BASH_SOURCE[0]}"
 
-          mv $BASEDIR /data/safe_staging/old_openpilot
+          mv $BASEDIR /data/safe_staging/old_catpilot
           mv "${STAGING_ROOT}/finalized" $BASEDIR
           cd $BASEDIR
 
@@ -63,7 +63,7 @@ function launch {
           unset AGNOS_VERSION
           exec "${LAUNCHER_LOCATION}"
         else
-          echo "openpilot backup found, not updating"
+          echo "catpilot backup found, not updating"
           # TODO: restore backup? This means the updater didn't start after swapping
         fi
       fi

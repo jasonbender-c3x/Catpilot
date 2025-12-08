@@ -1,5 +1,5 @@
 from cereal import car
-from openpilot.selfdrive.car.tesla.values import CAR
+from catpilot.selfdrive.car.tesla.values import CAR
 
 Ecu = car.CarParams.Ecu
 

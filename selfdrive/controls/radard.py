@@ -7,15 +7,15 @@ from typing import Any
 
 import capnp
 from cereal import messaging, log, car
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.numpy_fast import interp
-from openpilot.common.params import Params
-from openpilot.common.realtime import DT_CTRL, DT_MDL, Ratekeeper, Priority, config_realtime_process
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.numpy_fast import interp
+from catpilot.common.params import Params
+from catpilot.common.realtime import DT_CTRL, DT_MDL, Ratekeeper, Priority, config_realtime_process
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.common.simple_kalman import KF1D
+from catpilot.common.simple_kalman import KF1D
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
 
 # Default lead acceleration decay set to 50% at 1s
 _LEAD_ACCEL_TAU = 1.5

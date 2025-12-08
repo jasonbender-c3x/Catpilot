@@ -9,12 +9,12 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.realtime import DT_MDL
-from openpilot.common.time import system_time_valid
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.realtime import DT_MDL
+from catpilot.common.time import system_time_valid
 
-from openpilot.catpilot.common.catpilot_utilities import calculate_bearing_offset, calculate_distance_to_point, is_url_pingable
-from openpilot.catpilot.common.catpilot_variables import params, params_memory
+from catpilot.catpilot.common.catpilot_utilities import calculate_bearing_offset, calculate_distance_to_point, is_url_pingable
+from catpilot.catpilot.common.catpilot_variables import params, params_memory
 
 FREE_MAPBOX_REQUESTS = 100_000
 

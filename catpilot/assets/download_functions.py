@@ -5,8 +5,8 @@ import tempfile
 from datetime import datetime
 from pathlib import Path
 
-from openpilot.catpilot.common.catpilot_utilities import delete_file, is_url_pingable
-from openpilot.catpilot.common.catpilot_variables import RESOURCES_REPO, params_memory
+from catpilot.catpilot.common.catpilot_utilities import delete_file, is_url_pingable
+from catpilot.catpilot.common.catpilot_variables import RESOURCES_REPO, params_memory
 
 GITHUB_URL = f"https://raw.githubusercontent.com/{RESOURCES_REPO}"
 GITLAB_URL = f"https://gitlab.com/{RESOURCES_REPO}/-/raw"

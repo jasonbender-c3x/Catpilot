@@ -3,10 +3,10 @@
 import json
 import math
 
-from openpilot.common.conversions import Conversions as CV
+from catpilot.common.conversions import Conversions as CV
 
-from openpilot.catpilot.common.catpilot_utilities import calculate_distance_to_point
-from openpilot.catpilot.common.catpilot_variables import PLANNER_TIME, params_memory
+from catpilot.catpilot.common.catpilot_utilities import calculate_distance_to_point
+from catpilot.catpilot.common.catpilot_variables import PLANNER_TIME, params_memory
 
 def calculate_curvature(p1, p2, p3):
   lat1, lon1 = p1

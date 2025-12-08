@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import math
 from cereal import car
-from openpilot.common.conversions import Conversions as CV
+from catpilot.common.conversions import Conversions as CV
 from opendbc.can.parser import CANParser
-from openpilot.selfdrive.car.gm.values import DBC, CanBus
-from openpilot.selfdrive.car.interfaces import RadarInterfaceBase
+from catpilot.selfdrive.car.gm.values import DBC, CanBus
+from catpilot.selfdrive.car.interfaces import RadarInterfaceBase
 
 RADAR_HEADER_MSG = 1120
 SLOT_1_MSG = RADAR_HEADER_MSG + 1

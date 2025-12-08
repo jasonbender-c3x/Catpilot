@@ -9,9 +9,9 @@ from datetime import date, timedelta
 from dateutil import easter
 from pathlib import Path
 
-from openpilot.catpilot.assets.download_functions import GITLAB_URL, download_file, get_repository_url, handle_error, handle_request_error, verify_download
-from openpilot.catpilot.common.catpilot_utilities import delete_file, extract_zip
-from openpilot.catpilot.common.catpilot_variables import ACTIVE_THEME_PATH, RANDOM_EVENTS_PATH, RESOURCES_REPO, THEME_SAVE_PATH, params, params_memory, update_catpilot_toggles
+from catpilot.catpilot.assets.download_functions import GITLAB_URL, download_file, get_repository_url, handle_error, handle_request_error, verify_download
+from catpilot.catpilot.common.catpilot_utilities import delete_file, extract_zip
+from catpilot.catpilot.common.catpilot_variables import ACTIVE_THEME_PATH, RANDOM_EVENTS_PATH, RESOURCES_REPO, THEME_SAVE_PATH, params, params_memory, update_catpilot_toggles
 
 CANCEL_DOWNLOAD_PARAM = "CancelThemeDownload"
 DOWNLOAD_PROGRESS_PARAM = "ThemeDownloadProgress"

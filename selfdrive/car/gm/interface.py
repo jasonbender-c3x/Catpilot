@@ -4,13 +4,13 @@ from cereal import car, custom
 from math import fabs, exp
 from panda import Panda
 
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car import create_button_events, get_safety_config
-from openpilot.selfdrive.car.gm.radar_interface import RADAR_HEADER_MSG
-from openpilot.selfdrive.car.gm.values import CAR, CruiseButtons, CarControllerParams, EV_CAR, CAMERA_ACC_CAR, CanBus, GMFlags, CC_ONLY_CAR, SDGM_CAR
-from openpilot.selfdrive.car.interfaces import CarInterfaceBase, TorqueFromLateralAccelCallbackType, FRICTION_THRESHOLD, LatControlInputs, NanoFFModel
-from openpilot.selfdrive.controls.lib.drive_helpers import get_friction
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car import create_button_events, get_safety_config
+from catpilot.selfdrive.car.gm.radar_interface import RADAR_HEADER_MSG
+from catpilot.selfdrive.car.gm.values import CAR, CruiseButtons, CarControllerParams, EV_CAR, CAMERA_ACC_CAR, CanBus, GMFlags, CC_ONLY_CAR, SDGM_CAR
+from catpilot.selfdrive.car.interfaces import CarInterfaceBase, TorqueFromLateralAccelCallbackType, FRICTION_THRESHOLD, LatControlInputs, NanoFFModel
+from catpilot.selfdrive.controls.lib.drive_helpers import get_friction
 
 ButtonType = car.CarState.ButtonEvent.Type
 CatPilotButtonType = custom.CatPilotCarState.ButtonEvent.Type
@@ -130,7 +130,7 @@ class CarInterface(CarInterfaceBase):
 
       if ret.experimentalLongitudinalAvailable and experimental_long:
         ret.pcmCruise = False
-        ret.openpilotLongitudinalControl = True
+        ret.catpilotLongitudinalControl = True
         ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_CAM_LONG
 
     elif candidate in SDGM_CAR:
@@ -144,7 +144,7 @@ class CarInterface(CarInterfaceBase):
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_SDGM
 
     else:  # ASCM, OBD-II harness
-      ret.openpilotLongitudinalControl = not catpilot_toggles.disable_openpilot_long
+      ret.catpilotLongitudinalControl = not catpilot_toggles.disable_catpilot_long
       ret.networkLocation = NetworkLocation.gateway
       ret.radarUnavailable = RADAR_HEADER_MSG not in fingerprint[CanBus.OBSTACLE] and not docs
       ret.pcmCruise = False  # stock non-adaptive cruise control is kept off
@@ -213,7 +213,7 @@ class CarInterface(CarInterfaceBase):
       # On the Bolt, the ECM and camera independently check that you are either above 5 kph or at a stop
       # with foot on brake to allow engagement, but this platform only has that check in the camera.
       # TODO: check if this is split by EV/ICE with more platforms in the future
-      if ret.openpilotLongitudinalControl:
+      if ret.catpilotLongitudinalControl:
         ret.minEnableSpeed = -1.
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
 
@@ -265,7 +265,7 @@ class CarInterface(CarInterfaceBase):
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_CAM
       ret.minEnableSpeed = -1
       ret.pcmCruise = False
-      ret.openpilotLongitudinalControl = not catpilot_toggles.disable_openpilot_long
+      ret.catpilotLongitudinalControl = not catpilot_toggles.disable_catpilot_long
       ret.stoppingControl = True
       ret.autoResumeSng = True
 
@@ -289,7 +289,7 @@ class CarInterface(CarInterfaceBase):
       ret.radarUnavailable = True
       ret.experimentalLongitudinalAvailable = False
       ret.minEnableSpeed = 24 * CV.MPH_TO_MS
-      ret.openpilotLongitudinalControl = not catpilot_toggles.disable_openpilot_long
+      ret.catpilotLongitudinalControl = not catpilot_toggles.disable_catpilot_long
       ret.pcmCruise = False
 
       ret.stoppingDecelRate = 11.18  # == 25 mph/s (.04 rate)

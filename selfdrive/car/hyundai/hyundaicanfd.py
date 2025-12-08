@@ -1,6 +1,6 @@
-from openpilot.common.numpy_fast import clip
-from openpilot.selfdrive.car import CanBusBase
-from openpilot.selfdrive.car.hyundai.values import HyundaiFlags
+from catpilot.common.numpy_fast import clip
+from catpilot.selfdrive.car import CanBusBase
+from catpilot.selfdrive.car.hyundai.values import HyundaiFlags
 
 
 class CanBus(CanBusBase):
@@ -53,7 +53,7 @@ def create_steering_messages(packer, CP, CAN, enabled, lat_active, apply_steer):
 
   if CP.flags & HyundaiFlags.CANFD_HDA2:
     hda2_lkas_msg = "LKAS_ALT" if CP.flags & HyundaiFlags.CANFD_HDA2_ALT_STEERING else "LKAS"
-    if CP.openpilotLongitudinalControl:
+    if CP.catpilotLongitudinalControl:
       ret.append(packer.make_can_msg("LFA", CAN.ECAN, values))
     ret.append(packer.make_can_msg(hda2_lkas_msg, CAN.ACAN, values))
   else:

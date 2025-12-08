@@ -2,11 +2,11 @@
 import os
 import shutil
 import threading
-from openpilot.system.hardware.hw import Paths
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.loggerd.config import get_available_bytes, get_available_percent
-from openpilot.system.loggerd.uploader import listdir_by_creation
-from openpilot.system.loggerd.xattr_cache import getxattr
+from catpilot.system.hardware.hw import Paths
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.loggerd.config import get_available_bytes, get_available_percent
+from catpilot.system.loggerd.uploader import listdir_by_creation
+from catpilot.system.loggerd.xattr_cache import getxattr
 
 MIN_BYTES = 5 * 1024 * 1024 * 1024
 MIN_PERCENT = 10

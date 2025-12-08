@@ -1,7 +1,7 @@
 import time
 import functools
 
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.swaglog import cloudlog
 
 
 def retry(attempts=3, delay=1.0, ignore_failure=False):

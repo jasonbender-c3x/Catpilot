@@ -1,16 +1,16 @@
 # Minimal makefile for Sphinx documentation
 #
 
-OPENPILOT_ROOT = `git rev-parse --show-toplevel`
+CATPILOT_ROOT = `git rev-parse --show-toplevel`
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-DOCSDIR       = "$(OPENPILOT_ROOT)/docs"
-SOURCEDIR     = "$(OPENPILOT_ROOT)/build/docs"
-DOCSBUILDDIR  = "$(OPENPILOT_ROOT)/build/docs"
-BUILDDIR      = "$(OPENPILOT_ROOT)/build"
+DOCSDIR       = "$(CATPILOT_ROOT)/docs"
+SOURCEDIR     = "$(CATPILOT_ROOT)/build/docs"
+DOCSBUILDDIR  = "$(CATPILOT_ROOT)/build/docs"
+BUILDDIR      = "$(CATPILOT_ROOT)/build"
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -31,7 +31,7 @@ clean:
 
 	@echo "Copying docs & config to build folder..."
 	cp -a "$(DOCSDIR)" "$(BUILDDIR)"
-	cd "$(OPENPILOT_ROOT)" && \
+	cd "$(CATPILOT_ROOT)" && \
 		find . -type f \( -name "*.md" -o -name "*.rst" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" \) \
 			-not -path "*/.*" \
 			-not -path "./build/*" \

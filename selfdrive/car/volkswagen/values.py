@@ -5,11 +5,11 @@ from enum import Enum, IntFlag, StrEnum
 from cereal import car
 from panda.python import uds
 from opendbc.can.can_define import CANDefine
-from openpilot.common.conversions import Conversions as CV
-from openpilot.selfdrive.car import dbc_dict, CarSpecs, DbcDict, PlatformConfig, Platforms
-from openpilot.selfdrive.car.docs_definitions import CarFootnote, CarHarness, CarDocs, CarParts, Column, \
+from catpilot.common.conversions import Conversions as CV
+from catpilot.selfdrive.car import dbc_dict, CarSpecs, DbcDict, PlatformConfig, Platforms
+from catpilot.selfdrive.car.docs_definitions import CarFootnote, CarHarness, CarDocs, CarParts, Column, \
                                                      Device
-from openpilot.selfdrive.car.fw_query_definitions import EcuAddrSubAddr, FwQueryConfig, Request, p16
+from catpilot.selfdrive.car.fw_query_definitions import EcuAddrSubAddr, FwQueryConfig, Request, p16
 
 Ecu = car.CarParams.Ecu
 NetworkLocation = car.CarParams.NetworkLocation
@@ -180,7 +180,7 @@ class Footnote(Enum):
     "are limited to using stock ACC.",
     Column.LONGITUDINAL)
   VW_MQB_A0 = CarFootnote(
-    "Model-years 2022 and beyond may have a combined CAN gateway and BCM, which is supported by openpilot " +
+    "Model-years 2022 and beyond may have a combined CAN gateway and BCM, which is supported by catpilot " +
     "in software, but doesn't yet have a harness available from the comma store.",
     Column.HARDWARE)
 
@@ -480,7 +480,7 @@ CHECK_FUZZY_ECUS = {Ecu.fwdRadar}
 # where N=number, X=letter, and the trailing two letters are optional. Performance
 # tuners sometimes tamper with that field (e.g. 8V0 9C0 BB0 1 from COBB/EQT). Tampered
 # ECU SW part numbers are invalid for vehicle ID and compatibility checks. Try to have
-# them repaired by the tuner before including them in openpilot.
+# them repaired by the tuner before including them in catpilot.
 
 VOLKSWAGEN_VERSION_REQUEST_MULTI = bytes([uds.SERVICE_TYPE.READ_DATA_BY_IDENTIFIER]) + \
   p16(uds.DATA_IDENTIFIER_TYPE.VEHICLE_MANUFACTURER_SPARE_PART_NUMBER) + \

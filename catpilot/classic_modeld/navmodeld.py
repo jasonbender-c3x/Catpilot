@@ -9,11 +9,11 @@ from pathlib import Path
 from cereal import messaging
 from cereal.messaging import PubMaster, SubMaster
 from msgq.visionipc import VisionIpcClient, VisionStreamType
-from openpilot.common.swaglog import cloudlog
-from openpilot.common.params import Params
-from openpilot.common.realtime import set_realtime_priority
-from openpilot.catpilot.classic_modeld.constants import ModelConstants
-from openpilot.catpilot.classic_modeld.runners import ModelRunner, Runtime
+from catpilot.common.swaglog import cloudlog
+from catpilot.common.params import Params
+from catpilot.common.realtime import set_realtime_priority
+from catpilot.catpilot.classic_modeld.constants import ModelConstants
+from catpilot.catpilot.classic_modeld.runners import ModelRunner, Runtime
 
 NAV_INPUT_SIZE = 256*256
 NAV_FEATURE_LEN = 256

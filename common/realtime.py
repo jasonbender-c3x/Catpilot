@@ -6,7 +6,7 @@ from collections import deque
 
 from setproctitle import getproctitle
 
-from openpilot.system.hardware import PC
+from catpilot.system.hardware import PC
 
 
 # time step for each process

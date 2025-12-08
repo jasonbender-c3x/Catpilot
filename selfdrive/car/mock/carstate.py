@@ -1,4 +1,4 @@
-from openpilot.selfdrive.car.interfaces import CarStateBase
+from catpilot.selfdrive.car.interfaces import CarStateBase
 
 class CarState(CarStateBase):
   pass

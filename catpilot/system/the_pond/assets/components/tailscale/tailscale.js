@@ -58,7 +58,7 @@ export function TailscaleControl() {
           ${() => state.installed ? 'Uninstall Tailscale' : 'Install Tailscale'}
         </div>
         <p class="tailscale-text">
-          Tailscale creates a secure, private connection between your openpilot device and your phone or PC so you can access and control it from anywhere!
+          Tailscale creates a secure, private connection between your catpilot device and your phone or PC so you can access and control it from anywhere!
         </p>
         <div class="tailscale-button-wrapper">
           <button

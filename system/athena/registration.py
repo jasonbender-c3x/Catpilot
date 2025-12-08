@@ -7,13 +7,13 @@ import string
 from pathlib import Path
 
 from datetime import datetime, timedelta
-from openpilot.common.api import api_get
-from openpilot.common.params import Params
-from openpilot.common.spinner import Spinner
-from openpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
-from openpilot.system.hardware import HARDWARE, PC
-from openpilot.system.hardware.hw import Paths
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.api import api_get
+from catpilot.common.params import Params
+from catpilot.common.spinner import Spinner
+from catpilot.selfdrive.controls.lib.alertmanager import set_offroad_alert
+from catpilot.system.hardware import HARDWARE, PC
+from catpilot.system.hardware.hw import Paths
+from catpilot.common.swaglog import cloudlog
 
 
 UNREGISTERED_DONGLE_ID = "UnregisteredDevice"

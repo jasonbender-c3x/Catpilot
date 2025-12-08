@@ -11,13 +11,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
-from openpilot.common.conversions import Conversions as CV
-from openpilot.system.loggerd.config import get_available_bytes, get_used_bytes
-from openpilot.system.loggerd.deleter import PRESERVE_ATTR_NAME, PRESERVE_ATTR_VALUE
-from openpilot.system.loggerd.uploader import listdir_by_creation
-from openpilot.tools.lib.route import SegmentName
+from catpilot.common.conversions import Conversions as CV
+from catpilot.system.loggerd.config import get_available_bytes, get_used_bytes
+from catpilot.system.loggerd.deleter import PRESERVE_ATTR_NAME, PRESERVE_ATTR_VALUE
+from catpilot.system.loggerd.uploader import listdir_by_creation
+from catpilot.tools.lib.route import SegmentName
 
-from openpilot.catpilot.common.catpilot_variables import params, params_tracking
+from catpilot.catpilot.common.catpilot_variables import params, params_tracking
 
 LOG_CANDIDATES = [
   "qlog",

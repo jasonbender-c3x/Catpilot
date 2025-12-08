@@ -5,20 +5,20 @@ import math
 import cereal.messaging as messaging
 
 from cereal import car, log
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.filter_simple import FirstOrderFilter
-from openpilot.common.realtime import DT_MDL
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.filter_simple import FirstOrderFilter
+from catpilot.common.realtime import DT_MDL
 
-from openpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX
-from openpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import A_CHANGE_COST, DANGER_ZONE_COST, J_EGO_COST, STOP_DISTANCE
+from catpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX
+from catpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import A_CHANGE_COST, DANGER_ZONE_COST, J_EGO_COST, STOP_DISTANCE
 
-from openpilot.catpilot.common.catpilot_utilities import calculate_lane_width, calculate_road_curvature
-from openpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, MINIMUM_LATERAL_ACCELERATION, PLANNER_TIME, THRESHOLD, params, params_memory
-from openpilot.catpilot.controls.lib.conditional_experimental_mode import ConditionalExperimentalMode
-from openpilot.catpilot.controls.lib.catpilot_acceleration import CatPilotAcceleration
-from openpilot.catpilot.controls.lib.catpilot_events import CatPilotEvents
-from openpilot.catpilot.controls.lib.catpilot_following import CatPilotFollowing
-from openpilot.catpilot.controls.lib.catpilot_vcruise import CatPilotVCruise
+from catpilot.catpilot.common.catpilot_utilities import calculate_lane_width, calculate_road_curvature
+from catpilot.catpilot.common.catpilot_variables import CRUISING_SPEED, MINIMUM_LATERAL_ACCELERATION, PLANNER_TIME, THRESHOLD, params, params_memory
+from catpilot.catpilot.controls.lib.conditional_experimental_mode import ConditionalExperimentalMode
+from catpilot.catpilot.controls.lib.catpilot_acceleration import CatPilotAcceleration
+from catpilot.catpilot.controls.lib.catpilot_events import CatPilotEvents
+from catpilot.catpilot.controls.lib.catpilot_following import CatPilotFollowing
+from catpilot.catpilot.controls.lib.catpilot_vcruise import CatPilotVCruise
 
 class CatPilotPlanner:
   def __init__(self):

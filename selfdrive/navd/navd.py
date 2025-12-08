@@ -9,17 +9,17 @@ import requests
 
 import cereal.messaging as messaging
 from cereal import log
-from openpilot.common.api import Api
-from openpilot.common.numpy_fast import interp
-from openpilot.common.params import Params
-from openpilot.common.realtime import Ratekeeper
-from openpilot.selfdrive.navd.helpers import (Coordinate, coordinate_from_param,
+from catpilot.common.api import Api
+from catpilot.common.numpy_fast import interp
+from catpilot.common.params import Params
+from catpilot.common.realtime import Ratekeeper
+from catpilot.selfdrive.navd.helpers import (Coordinate, coordinate_from_param,
                                     distance_along_geometry, maxspeed_to_ms,
                                     minimum_distance,
                                     parse_banner_instructions)
-from openpilot.common.swaglog import cloudlog
+from catpilot.common.swaglog import cloudlog
 
-from openpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
+from catpilot.catpilot.common.catpilot_variables import get_catpilot_toggles
 
 REROUTE_DISTANCE = 25
 MANEUVER_TRANSITION_THRESHOLD = 10

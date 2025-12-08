@@ -8,10 +8,10 @@ from typing import NoReturn
 from timezonefinder import TimezoneFinder
 
 import cereal.messaging as messaging
-from openpilot.common.time import system_time_valid
-from openpilot.common.params import Params
-from openpilot.common.swaglog import cloudlog
-from openpilot.system.hardware import AGNOS
+from catpilot.common.time import system_time_valid
+from catpilot.common.params import Params
+from catpilot.common.swaglog import cloudlog
+from catpilot.system.hardware import AGNOS
 
 
 def set_timezone(timezone):

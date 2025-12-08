@@ -11,19 +11,19 @@ import urllib.error
 import urllib.request
 import zipfile
 
-import openpilot.system.sentry as sentry
+import catpilot.system.sentry as sentry
 
 from functools import cache
 from pathlib import Path
 
 from cereal import log, messaging
 from opendbc.can.parser import CANParser
-from openpilot.common.realtime import DT_DMON, DT_HW
-from openpilot.selfdrive.car.toyota.carcontroller import LOCK_CMD
-from openpilot.system.hardware import HARDWARE
+from catpilot.common.realtime import DT_DMON, DT_HW
+from catpilot.selfdrive.car.toyota.carcontroller import LOCK_CMD
+from catpilot.system.hardware import HARDWARE
 from panda import Panda
 
-from openpilot.catpilot.common.catpilot_variables import EARTH_RADIUS, KONIK_PATH, MAPD_PATH, MAPS_PATH, params, params_cache, params_memory
+from catpilot.catpilot.common.catpilot_variables import EARTH_RADIUS, KONIK_PATH, MAPD_PATH, MAPS_PATH, params, params_cache, params_memory
 
 running_threads = {}
 
@@ -36,7 +36,7 @@ locks = {
   "lock_doors": threading.Lock(),
   "update_checks": threading.Lock(),
   "update_maps": threading.Lock(),
-  "update_openpilot": threading.Lock(),
+  "update_catpilot": threading.Lock(),
 }
 
 def run_thread_with_lock(name, target, args=(), report=True):
@@ -231,7 +231,7 @@ def update_maps(now):
 
   params.put("LastMapsUpdate", todays_date)
 
-def update_openpilot():
+def update_catpilot():
   def update_available():
     subprocess.run(["pkill", "-SIGUSR1", "-f", "system.updated.updated"], check=False)
 

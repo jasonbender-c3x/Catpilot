@@ -1,6 +1,6 @@
 # navigation
 
-This directory contains two daemons, `navd` and `mapsd`, which support navigation in the openpilot stack.
+This directory contains two daemons, `navd` and `mapsd`, which support navigation in the catpilot stack.
 
 ### navd
 

@@ -10,22 +10,22 @@ from functools import cache
 from types import SimpleNamespace
 
 from cereal import car, custom
-from openpilot.common.basedir import BASEDIR
-from openpilot.common.conversions import Conversions as CV
-from openpilot.common.params import Params
-from openpilot.common.simple_kalman import KF1D, get_kalman_gain
-from openpilot.common.numpy_fast import clip
-from openpilot.common.realtime import DT_CTRL
-from openpilot.selfdrive.car import apply_hysteresis, gen_empty_fingerprint, scale_rot_inertia, scale_tire_stiffness, STD_CARGO_KG
-from openpilot.selfdrive.car.chrysler.values import CAR as ChryslerCAR, ChryslerCatPilotFlags
-from openpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
-from openpilot.selfdrive.car.hyundai.values import CAR as HyundaiCAR, CANFD_CAR, HyundaiCatPilotFlags
-from openpilot.selfdrive.car.mock.values import CAR as MockCAR
-from openpilot.selfdrive.car.toyota.values import CAR as ToyotaCAR, ToyotaCatPilotFlags
-from openpilot.selfdrive.car.values import PLATFORMS
-from openpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX, get_friction
-from openpilot.selfdrive.controls.lib.events import Events
-from openpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
+from catpilot.common.basedir import BASEDIR
+from catpilot.common.conversions import Conversions as CV
+from catpilot.common.params import Params
+from catpilot.common.simple_kalman import KF1D, get_kalman_gain
+from catpilot.common.numpy_fast import clip
+from catpilot.common.realtime import DT_CTRL
+from catpilot.selfdrive.car import apply_hysteresis, gen_empty_fingerprint, scale_rot_inertia, scale_tire_stiffness, STD_CARGO_KG
+from catpilot.selfdrive.car.chrysler.values import CAR as ChryslerCAR, ChryslerCatPilotFlags
+from catpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
+from catpilot.selfdrive.car.hyundai.values import CAR as HyundaiCAR, CANFD_CAR, HyundaiCatPilotFlags
+from catpilot.selfdrive.car.mock.values import CAR as MockCAR
+from catpilot.selfdrive.car.toyota.values import CAR as ToyotaCAR, ToyotaCatPilotFlags
+from catpilot.selfdrive.car.values import PLATFORMS
+from catpilot.selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX, get_friction
+from catpilot.selfdrive.controls.lib.events import Events
+from catpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
 
 def get_max_allowed_accel(v_ego):
   return float(np.interp(v_ego, [0., 5., 20.], [4.0, 4.0, 2.0]))  # ISO 15622:2018
@@ -205,7 +205,7 @@ class CarInterfaceBase(ABC):
           if 0x23 in fingerprint[0]:
             fp_ret.fpFlags |= ToyotaCatPilotFlags.ZSS.value
 
-      fp_ret.openpilotLongitudinalControlDisabled = catpilot_toggles.disable_openpilot_long
+      fp_ret.catpilotLongitudinalControlDisabled = catpilot_toggles.disable_catpilot_long
 
     return fp_ret
 
@@ -253,10 +253,10 @@ class CarInterfaceBase(ABC):
     ret.minSteerSpeed = 0.
     ret.wheelSpeedFactor = 1.0
 
-    ret.pcmCruise = True     # openpilot's state is tied to the PCM's cruise state on most cars
+    ret.pcmCruise = True     # catpilot's state is tied to the PCM's cruise state on most cars
     ret.minEnableSpeed = -1. # enable is done by stock ACC, so ignore this
     ret.steerRatioRear = 0.  # no rear steering, at least on the listed cars aboveA
-    ret.openpilotLongitudinalControl = False
+    ret.catpilotLongitudinalControl = False
     ret.stopAccel = -2.0
     ret.stoppingDecelRate = 0.8 # brake_travel/s while trying to stop
     ret.vEgoStopping = 0.5
@@ -354,7 +354,7 @@ class CarInterfaceBase(ABC):
       events.add(EventName.speedTooHigh)
     if cs_out.cruiseState.nonAdaptive:
       events.add(EventName.wrongCruiseMode)
-    if cs_out.brakeHoldActive and self.CP.openpilotLongitudinalControl:
+    if cs_out.brakeHoldActive and self.CP.catpilotLongitudinalControl:
       events.add(EventName.brakeHold)
     if cs_out.parkingBrake:
       events.add(EventName.parkBrake)
@@ -566,7 +566,7 @@ def get_interface_attr(attr: str, combine_brands: bool = False, ignore_none: boo
   for car_folder in sorted([x[0] for x in os.walk(BASEDIR + '/selfdrive/car')]):
     try:
       brand_name = car_folder.split('/')[-1]
-      brand_values = __import__(f'openpilot.selfdrive.car.{brand_name}.{INTERFACE_ATTR_FILE.get(attr, "values")}', fromlist=[attr])
+      brand_values = __import__(f'catpilot.selfdrive.car.{brand_name}.{INTERFACE_ATTR_FILE.get(attr, "values")}', fromlist=[attr])
       if hasattr(brand_values, attr) or not ignore_none:
         attr_data = getattr(brand_values, attr, None)
       else:

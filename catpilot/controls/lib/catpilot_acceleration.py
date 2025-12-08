@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import numpy as np
 
-from openpilot.selfdrive.controls.lib.longitudinal_planner import A_CRUISE_MIN, get_max_accel
+from catpilot.selfdrive.controls.lib.longitudinal_planner import A_CRUISE_MIN, get_max_accel
 
-from openpilot.catpilot.common.catpilot_variables import CITY_SPEED_LIMIT
+from catpilot.catpilot.common.catpilot_variables import CITY_SPEED_LIMIT
 
 A_CRUISE_MIN_ECO =   A_CRUISE_MIN / 2
 A_CRUISE_MIN_SPORT = A_CRUISE_MIN * 2
