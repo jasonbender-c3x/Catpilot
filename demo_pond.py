@@ -89,9 +89,25 @@ def tsk_available():
 @app.route("/api/stats", methods=["GET"])
 def get_stats():
     return jsonify({
-        "hours": 0,
-        "miles": 0,
-        "note": "Demo mode - stats require actual driving data"
+        "driveStats": {
+            "all": {"drives": 0, "distance": 0, "hours": 0},
+            "week": {"drives": 0, "distance": 0, "hours": 0},
+            "catpilot": {"drives": 0, "distance": 0, "hours": 0}
+        },
+        "firehoseStats": {
+            "segments": 0
+        },
+        "diskUsage": [
+            {"size": "0 GB", "used": "0 GB", "usedPercentage": "0"}
+        ],
+        "softwareInfo": {
+            "branchName": "main",
+            "buildEnvironment": "Replit Demo",
+            "commitHash": "catpilot-demo",
+            "forkMaintainer": "Jason Bender & Replit",
+            "updateAvailable": "No",
+            "versionDate": "December 2025"
+        }
     })
 
 @app.route("/api/params", methods=["GET"])
