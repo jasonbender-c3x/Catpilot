@@ -121,6 +121,19 @@ To run the full version, you need:
 - Set up workflow and deployment
 - Added stub API endpoints for demo mode
 - Renamed from "The Pond" to "The Pound" with cat theme
+- **Comprehensive Rebranding**:
+  - Replaced all "Frogpilot" references with "Catpilot" (24 files)
+  - Replaced all "openpilot" references with "catpilot" (287+ files)
+  - Generated new CatPilot cat logo and branding assets
+  - Created media assets documentation at `docs/MEDIA_ASSETS.md`
+  - Created car assets inventory at `CAR_ASSETS_INVENTORY.md`
+  - Generated 12 replacement images (logos, steering wheels, icons)
+
+## Documentation
+
+- **[docs/MEDIA_ASSETS.md](docs/MEDIA_ASSETS.md)** - Complete media asset catalog with metadata for generating replacements
+- **[CAR_ASSETS_INVENTORY.md](CAR_ASSETS_INVENTORY.md)** - Full inventory of all 468 car assets (icons, sounds, images)
+- **Generated Assets** - New images in `attached_assets/generated_images/`
 
 ## Resources
 
