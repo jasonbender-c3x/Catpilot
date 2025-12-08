@@ -39,5 +39,5 @@ waitForPort = 5000
 outputType = "webview"
 
 [deployment]
-deploymentTarget = "cloudrun"
-run = ["sh", "-c", "/nix/store/cn7gx98bvd6qj3jrh5v21q868nlv2jv6-python3-wrapper/bin/python3 $file"]
+deploymentTarget = "autoscale"
+run = ["python3", "demo_pond.py"]
