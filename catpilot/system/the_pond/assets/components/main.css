@@ -20,13 +20,13 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 
-  /* Colors */
-  --accent-bg: #673ab7;
-  --accent-hover-bg: #512da8;
-  --card-bg: #234423;
+  /* Colors - Dark Blue/Orange Cat Theme */
+  --accent-bg: #e67e22;
+  --accent-hover-bg: #d35400;
+  --card-bg: #1e2a3a;
   --color-black: #000000;
-  --color-confirm: #1a73e8;
-  --color-confirm-hover: #0758ad;
+  --color-confirm: #3498db;
+  --color-confirm-hover: #2980b9;
   --color-gray-100: #f5f5f5;
   --color-gray-200: #e0e0e0;
   --color-gray-300: #c2c2c2;
@@ -37,28 +37,28 @@
   --color-gray-800: #333333;
   --color-gray-900: #1a1a1a;
   --color-white: #ffffff;
-  --danger-bg: #b71c1c;
-  --danger-fg: #ef1313;
-  --danger-hover-bg: #d32f2f;
-  --input-bg: #2f5432;
-  --main-bg: #0b1b0b;
-  --main-fg: #178643;
-  --secondary-bg: #264026;
-  --selected-camera-bg: #1f2f1f;
-  --sidebar-active-bg: #64c87826;
-  --sidebar-bg: #264026;
-  --sidebar-border-color: #1e2e1e;
+  --danger-bg: #c0392b;
+  --danger-fg: #e74c3c;
+  --danger-hover-bg: #e74c3c;
+  --input-bg: #2c3e50;
+  --main-bg: #0d1520;
+  --main-fg: #e67e22;
+  --secondary-bg: #1a2634;
+  --selected-camera-bg: #1e2d3d;
+  --sidebar-active-bg: #e67e2226;
+  --sidebar-bg: #1a2634;
+  --sidebar-border-color: #2c3e50;
   --sidebar-fg: #ffffff;
-  --sidebar-title-fg: #193446;
-  --success-bg: #039226;
-  --success-fg: #00a100;
-  --success-hover-bg: #01be2d;
+  --sidebar-title-fg: #ecf0f1;
+  --success-bg: #27ae60;
+  --success-fg: #2ecc71;
+  --success-hover-bg: #2ecc71;
   --text-color: #ffffff;
-  --text-muted: #a0a0a0;
+  --text-muted: #95a5a6;
   --text-on-primary: var(--sidebar-fg);
   --text-on-surface: var(--text-color);
-  --thumb-color: #178643;
-  --track-color: #1a3a1a;
+  --thumb-color: #e67e22;
+  --track-color: #1a2634;
   --warning-bg: #ff9800;
   --warning-hover-bg: #f57c00;
 
