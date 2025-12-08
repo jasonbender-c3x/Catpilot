@@ -131,9 +131,26 @@ To run the full version, you need:
 
 ## Documentation
 
+- **[docs/TOOLS.md](docs/TOOLS.md)** - Complete development tools guide with build instructions
 - **[docs/MEDIA_ASSETS.md](docs/MEDIA_ASSETS.md)** - Complete media asset catalog with metadata for generating replacements
 - **[CAR_ASSETS_INVENTORY.md](CAR_ASSETS_INVENTORY.md)** - Full inventory of all 468 car assets (icons, sounds, images)
 - **Generated Assets** - New images in `attached_assets/generated_images/`
+
+## Development Tools
+
+CatPilot includes powerful development and debugging tools:
+
+| Tool | Purpose |
+|------|---------|
+| **Cabana** | CAN bus message analyzer and DBC editor |
+| **Replay** | Replay recorded drives for testing |
+| **PlotJuggler** | Time-series data visualization |
+| **Joystick** | Control car with joystick/keyboard |
+| **CameraStream** | Stream cameras over network |
+| **Simulator** | Virtual driving with MetaDrive |
+| **Webcam** | Run CatPilot on PC with webcams |
+
+See [docs/TOOLS.md](docs/TOOLS.md) for complete build and usage instructions.
 
 ## Resources
 
