@@ -140,6 +140,7 @@ To run the full version, you need:
 
 CatPilot includes powerful development and debugging tools:
 
+### Core Tools
 | Tool | Purpose |
 |------|---------|
 | **Cabana** | CAN bus message analyzer and DBC editor |
@@ -149,6 +150,20 @@ CatPilot includes powerful development and debugging tools:
 | **CameraStream** | Stream cameras over network |
 | **Simulator** | Virtual driving with MetaDrive |
 | **Webcam** | Run CatPilot on PC with webcams |
+
+### Web Interface & Customization
+| Tool | Purpose |
+|------|---------|
+| **The Pound** | Web-based device management (port 8082) |
+| **Theme Maker** | Create custom UI themes |
+| **Model Selector** | Switch AI driving models |
+| **Force Car Recognition** | Manual vehicle fingerprinting |
+
+### Tuning Tools
+| Tool | Purpose |
+|------|---------|
+| **Lateral Tuner** | Fine-tune steering control |
+| **Longitudinal Tuner** | Fine-tune acceleration/braking |
 
 See [docs/TOOLS.md](docs/TOOLS.md) for complete build and usage instructions.
 

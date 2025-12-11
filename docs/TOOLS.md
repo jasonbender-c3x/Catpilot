@@ -13,6 +13,13 @@ This document covers all the development and debugging tools available in CatPil
 - [CameraStream - Remote Camera Viewing](#camerastream---remote-camera-viewing)
 - [Simulator - Virtual Driving](#simulator---virtual-driving)
 - [Webcam - PC-Based CatPilot](#webcam---pc-based-catpilot)
+- [The Pound - Web Management Interface](#the-pound---web-management-interface)
+- [Theme Maker](#theme-maker)
+- [Lateral Tuner](#lateral-tuner)
+- [Longitudinal Tuner](#longitudinal-tuner)
+- [Model Selector](#model-selector)
+- [Force Car Recognition](#force-car-recognition)
+- [Legacy Debug Tools](#legacy-debug-tools)
 - [Build Instructions](#build-instructions)
 - [Troubleshooting](#troubleshooting)
 
@@ -41,6 +48,8 @@ python3 tools/lib/auth.py
 
 ## Tool Overview
 
+### Core Development Tools
+
 | Tool | Purpose | Hardware Required |
 |------|---------|-------------------|
 | **Cabana** | CAN message analyzer & DBC editor | Optional |
@@ -50,6 +59,30 @@ python3 tools/lib/auth.py
 | **CameraStream** | Stream cameras over network | Comma device |
 | **Simulator** | Virtual driving with MetaDrive | No |
 | **Webcam** | Run CatPilot on PC with webcams | Panda + Webcam |
+
+### Web Interface & Customization
+
+| Tool | Purpose | Hardware Required |
+|------|---------|-------------------|
+| **The Pound** | Web-based device management | Comma device |
+| **Theme Maker** | Create custom UI themes | Comma device |
+| **Model Selector** | Switch AI driving models | Comma device |
+| **Force Car Recognition** | Manual vehicle fingerprinting | Comma device |
+
+### Tuning Tools
+
+| Tool | Purpose | Hardware Required |
+|------|---------|-------------------|
+| **Lateral Tuner** | Fine-tune steering control | Comma device + Car |
+| **Longitudinal Tuner** | Fine-tune acceleration/braking | Comma device + Car |
+
+### Legacy Tools
+
+| Tool | Purpose | Hardware Required |
+|------|---------|-------------------|
+| **unlogger.py** | Legacy drive replay | No |
+| **selfdrive/debug/** | Debug scripts & log filters | No |
+| **carcontrols/** | Legacy joystick control | Panda + Car |
 
 ---
 
@@ -403,6 +436,262 @@ USE_WEBCAM=1 ROAD_CAM=1 system/manager/manager.py
 
 # Multiple cameras
 USE_WEBCAM=1 ROAD_CAM=0 DRIVER_CAM=1 WIDE_CAM=2 system/manager/manager.py
+```
+
+---
+
+## The Pound - Web Management Interface
+
+The Pound is CatPilot's web-based fleet management interface, accessible from any browser on the same network as your comma device.
+
+### Access
+
+Open a web browser and navigate to:
+```
+http://YOUR.DEVICE.IP:8082
+```
+
+### Features
+
+| Section | Functionality |
+|---------|---------------|
+| **Home** | Driving statistics, disk usage, software info |
+| **Navigation** | Set destinations, manage Mapbox keys |
+| **Recordings** | View dashcam routes, screen recordings |
+| **Tailscale** | Network connectivity status |
+| **Tools** | Theme Maker, Speed Limits, Error Logs, Toggles |
+| **Settings** | Device configuration, model selection |
+
+### Finding Your Device IP
+
+```bash
+# On the comma device via SSH:
+ip addr show wlan0 | grep inet
+```
+
+Or check your router's connected devices list.
+
+---
+
+## Theme Maker
+
+Create custom visual themes for your CatPilot interface.
+
+### Access
+
+Navigate to The Pound → Tools → Theme Maker
+
+### Customization Options
+
+- **Colors**: Primary accent colors, background shades
+- **Icons**: Custom steering wheel, turn signals, alerts
+- **Sounds**: Engagement/disengagement alerts, chimes
+- **Animations**: Turn signal styles, path visualization
+
+### Pre-Built Themes
+
+CatPilot includes seasonal and custom themes:
+- Default Cat Theme
+- Holiday themes (seasonal)
+- Community-submitted themes
+
+### Sharing Themes
+
+Export your theme and share it with the community via Discord or GitHub.
+
+---
+
+## Lateral Tuner
+
+Fine-tune steering (lateral) control parameters for your specific vehicle.
+
+### Access
+
+Settings → Driving Controls → Steering → Advanced Lateral Tuning
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| **Steer Ratio** | Steering wheel turns lock-to-lock |
+| **Steer Rate Cost** | How quickly steering changes (smoothness) |
+| **Steer Actuator Delay** | Latency compensation |
+| **Tire Stiffness Factor** | Grip modeling |
+| **NNFF Models** | Neural Network Feedforward models |
+
+### NNFF (Neural Network Feedforward)
+
+Location: `catpilot/assets/nnff_models/`
+
+Pre-trained models for specific vehicles that improve steering accuracy based on real-world data.
+
+### Tuning Tips
+
+1. Start with stock values
+2. Adjust one parameter at a time
+3. Test on straight roads first, then curves
+4. Use PlotJuggler to analyze steering behavior
+
+---
+
+## Longitudinal Tuner
+
+Fine-tune acceleration and braking (longitudinal) control.
+
+### Access
+
+Settings → Driving Controls → Gas/Brake → Advanced Longitudinal Tuning
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| **Acceleration Profile** | Comfort, Normal, Sport |
+| **Following Distance** | Time gap to lead vehicle (0.5s - 3.0s) |
+| **Stopping Distance** | How close to stop behind lead |
+| **Jerk Limits** | Smoothness of speed changes |
+
+### Traffic Mode
+
+Dynamic following distance that adjusts based on speed:
+- 0.5s @ 0 mph (stopped)
+- 1.0s @ 55 mph (highway)
+
+Great for dense city traffic.
+
+---
+
+## Model Selector
+
+Switch between different AI driving models without reinstalling.
+
+### Access
+
+Settings → Software → Current Driving Model
+
+### Available Models
+
+Models are downloaded on-demand and cached locally:
+
+| Model | Characteristics |
+|-------|-----------------|
+| **Blue Diamond** | Smooth, good lane centering |
+| **Notre Dame** | Latest general-purpose model |
+| **Custom** | User-trained or community models |
+
+### Model Caching
+
+Downloaded models are stored locally for offline switching:
+```
+/data/catpilot/models/
+```
+
+### Switching Models
+
+1. Park the vehicle (cannot switch while driving)
+2. Go to Model Selector
+3. Select desired model
+4. Wait for download (if not cached)
+5. Restart openpilot
+
+---
+
+## Force Car Recognition
+
+Manually specify your vehicle when automatic fingerprinting fails.
+
+### Access
+
+Settings → Vehicle → Force Car Recognition
+
+### When to Use
+
+- New/unsupported vehicle variants
+- Modified vehicles with non-standard CAN messages
+- Debugging fingerprinting issues
+
+### Usage
+
+1. Select your car make
+2. Select model/year
+3. Confirm selection
+4. Reboot device
+
+### Supported Platforms
+
+Works with most vehicles including:
+- GM (Chevrolet, Cadillac, GMC, Buick)
+- Toyota/Lexus
+- Honda/Acura
+- Hyundai/Kia/Genesis
+- And many more...
+
+---
+
+## Legacy Debug Tools
+
+These tools are from earlier openpilot builds and remain useful for development and debugging.
+
+### unlogger.py - Drive Data Replay (Legacy)
+
+Replays recorded drive data locally for debugging.
+
+```bash
+python tools/replay/unlogger.py '<route-name>' <data-directory>
+
+# Example:
+python tools/replay/unlogger.py '99c94dc769b5d96e|2018-11-14--13-31-42' ~/data
+```
+
+**Note:** Modern CatPilot uses the C++ `replay` tool instead. Use unlogger only for legacy compatibility.
+
+### selfdrive/debug/ - Debug Scripts
+
+Location: `selfdrive/debug/`
+
+| Script | Purpose |
+|--------|---------|
+| `filter_log_message.py` | Filter specific log messages from replay |
+| `test_car_model.py` | Automated testing for car ports |
+| `dump_car_info.py` | Dump car fingerprint and parameters |
+
+### carcontrols/ - Manual Joystick Control (Legacy)
+
+Direct car control via joystick for reverse engineering.
+
+**Hardware Required:**
+- Panda
+- Car harness
+- USB Joystick
+
+```bash
+# Terminal 1: Start joystick daemon
+python carcontrols/joystickd.py
+
+# Terminal 2: Start board daemon
+selfdrive/boardd/tests/boardd_old.py
+
+# Terminal 3: Debug controls
+python carcontrols/debug_controls.py
+```
+
+**Warning:** Requires bypassing safety checks. Use only in controlled environments.
+
+### CAN Replay to Device
+
+Replay CAN messages from PC to comma device using two pandas.
+
+**Hardware:**
+- 2x Panda devices
+- Debug board
+- Comma 3/3X
+
+```bash
+# Terminal 1: Mock board daemon
+MOCK=1 tools/replay/boardd.py
+
+# Terminal 2: Unlogger
+python tools/replay/unlogger.py <route> <data-dir>
 ```
 
 ---
