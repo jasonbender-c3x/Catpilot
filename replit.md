@@ -68,6 +68,15 @@ The project runs a simplified demo version (`demo_pond.py`) that:
 - **Port**: 5000 (configured for Replit webview)
 - **Host**: 0.0.0.0 (allows Replit proxy to work)
 
+### Mobile Support
+The Pound includes comprehensive mobile support:
+- **Responsive Design**: Optimized for phones and tablets (portrait/landscape)
+- **PWA Ready**: Can be installed as a standalone app on mobile devices
+- **Touch Optimized**: 44px minimum touch targets for all interactive elements
+- **Safe Area Support**: Proper padding for notched devices (iPhone X+)
+- **Reduced Motion**: Respects user accessibility preferences
+- **Mobile Menu**: Floating action button with slide-out sidebar
+
 ## Development
 
 ### Adding Features to Demo
