@@ -140,6 +140,7 @@ To run the full version, you need:
 
 ## Documentation
 
+- **[docs/COMPILING.md](docs/COMPILING.md)** - Complete compilation and build guide
 - **[docs/TOOLS.md](docs/TOOLS.md)** - Complete development tools guide with build instructions
 - **[docs/MEDIA_ASSETS.md](docs/MEDIA_ASSETS.md)** - Complete media asset catalog with metadata for generating replacements
 - **[CAR_ASSETS_INVENTORY.md](CAR_ASSETS_INVENTORY.md)** - Full inventory of all 468 car assets (icons, sounds, images)
