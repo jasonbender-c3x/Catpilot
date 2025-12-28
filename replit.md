@@ -1,199 +1,235 @@
-# CatPilot - The Pound Web Interface 🐱
+# CatPilot - Complete User Interface System 🐱
 
 ## Project Overview
 
-**CatPilot** is a fully open-sourced fork of catpilot, featuring clear and concise commits and serving as a resource for the catpilot developer community. This Replit project showcases **The Pound**, CatPilot's lightweight web-based interface for managing comma devices.
+**CatPilot** is a fully open-sourced fork of openpilot, featuring clear and concise commits and serving as a resource for the catpilot developer community. This project includes two distinct user interfaces:
 
-**Important Note**: This is a **demo version** of The Pound running in the Replit environment. Full functionality requires actual comma.ai hardware (comma 3/3X device). The demo version provides a preview of the user interface and basic API structure.
+1. **The Pound** - Web-based management interface (port 8082)
+2. **On-Device UI** - In-vehicle display on comma 3X screen
 
-### What is catpilot?
+**Note**: This Replit runs a demo version of The Pound. Full functionality requires comma.ai hardware (comma 3/3X device).
 
-catpilot is an open source driver assistance system that performs:
+### What is CatPilot?
+
+CatPilot is an open source driver assistance system that performs:
 - Adaptive Cruise Control (ACC)
 - Automated Lane Centering (ALC)
 - Forward Collision Warning (FCW)
 - Lane Departure Warning (LDW)
 
-### What is The Pound?
+## Two User Interfaces
+
+### 1. The Pound (Web Interface)
+
+**Access**: Connect to your comma 3X over the Internet on port 8082
 
 The Pound is a web-based management interface that allows users to:
-- View driving statistics
+- View driving statistics and routes
 - Manage device settings and toggles
 - Access error logs and screen recordings
-- View recorded driving routes
 - Configure navigation destinations
+- Download and manage themes
+
+**Design Features**:
+- Dark cyan/teal color scheme (#00bcd4)
+- Cat-themed branding throughout
+- Mobile-responsive with PWA support
+- 44px touch targets for accessibility
+
+**Location**: `catpilot/system/the_pond/`
+
+### 2. On-Device UI (In-Vehicle Display)
+
+**Access**: Displayed on the comma 3X screen when driving
+
+The on-device UI shows:
+- Current speed (large, centered display)
+- Engagement status (CatPilot Ready/Engaged/Override)
+- Driver alerts and warnings
+- System status indicators (GPS, Camera, Model, Panda)
+- Real-time vehicle information
+
+**Design Features**:
+- Matches The Pound's dark cyan theme
+- Cat emoji status indicators (🐱 😺 🚫)
+- High-contrast for daylight visibility
+- Glowing cyan accents for night driving
+
+**Location**: `selfdrive/ui/`
+- `catpilot_ui.py` - Main driving HUD
+- `catpilot_settings.py` - Settings panel
 
 ## Project Structure
 
 ```
 .
-├── catpilot/              # CatPilot-specific code
+├── catpilot/                    # CatPilot-specific code
+│   ├── assets/                  # UI assets and themes
+│   │   ├── active_theme/        # Currently active theme
+│   │   ├── holiday_themes/      # Seasonal themes
+│   │   ├── stock_theme/         # Default theme
+│   │   │   ├── colors/          # Color definitions (JSON)
+│   │   │   ├── distance_icons/  # Following distance icons
+│   │   │   ├── icons/           # UI icons
+│   │   │   └── steering_wheel/  # Steering wheel image
+│   │   ├── toggle_icons/        # Settings menu icons
+│   │   └── theme_manager.py     # Theme download/management
 │   └── system/
-│       └── the_pond/      # Web UI components (The Pound)
-│           ├── assets/    # JavaScript, CSS, images
-│           ├── templates/ # HTML templates
-│           ├── the_pond.py  # Full Flask application (requires hardware)
-│           └── utilities.py
-├── demo_pond.py           # Demo version for Replit (THIS IS WHAT RUNS)
-├── cereal/                # Messaging system (Cap'n Proto)
-├── opendbc/               # CAN bus databases
-├── panda/                 # Interface to comma hardware
-├── system/                # Core catpilot systems
-└── selfdrive/             # Autonomous driving logic
+│       └── the_pond/            # Web UI (The Pound)
+│           ├── assets/          # JS, CSS, images
+│           ├── templates/       # HTML templates
+│           └── the_pond.py      # Flask application
+├── selfdrive/                   # Driving system
+│   └── ui/                      # On-device UI
+│       ├── catpilot_ui.py       # Main driving interface
+│       ├── catpilot_settings.py # Settings panel
+│       ├── ui.py                # Legacy UI
+│       └── translations/        # Language files
+├── demo_pond.py                 # Demo for Replit
+├── cereal/                      # Messaging (Cap'n Proto)
+├── opendbc/                     # CAN bus databases
+└── panda/                       # Hardware interface
 ```
 
 ## Technology Stack
 
-### Backend
-- **Python 3.11** - Main programming language
-- **Flask** - Web framework
-- **Cap'n Proto** - Messaging protocol (via pycapnp)
-
-### Frontend
+### The Pound (Web UI)
+- **Python 3.11** with **Flask** - Backend
 - **Arrow.js** - Minimal reactive framework
 - **Bootstrap Icons** - Icon library
-- **Mapbox GL** - Map rendering (for navigation features)
-- Pure JavaScript (ES modules) - No build step required
+- **Mapbox GL** - Map rendering
+- Pure JavaScript ES modules
+
+### On-Device UI
+- **Python 3.11** with **PyQt5** - GUI framework
+- **cereal** - Inter-process messaging
+- Custom cat-themed widgets
+
+## Design System
+
+Both interfaces share a consistent design language:
+
+### Colors
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Cyan Primary | `#00bcd4` | Accents, active states |
+| Cyan Dark | `#00838f` | Pressed states |
+| Cyan Light | `#4dd0e1` | Highlights |
+| Background | `#0a0a0a` | Main background |
+| Background Secondary | `#1a1a1a` | Cards, panels |
+| Text Primary | `#ffffff` | Main text |
+| Text Secondary | `#b0bec5` | Descriptions |
+| Warning | `#ff9800` | Caution alerts |
+| Danger | `#f44336` | Critical alerts |
+
+### Cat-Themed Elements
+- 🐱 CatPilot Ready
+- 😺 CatPilot Engaged  
+- 🚫 Not Available
+- Holiday themes (Christmas, Halloween, World Cat Day)
 
 ## Running in Replit
 
-The project runs a simplified demo version (`demo_pond.py`) that:
-- Serves the web UI on port 5000
-- Provides stub API endpoints
-- Works without comma.ai hardware dependencies
-- Displays "Demo Mode" messages
+The demo version (`demo_pond.py`) provides a preview of The Pound:
+- Serves web UI on port 5000
+- Stub API endpoints
+- Mock data responses
 
 ### Current Setup
-- **Workflow**: "The Pound Web UI" - Runs automatically
-- **Port**: 5000 (configured for Replit webview)
-- **Host**: 0.0.0.0 (allows Replit proxy to work)
+- **Workflow**: "The Pound Web UI"
+- **Port**: 5000 (Replit webview)
+- **Host**: 0.0.0.0
 
-### Mobile Support
-The Pound includes comprehensive mobile support:
-- **Responsive Design**: Optimized for phones and tablets (portrait/landscape)
-- **PWA Ready**: Can be installed as a standalone app on mobile devices
-- **Touch Optimized**: 44px minimum touch targets for all interactive elements
-- **Safe Area Support**: Proper padding for notched devices (iPhone X+)
-- **Reduced Motion**: Respects user accessibility preferences
-- **Mobile Menu**: Floating action button with slide-out sidebar
+## Theme System
 
-## Development
+CatPilot supports extensive theming:
 
-### Adding Features to Demo
+### Theme Components
+- **Colors** - Color scheme definitions (JSON)
+- **Icons** - UI button icons (PNG)
+- **Distance Icons** - Following distance indicators
+- **Steering Wheel** - Custom wheel images
+- **Sounds** - Alert and notification sounds
+- **Turn Signals** - Turn signal animations
 
-Edit `demo_pond.py` to add new API endpoints:
-
-```python
-@app.route("/api/your_endpoint", methods=["GET"])
-def your_endpoint():
-    return jsonify({"data": "value"})
-```
-
-### Frontend Development
-
-The frontend uses Arrow.js with ES modules. Files are in:
-- `catpilot/system/the_pond/assets/components/` - UI components
-- `catpilot/system/the_pond/assets/js/` - Utilities
-- `catpilot/system/the_pond/templates/` - HTML templates
-
-No build step is needed - just edit and refresh!
-
-## Deployment
-
-Deployment is configured using Replit's autoscale mode:
-- **Type**: autoscale (stateless web app)
-- **Command**: `python3 demo_pond.py`
-- Scales automatically with traffic
-
-## Limitations in Replit
-
-The demo version has limitations compared to running on actual hardware:
-- No real driving data or routes
-- No hardware controls (doors, camera, etc.)
-- No CAN bus integration
-- No real-time vehicle data
-- Mock responses for most API endpoints
-
-## Full CatPilot Installation
-
-To run the full version, you need:
-1. A comma 3 or comma 3X device
-2. Install via: `catpilot.download`
-3. Connect to a supported vehicle
-
-## Recent Changes
-
-### December 8, 2025
-- Imported from GitHub
-- Created demo version for Replit
-- Configured Flask server for port 5000
-- Set up workflow and deployment
-- Added stub API endpoints for demo mode
-- Renamed from "The Pond" to "The Pound" with cat theme
-- **Comprehensive Rebranding**:
-  - Replaced all "Frogpilot" references with "Catpilot" (24 files)
-  - Replaced all "openpilot" references with "catpilot" (287+ files)
-  - Generated new CatPilot cat logo and branding assets
-  - Created media assets documentation at `docs/MEDIA_ASSETS.md`
-  - Created car assets inventory at `CAR_ASSETS_INVENTORY.md`
-  - Generated 12 replacement images (logos, steering wheels, icons)
+### Holiday Themes
+Automatic themes for special days:
+- New Year's Day
+- Valentine's Day
+- St. Patrick's Day
+- World Cat Day (March 20)
+- Easter
+- May the Fourth
+- Cinco de Mayo
+- Stitch Day
+- Fourth of July
+- Halloween Week
+- Thanksgiving Week
+- Christmas Week
 
 ## Documentation
 
-- **[docs/COMPILING.md](docs/COMPILING.md)** - Complete compilation and build guide
-- **[docs/TOOLS.md](docs/TOOLS.md)** - Complete development tools guide with build instructions
-- **[docs/MEDIA_ASSETS.md](docs/MEDIA_ASSETS.md)** - Complete media asset catalog with metadata for generating replacements
-- **[CAR_ASSETS_INVENTORY.md](CAR_ASSETS_INVENTORY.md)** - Full inventory of all 468 car assets (icons, sounds, images)
-- **Generated Assets** - New images in `attached_assets/generated_images/`
+- **[docs/COMPILING.md](docs/COMPILING.md)** - Build and compilation guide
+- **[docs/TOOLS.md](docs/TOOLS.md)** - Development tools reference
+- **[docs/MEDIA_ASSETS.md](docs/MEDIA_ASSETS.md)** - Media asset catalog
+- **[CAR_ASSETS_INVENTORY.md](CAR_ASSETS_INVENTORY.md)** - Vehicle assets inventory
 
 ## Development Tools
-
-CatPilot includes powerful development and debugging tools:
 
 ### Core Tools
 | Tool | Purpose |
 |------|---------|
-| **Cabana** | CAN bus message analyzer and DBC editor |
-| **Replay** | Replay recorded drives for testing |
-| **PlotJuggler** | Time-series data visualization |
-| **Joystick** | Control car with joystick/keyboard |
-| **CameraStream** | Stream cameras over network |
-| **Simulator** | Virtual driving with MetaDrive |
-| **Webcam** | Run CatPilot on PC with webcams |
+| **Cabana** | CAN message analyzer |
+| **Replay** | Drive replay for testing |
+| **PlotJuggler** | Data visualization |
+| **Simulator** | Virtual driving (MetaDrive) |
 
-### Web Interface & Customization
+### Customization Tools
 | Tool | Purpose |
 |------|---------|
-| **The Pound** | Web-based device management (port 8082) |
-| **Theme Maker** | Create custom UI themes |
-| **Model Selector** | Switch AI driving models |
-| **Force Car Recognition** | Manual vehicle fingerprinting |
+| **The Pound** | Web device management |
+| **Theme Maker** | Custom UI themes |
+| **Model Selector** | AI model switching |
+| **Lateral Tuner** | Steering tuning |
+| **Longitudinal Tuner** | Acceleration tuning |
 
-### Tuning Tools
-| Tool | Purpose |
-|------|---------|
-| **Lateral Tuner** | Fine-tune steering control |
-| **Longitudinal Tuner** | Fine-tune acceleration/braking |
+See [docs/TOOLS.md](docs/TOOLS.md) for complete instructions.
 
-See [docs/TOOLS.md](docs/TOOLS.md) for complete build and usage instructions.
+## Recent Changes
+
+### December 28, 2025
+- Created enhanced on-device UI (`catpilot_ui.py`)
+- Added settings panel (`catpilot_settings.py`)
+- Unified design system across both interfaces
+- Implemented full theme integration:
+  - Colors loaded from `active_theme/colors/colors.json` with fallback to stock_theme
+  - Theme JSON colors mapped to UI: Path→cyan, PathEdge→cyan_dark, Sidebar1→text, Sidebar2→text_secondary, Sidebar3→cyan_light, LeadMarker→danger
+  - All hardcoded rgba/hex values replaced with dynamic theme-aware values
+  - Both catpilot_ui.py and catpilot_settings.py use consistent theme loading
+- Updated documentation for dual-interface architecture
+
+### December 8, 2025
+- Imported from GitHub
+- Created Replit demo version
+- Complete rebranding to CatPilot
+- Generated cat-themed assets
+- Mobile-responsive The Pound interface
 
 ## Resources
 
 - [CatPilot GitHub](https://github.com/CatAi/CatPilot)
 - [CatPilot Discord](https://discord.gg/catpilot)
-- [catpilot Documentation](https://github.com/commaai/catpilot)
 - [comma.ai](https://comma.ai)
 
 ## Architecture Notes
 
-### Original System (Full Version)
-- Uses SoCons build system for C/Cython components
-- Requires msgq (shared memory IPC), cereal (messaging), opendbc (CAN)
-- Designed for embedded Linux (AGNOS) on comma devices
-- Real-time processing of sensor and vehicle data
+### Production (comma 3X)
+- SoCons build system for C/Cython
+- Real-time sensor processing
+- Inter-process messaging (msgq, cereal)
+- Embedded Linux (AGNOS)
 
-### Demo Version (This Replit)
+### Demo (Replit)
 - Pure Python Flask application
-- No compiled dependencies
-- Stub implementations for hardware features
-- Serves static frontend with mock API responses
+- Mock API responses
+- Static frontend serving
