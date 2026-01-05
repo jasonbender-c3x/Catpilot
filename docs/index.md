@@ -1,4 +1,4 @@
-# catpilot Documentation
+# CatPilot Documentation
 
 ```{include} README.md
 ```
