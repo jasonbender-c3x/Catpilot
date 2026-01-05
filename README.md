@@ -1,17 +1,13 @@
 [![CatPilot on the comma 3X](docs/images/catpilot_header.jpg)](https://comma.ai/shop/comma-3x)
 
-What is catpilot?
-------
-
-[catpilot](http://github.com/commaai/catpilot) is an open source driver assistance system. Currently, catpilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models, and model years](docs/CARS.md). In addition, while catpilot is engaged, a camera-based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
-
-
 What is CatPilot? 🐱
 ------
 
 <img src="docs/images/catpilot_mascot.jpg" width="200" alt="CatPilot Mascot" align="right">
 
-CatPilot is a fully open-sourced fork of catpilot, featuring clear and concise commits striving to be a resource for the catpilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced catpilot experience for everyone!
+CatPilot is a fully open-sourced fork of FrogPilot, which is itself a fork of Openpilot. CatPilot features clear and concise commits striving to be a resource for the CatPilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced CatPilot experience for everyone!
+
+CatPilot is an open source driver assistance system. Currently, CatPilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models, and model years](docs/CARS.md). In addition, while CatPilot is engaged, a camera-based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
 
 ------
 CatPilot was last updated on:
@@ -20,27 +16,27 @@ CatPilot was last updated on:
 
 ![CatPilot Interior](docs/images/catpilot_interior.jpg)
 
-Features
+CatPilot Features:
 ------
 
-CatPilot offers a wide range of customizable features that are easily toggled on or off to suit your preferences. Whether you want a completely stock catpilot experience, or want to add some fun and personal touches, CatPilot has you covered! Some of the features include:
+CatPilot offers a wide range of customizable features that are easily toggled on or off to suit your preferences. Whether you want a completely stock CatPilot experience, or want to add some fun and personal touches, CatPilot has you covered! Some of the features include:
 
 ------
 ⚡ **Advanced Customizations:**
 
-  - "Alert Volume Controller" to set the volume level for each of of catpilot's sounds
+  - "Alert Volume Controller" to set the volume level for each of CatPilot's sounds
   - Customize the following distance and jerk values for each personality profile
   - Fine tune your car's "Steer Ratio" to perfect your lateral control
   - Increase the distance when stopped behind lead vehicles
   - Increase the max set speed by a custom interval (i.e. 2, 3, 4, 5, 6, etc. instead of just 1)
-  - Select between past, present, and future catpilot driving models
+  - Select between past, present, and future CatPilot driving models
 ------
 🎨 **Custom Themes:**
 
   - 🐱 Cat theme (with a bonus 😺 sound effect)
   - 🔌 Tesla theme
   - Holiday themes! Minor holidays last a day, while major holidays (Easter, Halloween, Thanksgiving, Christmas) last a week
-  - Random events triggered by specific actions while driving with catpilot
+  - Random events triggered by specific actions while driving with CatPilot
 
   - 📢 Want to add a theme? Submit a pull request on GitHub!
 ------
@@ -85,7 +81,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Pause lateral control when pressing the brake
   - Pause lateral control when turn signals are active
   - Precise turns by using turn desires when below the minimum lane change speed
-  - [Twilsonco's NNFF](https://github.com/twilsonco/catpilot) for smoother steering control
+  - [Twilsonco's NNFF](https://github.com/twilsonco/openpilot) for smoother steering control
 ------
 🚘 **Longitudinal Adjustments:**
 
@@ -107,7 +103,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Custom map styles
   - Full screen map that takes up the entire screen for a more expansive map view
   - iOS shortcuts to quickly set navigation destinations
-  - Navigate on catpilot without a comma prime subscription
+  - Navigate on CatPilot without a comma prime subscription
   - Offline maps
   - "Open Street Maps" integration for speed limit control and road name view
 ------
@@ -139,12 +135,12 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Automatic/manual fingerprint selection to force a selected fingerprint
   - Custom longitudinal tunings for GM EVs and trucks for smoother gas and brake control
   - Custom longitudinal tunings for Toyota/Lexus for smoother gas and brake control
-  - Disable catpilot longitudinal control to use your car's stock cruise control
+  - Disable CatPilot longitudinal control to use your car's stock cruise control
   - GM Volt support
   - Honda Clarity support
   - Increased torque for the Subaru Crosstrek
   - Lock doors automatically when in the drive gear for Toyota/Lexus and unlock when in park
-  - catpilot longitudinal control for GM vehicles without ACC
+  - CatPilot longitudinal control for GM vehicles without ACC
   - Pedal interceptor support for GM vehicles
   - "Stop and Go" hack for Toyota's without stop and go functionality
   - ZSS support for the Toyota Prius and Sienna
@@ -162,7 +158,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
   - Screenrecorder
   - Toggle "Experimental Mode" via the "Lane Departure Alert" button, holding down the "Distance" button for 0.5+ seconds, or by double tapping the screen
 
-How to Install
+CatPilot Installation:
 ------
 
 To install CatPilot on your comma 3X device:
@@ -177,7 +173,7 @@ To install CatPilot on your comma 3X device:
 
 ![CatPilot Installation](docs/images/catpilot_install.jpg)
 
-Bug reports / Feature Requests
+CatPilot Bug Reports / Feature Requests:
 ------
 
 If you encounter any issues or bugs while using CatPilot, or if you have any suggestions for new features or improvements, please open an issue on GitHub! We're always looking for ways to improve the fork and provide a better experience for everyone.
@@ -186,7 +182,7 @@ To report a bug or request a new feature, please open an issue on the CatPilot G
 
 We will do our best to respond to bug reports and feature requests in a timely manner, but please understand that we may not be able to address every request immediately. Your feedback and suggestions are valuable, and we appreciate your help in making CatPilot the best it can be!
 
-Credits
+CatPilot Credits:
 ------
 
 * **[Bender, Jason](docs/AUTHORS.md#jason-bender)** - Co-Developer
@@ -204,7 +200,7 @@ Credits
 * [Twilsonco](https://github.com/twilsonco)
 * [Mike8643](https://github.com/mike8643)
 
-Licensing
+CatPilot Licensing:
 ------
 
 CatPilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
