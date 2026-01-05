@@ -189,19 +189,19 @@ We will do our best to respond to bug reports and feature requests in a timely m
 Credits
 ------
 
-* [Agentia](https://github.com/agentia)
+* **Agentia Compiler** - Co-developer
 * [AlexandreSato](https://github.com/AlexandreSato)
 * [Crwusiz](https://github.com/crwusiz)
 * [DragonPilot](https://github.com/dragonpilot-community)
 * [ErichMoraga](https://github.com/ErichMoraga)
 * [Garrettpall](https://github.com/garrettpall)
+* **Jason Bender** - Fork maintainer and co-developer
 * [Mike8643](https://github.com/mike8643)
 * [Neokii](https://github.com/Neokii)
 * [OPGM](https://github.com/opgm)
 * [OPKR](https://github.com/catpilotkr)
 * [Pfeiferj](https://github.com/pfeiferj)
 * [ServerDummy](https://github.com/ServerDummy)
-* [The Compiler](https://github.com/thecompiler)
 * [Twilsonco](https://github.com/twilsonco)
 
 Licensing
