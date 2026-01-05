@@ -4,7 +4,7 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
-packages = ["capnproto", "glibcLocales", "gmp", "libffi", "libxcrypt", "libyaml", "pkg-config", "xsimd"]
+packages = ["capnproto", "freetype", "glibcLocales", "gmp", "lcms2", "libffi", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "libyaml", "openjpeg", "pkg-config", "tcl", "tk", "xsimd", "zlib"]
 
 [[ports]]
 localPort = 5000

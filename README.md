@@ -1,4 +1,4 @@
-[![catpilot on the comma 3X](https://i.imgur.com/Zwv9SaN.png)](https://comma.ai/shop/comma-3x)
+[![CatPilot on the comma 3X](docs/images/catpilot_header.jpg)](https://comma.ai/shop/comma-3x)
 
 What is catpilot?
 ------
@@ -13,7 +13,7 @@ What is catpilot?
   </tr>
 </table>
 
-What is CatPilot? 🐸
+What is CatPilot? 🐱
 ------
 
 CatPilot is a fully open-sourced fork of catpilot, featuring clear and concise commits striving to be a resource for the catpilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced catpilot experience for everyone!
@@ -40,7 +40,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
 ------
 🎨 **Custom Themes:**
 
-  - 🐸 Cat theme (with a bonus 🐐 sound effect)
+  - 🐱 Cat theme (with a bonus 😺 sound effect)
   - <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1f7-1f1fa.png" width="15" height="12"> Russia / Joseph Stalin theme
   - 🔌 Tesla theme
   - Holiday themes! Minor holidays last a day, while major holidays (Easter, Halloween, Thanksgiving, Christmas) last a week
@@ -177,7 +177,7 @@ catpilot.download
 
 DO NOT install the "CatPilot-Development" branch. I'm constantly breaking things on there, so unless you don't want to use catpilot, NEVER install it!
 
-![](https://i.imgur.com/swr0kqJ.png)
+![CatPilot Installation](docs/images/catpilot_install.jpg)
 
 Bug reports / Feature Requests
 ------
@@ -222,7 +222,7 @@ NO WARRANTY EXPRESSED OR IMPLIED.**
 
 ---
 
-<img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/1061157-bc7e9bf3b246ece7322e6ffe653f6af8-medium_jpg.jpg?buster=1458363130" width="75"></img> <img src="https://cdn-images-1.medium.com/max/1600/1*C87EjxGeMPrkTuVRVWVg4w.png" width="225"></img>
+<img src="docs/images/catpilot_icon_75.jpg" width="75" alt="CatPilot Icon"></img> <img src="docs/images/catpilot_banner_225.jpg" width="225" alt="CatPilot Banner"></img>
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CatAi/CatPilot)
 ![catpilot tests](https://github.com/commaai/catpilot/actions/workflows/selfdrive_tests.yaml/badge.svg)
