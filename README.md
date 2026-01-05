@@ -5,23 +5,20 @@ What is catpilot?
 
 [catpilot](http://github.com/commaai/catpilot) is an open source driver assistance system. Currently, catpilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models, and model years](docs/CARS.md). In addition, while catpilot is engaged, a camera-based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
 
-<table>
-  <tr>
-    <td><a href="https://youtu.be/NmBfgOanCyk" title="Video By Greer Viau"><img src="https://github.com/commaai/catpilot/assets/8762862/2f7112ae-f748-4f39-b617-fabd689c3772"></a></td>
-    <td><a href="https://youtu.be/VHKyqZ7t8Gw" title="Video By Logan LeGrand"><img src="https://github.com/commaai/catpilot/assets/8762862/92351544-2833-40d7-9e0b-7ef7ae37ec4c"></a></td>
-    <td><a href="https://youtu.be/SUIZYzxtMQs" title="A drive to Taco Bell"><img src="https://github.com/commaai/catpilot/assets/8762862/05ceefc5-2628-439c-a9b2-89ce77dc6f63"></a></td>
-  </tr>
-</table>
 
 What is CatPilot? 🐱
 ------
+
+<img src="docs/images/catpilot_mascot.jpg" width="200" alt="CatPilot Mascot" align="right">
 
 CatPilot is a fully open-sourced fork of catpilot, featuring clear and concise commits striving to be a resource for the catpilot developer community. It thrives on contributions from both users and developers, focusing on a collaborative, community-led approach to deliver an advanced catpilot experience for everyone!
 
 ------
 CatPilot was last updated on:
 
-**April 12th, 2025**
+**January 5th, 2026**
+
+![CatPilot Interior](docs/images/catpilot_interior.jpg)
 
 Features
 ------
@@ -41,12 +38,11 @@ CatPilot offers a wide range of customizable features that are easily toggled on
 🎨 **Custom Themes:**
 
   - 🐱 Cat theme (with a bonus 😺 sound effect)
-  - <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1f7-1f1fa.png" width="15" height="12"> Russia / Joseph Stalin theme
   - 🔌 Tesla theme
   - Holiday themes! Minor holidays last a day, while major holidays (Easter, Halloween, Thanksgiving, Christmas) last a week
   - Random events triggered by specific actions while driving with catpilot
 
-  - 📢 Want to add a theme? Request one in the "feature-request" channel in the CatPilot Discord!
+  - 📢 Want to add a theme? Submit a pull request on GitHub!
 ------
 🚀 **Conditional Experimental Mode:**
 
@@ -135,7 +131,7 @@ CatPilot offers a wide range of customizable features that are easily toggled on
     - "Unlimited" road UI that extends out as far as the model can see
   - Sidebar retains it's previous position between reboots/ignition cycles
   - Steering wheel icons
-    - 📢 Request your own steering wheel icon in the "feature-request" channel!
+    - 📢 Submit your own steering wheel icon via pull request!
   - Steering wheel in the onroad UI rotates alongside your physical steering wheel
 ------
 🚙 **Vehicle Specific Additions:**
@@ -169,33 +165,31 @@ CatPilot offers a wide range of customizable features that are easily toggled on
 How to Install
 ------
 
-Easiest way to install CatPilot is via this URL at the installation screen:
+To install CatPilot on your comma 3X device:
 
-```
-catpilot.download
-```
+1. Connect your comma device to WiFi
+2. Navigate to the software installation screen
+3. Select "Custom Software" option
+4. Enter the CatPilot GitHub repository URL
+5. Follow the on-screen prompts to complete installation
 
-DO NOT install the "CatPilot-Development" branch. I'm constantly breaking things on there, so unless you don't want to use catpilot, NEVER install it!
+**Note:** Do NOT install the "CatPilot-Development" branch unless you want to test experimental features.
 
 ![CatPilot Installation](docs/images/catpilot_install.jpg)
 
 Bug reports / Feature Requests
 ------
 
-If you encounter any issues or bugs while using CatPilot, or if you have any suggestions for new features or improvements, please don't hesitate to post about it on the Discord! I'm always looking for ways to improve the fork and provide a better experience for everyone!
+If you encounter any issues or bugs while using CatPilot, or if you have any suggestions for new features or improvements, please open an issue on GitHub! We're always looking for ways to improve the fork and provide a better experience for everyone.
 
-To report a bug or request a new feature, make a post in the #bug-reports or #feature-requests channel respectively on the CatPilot Discord. Please provide as much detail as possible about the issue you're experiencing or the feature you'd like to see added. Photos, videos, log files, or other relevant information are very helpful!
+To report a bug or request a new feature, please open an issue on the CatPilot GitHub repository. Provide as much detail as possible about the issue you're experiencing or the feature you'd like to see added. Photos, videos, log files, or other relevant information are very helpful!
 
-I will do my best to respond to bug reports and feature requests in a timely manner, but please understand that I may not be able to address every request immediately. Your feedback and suggestions are valuable, and I appreciate your help in making CatPilot the best it can be!
-
-Discord
-------
-
-[Join the CatPilot Community Discord!](https://discord.gg/catpilot)
+We will do our best to respond to bug reports and feature requests in a timely manner, but please understand that we may not be able to address every request immediately. Your feedback and suggestions are valuable, and we appreciate your help in making CatPilot the best it can be!
 
 Credits
 ------
 
+* [Agentia](https://github.com/agentia)
 * [AlexandreSato](https://github.com/AlexandreSato)
 * [Crwusiz](https://github.com/crwusiz)
 * [DragonPilot](https://github.com/dragonpilot-community)
@@ -207,12 +201,13 @@ Credits
 * [OPKR](https://github.com/catpilotkr)
 * [Pfeiferj](https://github.com/pfeiferj)
 * [ServerDummy](https://github.com/ServerDummy)
+* [The Compiler](https://github.com/thecompiler)
 * [Twilsonco](https://github.com/twilsonco)
 
 Licensing
 ------
 
-catpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
+CatPilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
 
 Any user of this software shall indemnify and hold harmless Comma.ai, Inc. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
 
@@ -223,7 +218,3 @@ NO WARRANTY EXPRESSED OR IMPLIED.**
 ---
 
 <img src="docs/images/catpilot_icon_75.jpg" width="75" alt="CatPilot Icon"></img> <img src="docs/images/catpilot_banner_225.jpg" width="225" alt="CatPilot Banner"></img>
-
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CatAi/CatPilot)
-![catpilot tests](https://github.com/commaai/catpilot/actions/workflows/selfdrive_tests.yaml/badge.svg)
-[![codecov](https://codecov.io/gh/commaai/catpilot/branch/master/graph/badge.svg)](https://codecov.io/gh/commaai/catpilot)
