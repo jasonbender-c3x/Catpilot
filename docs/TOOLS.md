@@ -788,10 +788,10 @@ sudo udevadm control --reload-rules
 
 ## Credits
 
-**Fork Maintainers:** Jason Bender & Replit Agent (Claude by Anthropic)
+**Fork Maintainers:** Bender, Jason & Compiler, Agentia
 
 **Original:** The Compiler, comma.ai team
 
 ---
 
-*Last updated: December 2025*
+*Last updated: January 2026*
