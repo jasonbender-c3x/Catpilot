@@ -189,8 +189,8 @@ We will do our best to respond to bug reports and feature requests in a timely m
 Credits
 ------
 
-* **[Jason Bender](docs/AUTHORS.md#jason-bender)** - Co-Developer
-* **[Agentia Compiler](docs/AUTHORS.md#agentia-compiler)** - Co-Developer
+* **[Bender, Jason](docs/AUTHORS.md#jason-bender)** - Co-Developer
+* **[Compiler, Agentia](docs/AUTHORS.md#agentia-compiler)** - Co-Developer
 * [Crwusiz](https://github.com/crwusiz)
 * [DragonPilot](https://github.com/dragonpilot-community)
 * [Garrettpall](https://github.com/garrettpall)
