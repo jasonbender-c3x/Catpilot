@@ -593,7 +593,6 @@ export USE_WEBCAM=1
 
 ## Getting Help
 
-- **Discord**: [CatPilot Community](https://discord.gg/catpilot)
 - **GitHub Issues**: Report build problems
 - **Wiki**: Additional documentation
 
