@@ -193,16 +193,16 @@ Credits
 * **[Compiler, Agentia](docs/AUTHORS.md#agentia-compiler)** - Co-Developer
 * [Crwusiz](https://github.com/crwusiz)
 * [DragonPilot](https://github.com/dragonpilot-community)
-* [Garrettpall](https://github.com/garrettpall)
-* [Mike8643](https://github.com/mike8643)
-* [ErichMoraga](https://github.com/ErichMoraga)
+* [Moraga, Erich](https://github.com/ErichMoraga)
 * [Neokii](https://github.com/Neokii)
 * [OPGM](https://github.com/opgm)
 * [OPKR](https://github.com/catpilotkr)
+* [Pall, Garrett](https://github.com/garrettpall)
 * [Pfeiferj](https://github.com/pfeiferj)
-* [AlexandreSato](https://github.com/AlexandreSato)
+* [Sato, Alexandre](https://github.com/AlexandreSato)
 * [ServerDummy](https://github.com/ServerDummy)
 * [Twilsonco](https://github.com/twilsonco)
+* [Mike8643](https://github.com/mike8643)
 
 Licensing
 ------
